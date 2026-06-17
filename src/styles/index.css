@@ -1,0 +1,100 @@
+@import './tailwind.css';
+
+/* Global styles */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'IBM Plex Sans Arabic', 'IBM Plex Sans', 'Inter', sans-serif;
+  background-color: #ffffff; /* default fallback */
+  color: #000000;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* 🧩 Box sizing reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/* Focus styles for accessibility */
+*:focus {
+  outline: 2px solid #1b8354;
+  outline-offset: 2px;
+  box-sizing: border-box;
+}
+/* 🖼️ Ensure images are responsive and sharp */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  image-rendering: auto;
+  object-fit: contain;
+}
+
+/* 🧭 Accessibility Focus Ring */
+:focus-visible {
+  outline: 2px solid #1b8354;
+  outline-offset: 3px;
+}
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1b8354;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #074c30;
+}
+* 🔍 Smooth transitions for UI elements */
+a,
+button,
+input,
+textarea {
+  transition: all 0.2s ease-in-out;
+}
+
+/* ✨ Disable image drag ghosting */
+img,
+svg {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* 📱 Responsive font fix for consistent line heights */
+body {
+  line-height: 1.5;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+/* Global Language Direction Reset */
+.ltr {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+.rtl {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* Specific navbar fixes */
+.lang-en .navbar,
+.lang-en .navbar-arabic {
+  direction: ltr !important;
+}
+
+.lang-ar .navbar,
+.lang-ar .navbar-arabic {
+  direction: rtl !important;
+}

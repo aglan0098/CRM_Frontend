@@ -1,0 +1,2964 @@
+// Updated GlobalStyles.jsx with Complete RTL Support
+import React from "react";
+import BannerImage from './Banner.png';
+import { useTranslation } from './TranslationContext';
+
+const GlobalStyles = () => {
+  const { isRTL } = useTranslation();
+  
+  return (
+    <style>{`
+    :root {
+      --Background-background-primary-25: #f7fdf9;
+      --Link-link-primary-visited: #14573a;
+      --Text-text-default: #161616;
+      --Font-Family-font-family-text: "IBM Plex Sans Arabic", Arial, sans-serif;
+      --Font-Family-font-family-display: "IBM Plex Sans Arabic", Arial, sans-serif;
+      --Size-Text-typo-size-text-sm: 14px;
+      --Size-Display-typo-size-display-sm: 30px;
+      --Line-Height-Text-line-heights-text-sm: 20px;
+      --Line-Height-Display-line-heights-display-sm: 38px;
+      --spacing-416-px: 16px;
+      --spacing-624-px: 24px;
+      --Link-link-sm-gap: 4px;
+      --Global-spacing-none: 0px;
+      --spacing-312-px: 12px;
+      --spacing-832-px: 32px;
+      --Tab-horizontal-tab-md-button-v-padding: 12px;
+      --Global-spacing-2xl: 20px;
+      --Size-Text-typo-size-text-md: 16px;
+      --Form-field-text-placeholder: #6c737f;
+      --Line-Height-Text-line-heights-text-md: 24px;
+      --spacing-md: 8px;
+      --spacing-xl: 16px;
+      --radius-sm: 4px;
+      --Global-spacing-lg: 8px;
+      --Background-background-card: #fff;
+      --Background-background-menu: #fff;
+      --Border-border-neutral-secondary: #e5e7eb;
+      --Tag-tag-background-neutral-light: #f9fafb;
+    }
+
+    .main-container {
+      width: 100%;
+      min-height: 100vh;
+      background: var(--Background-background-card, #fff);
+    }
+
+    .sidebar {
+      display: flex;
+      width: 271px;
+      height: 100vh;
+      max-height: 100vh;
+      padding: var(--spacing-416-px, 16px) 0px;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 32px;
+      flex-shrink: 0;
+      background: var(--Background-background-menu, #fff);
+      box-shadow: 0px 0px 16px -2px rgba(16, 24, 40, 0.16);
+      position: fixed;
+      ${isRTL ? 'right: 0;' : 'left: 0;'}
+      top: 0;
+      z-index: 1000;
+      transition: transform 0.3s ease;
+      overflow-y: hidden;
+      overflow-x: hidden;
+    }
+
+    .image-container {
+  display: flex;
+  padding: var(--spacing-312-px, 12px) var(--spacing-832-px, 32px);
+  flex-direction: column;
+  align-items: ${isRTL ? 'flex-end' : 'flex-start'};
+  gap: 10px;
+  align-self: stretch;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  ${isRTL ? 'padding-right: 32px; padding-left: 12px;' : 'padding-left: 32px; padding-right: 12px;'}
+}
+
+    .logo-image {
+  display: flex;
+  width: 103.689px;
+  height: 82.049px;
+  padding: 0.012px 0px 0.022px 0px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 7.361px;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  ${isRTL ? 'align-self: flex-end; margin-left: auto; margin-right: 0;' : 'align-self: flex-start; margin-left: 0; margin-right: auto;'}
+}
+
+  .section-container {
+  display: flex;
+  padding: var(--Tab-horizontal-tab-md-button-v-padding, 12px) 0px;
+  flex-direction: column;
+  align-items: ${isRTL ? 'flex-end' : 'center'};
+  gap: 20px;
+  align-self: stretch;
+  width: 100%;
+}
+
+    .search-menubar {
+  position: relative;
+  width: 231px;
+  height: 40px;
+  border: 1px solid #9da4ae;
+  border-radius: 6px;
+  background-color: #ffffff;
+  ${isRTL ? 'margin-right: 0; margin-left: auto;' : ''}
+}
+
+    .search-icon {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      ${isRTL ? 'right: 10px;' : 'left: 10px;'}
+      top: 52%;
+      transform: translateY(-50%);
+    }
+
+    .placeholdermenu {
+      width: 100%;
+      height: 100%;
+      ${isRTL ? 'padding-right: 35px;' : 'padding-left: 35px;'}
+      border: none;
+      outline: none;
+      font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+      font-size: var(--Size-Text-typo-size-text-md, 16px);
+      font-style: normal;
+      font-weight: 400;
+      color: var(--Form-field-text-placeholder, #6c737f);
+      background-color: transparent;
+      line-height: var(--Line-Height-Text-line-heights-text-md, 24px);
+      text-align: ${isRTL ? 'right' : 'left'};
+    }
+
+    .avatar {
+      width: 65px;
+      height: 65px;
+      flex-shrink: 0;
+      border-radius: 9999px;
+      border: 2px solid #fff;
+      background: lightgray;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .sidemenu {
+  display: flex;
+  flex-direction: column;
+  align-items: ${isRTL ? 'flex-end' : 'center'};
+  align-self: stretch;
+  width: 231px;
+  height: 320px;
+}
+
+    .menuitem1 {
+  display: flex;
+  width: 192px;
+  height: 20px;
+  padding: var(--spacing-md, 8px) var(--spacing-xl, 16px);
+  justify-content: ${isRTL ? 'flex-end' : 'center'};
+  align-items: center;
+  gap: 8px;
+  ${isRTL ? 'margin-right: -70px; margin-left: 30px;' : 'margin-left: -70px; margin-right: 15px;'}
+  border-radius: var(--radius-sm, 4px);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  flex-direction: ${isRTL ? 'row-reverse' : 'row'};
+}
+
+    .menuitem1.active {
+      background-color: #f3f4f6;
+    }
+
+    .menuitem1.active::before {
+      content: "";
+      position: absolute;
+      ${isRTL ? 'right: 2px;' : 'left: 2px;'}
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background-color: #085d3a;
+      border-radius: ${isRTL ? '2px 0 0 2px;' : '0 2px 2px 0;'}
+    }
+
+    .menuitem1.active .menu1img {
+      filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(146deg) brightness(104%) contrast(97%);
+    }
+
+    .menuitem1:hover {
+      background-color: #f9fafb;
+    }
+
+    .menu1img {
+  width: 14.333px;
+  height: 13px;
+  flex-shrink: 0;
+  transition: filter 0.3s ease;
+  border-radius: 2px;
+  ${isRTL ? 'order: 2;' : ''}
+}
+
+    .menuheader {
+  color: var(--Text-text-default, #161616);
+  font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+  font-size: var(--Size-Text-typo-size-text-sm, 14px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: var(--Line-Height-Text-line-heights-text-sm, 20px);
+  text-align: ${isRTL ? 'right' : 'left'};
+  ${isRTL ? 'order: 1;' : 'flex: 1 0 0;'}
+}
+
+    .bottomsidemenu .menuitem1.active .menuheader {
+      color: #1b8354 !important;
+    }
+
+    .bottomsidemenu .menuitem1.active::before {
+      ${isRTL ? 'right: 0px;' : 'left: 0px;'}
+    }
+
+    .hr1 {
+      padding: 8px 16px;
+    }
+
+    .line {
+      width: 199px;
+      height: 1px;
+      background-color: #d2d6db;
+      border: none;
+      margin: 0;
+      display: block;
+      ${isRTL ? 'margin-right: -70px;' : 'margin-left: -70px;'}
+    }
+
+    .bottomsidemenu {
+  display: flex;
+  padding: var(--Tab-horizontal-tab-md-button-v-padding, 12px) var(--Global-spacing-2xl, 20px);
+  flex-direction: column;
+  align-items: ${isRTL ? 'flex-end' : 'flex-start'};
+  gap: var(--Global-spacing-lg, 8px);
+  align-self: stretch;
+  width: 231px;
+  height: 84px;
+  ${isRTL ? 'margin-right: 18px; margin-left: 0;' : 'margin-left: 30px; margin-right: 0;'}
+}
+
+.bottomsidemenu .menuitem1 {
+  ${isRTL ? 'margin-right: -70px; margin-left: 30px;' : 'margin-left: -86px; margin-right: 0;'}
+  justify-content: ${isRTL ? 'flex-end' : 'center'};
+  flex-direction: ${isRTL ? 'row-reverse' : 'row'};
+}
+
+.bottomsidemenu .menuitem1.active::before {
+  content: none;
+  display: none;
+}
+
+    .hamburger {
+      display: none;
+      position: fixed;
+      top: 20px;
+      ${isRTL ? 'right: 20px;' : 'left: 20px;'}
+      z-index: 1001;
+      background: #085d3a;
+      color: white;
+      border: none;
+      padding: 10px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+
+    .content-area {
+      transition: margin-left 0.3s ease;
+      min-height: 100vh;
+      background: white;
+      ${isRTL ? 'margin-right: 271px; margin-left: 0;' : ''}
+    }
+
+    .card-back {
+      width: 100%;
+      min-height: 244px;
+      position: relative;
+      background: var(--Background-background-primary-25, #f7fdf9);
+      padding: 16px 60px 24px 24px;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    .Vector-img {
+      position: absolute !important;
+      ${isRTL ? 'right: -50px !important;' : 'left: -50px !important;'}
+      top: -50px !important;
+      width: min(610px, 60vw) !important;
+      height: auto;
+      max-height: 600px !important;
+      opacity: 10.2 !important;
+      z-index: 0 !important;
+      pointer-events: none !important;
+      border-radius: 50% !important;
+    }
+
+    .vernav {
+      position: absolute;
+      top: 16px;
+      ${isRTL ? 'left: 16px;' : 'right: 16px;'}
+      display: inline-flex;
+      padding: var(--spacing-416-px, 16px) var(--spacing-624-px, 24px);
+      align-items: flex-start;
+      gap: 16px;
+      z-index: 2;
+    }
+
+    .vernav-img {
+      display: flex;
+      width: 20px;
+      height: 20px;
+      padding: 1.042px 1.457px 1.041px 1.458px;
+      justify-content: center;
+      align-items: center;
+      aspect-ratio: 1/1;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .BreadCrumbs {
+      display: inline-flex;
+      padding: var(--Global-spacing-none, 0px);
+      align-items: flex-start;
+      position: absolute;
+      top: 30px;
+      ${isRTL ? 'right: 24px; left: 180px;' : 'left: 24px; right: 180px;'}
+      gap: var(--Global-spacing-none, 0px);
+      z-index: 2;
+      flex-wrap: wrap;
+      list-style: none;
+      margin: 0;
+      direction: ${isRTL ? 'rtl' : 'ltr'};
+    }
+
+    .link-item {
+      display: flex;
+      ${isRTL ? 'padding-left: var(--Link-link-sm-gap, 4px);' : 'padding-right: var(--Link-link-sm-gap, 4px);'}
+      align-items: center;
+      gap: var(--Link-link-sm-gap, 4px);
+      white-space: nowrap;
+    }
+
+    .text {
+      padding: var(--Global-spacing-none, 0px);
+      text-decoration: none;
+      color: var(--Link-link-primary-visited, #14573a);
+      font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+      font-size: var(--Size-Text-typo-size-text-sm, 14px);
+      font-style: normal;
+      font-weight: 400;
+      line-height: var(--Line-Height-Text-line-heights-text-sm, 20px);
+    }
+
+    .arrow {
+      display: flex;
+      width: 16px;
+      height: 16px;
+      padding: 2.222px 4.827px 2.22px 5.442px;
+      justify-content: center;
+      align-items: center;
+      color: black;
+    }
+
+    .arrow::before {
+      content: "${isRTL ? '<' : '>'}";
+    }
+
+    .service-title {
+      position: absolute;
+      top: 80px;
+      ${isRTL ? 'right: 24px; left: 24px;' : 'left: 24px; right: 24px;'}
+      color: var(--Text-text-default, #161616);
+      font-family: var(--Font-Family-font-family-display, "IBM Plex Sans Arabic");
+      font-size: var(--Size-Display-typo-size-display-sm, 30px);
+      font-style: normal;
+      font-weight: 700;
+      line-height: var(--Line-Height-Display-line-heights-display-sm, 38px);
+      margin: 0;
+      z-index: 2;
+      text-align: ${isRTL ? 'right' : 'left'};
+    }
+
+    .tip-banner {
+      width: calc(100% - 60px);
+      height: 59px;
+      position: relative;
+      margin: 0 auto 20px auto;
+      border-radius: 8px;
+      background: rgba(0, 0, 0, 0.1);
+      background-image: url('${BannerImage}');
+      backdrop-filter: blur(4px);
+      color: white;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: -80px;
+      z-index: 10;
+      direction: ${isRTL ? 'rtl' : 'ltr'};
+    }
+
+    .tip-text {
+      color: var(--Background-background-card, #fff);
+      font-family: "IBM Plex Sans Arabic";
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 28px;
+      text-align: ${isRTL ? 'right' : 'left'};
+    }
+
+    .request-workshop-btn {
+      display: flex;
+      width: 150px;
+      height: 32px;
+      min-height: 32px;
+      max-height: 40px;
+      padding: var(--Global-spacing-none, 0) var(--Button-buttons-md-padding, 12px);
+      justify-content: center;
+      align-items: center;
+      gap: var(--Button-buttons-md-gap, 4px);
+      flex-shrink: 0;
+      border-radius: var(--Radius-radius-sm, 4px);
+      background: var(--Button-button-background-neutral-default, #f3f4f6);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .request-workshop-text {
+      color: var(--Text-text-default, #161616);
+      font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+      font-size: var(--Size-Text-typo-size-text-sm, 14px);
+      font-style: normal;
+      font-weight: 600;
+      line-height: var(--Line-Height-Text-line-heights-text-sm, 20px);
+    }
+
+    .main-content {
+      padding: 30px;
+      margin-top: 0;
+    }
+
+    .main-card {
+      background: white;
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: 0 4px 8px -2px rgba(16, 24, 40, 0.1), 0 2px 4px -2px rgba(16, 24, 40, 0.06);
+      border: 1px solid #e5e7eb;
+      position: relative;
+      z-index: 10;
+      margin-top: -30px;
+    }
+
+    .mr-main-card {
+      background: white;
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: 0 4px 8px -2px rgba(16, 24, 40, 0.1), 0 2px 4px -2px rgba(16, 24, 40, 0.06);
+      border: 1px solid #e5e7eb;
+      position: relative;
+      z-index: 10;
+      margin-top: -100px;
+    }
+
+    .welcome-section {
+      display: flex;
+      padding: var(--spacing-832-px, 32px) 0;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
+      align-self: stretch;
+      border-bottom: 1px solid var(--Border-border-neutral-secondary, #e5e7eb);
+    }
+
+    .welcome-title {
+      color: var(--Text-text-primary-paragraph, #384250);
+      font-family: "IBM Plex Sans Arabic";
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 24px;
+      text-align: ${isRTL ? 'right' : 'left'};
+    }
+
+    .welcome-text {
+      color: var(--Text-text-primary-paragraph, #384250);
+      font-family: "IBM Plex Sans Arabic";
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 24px;
+      text-align: ${isRTL ? 'right' : 'left'};
+    }
+
+    .stats-grid {
+      display: flex;
+      padding: 32px 0;
+      align-items: flex-start;
+      align-content: flex-start;
+      gap: 48px 32px;
+      align-self: stretch;
+      flex-wrap: wrap;
+      direction: ${isRTL ? 'rtl' : 'ltr'};
+    }
+
+    .stat-card {
+      display: flex;
+      height: 164px;
+      padding: 16px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 24px;
+      flex: 1 0 0;
+      border-radius: 16px;
+      border: 1px solid #d2d6db;
+      background: #fff;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      min-width: 200px;
+    }
+
+    .stat-card:hover {
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .stat-card[data-filter="pending"] {
+      background: var(--Alpha-Alpha-warning-20, rgba(220, 104, 3, 0.20));
+    }
+
+    .stat-icon {
+      width: 24px;
+      height: 24px;
+      opacity: 0.8;
+      flex-shrink: 0;
+    }
+
+    .stat-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .stat-label-text {
+      color: var(--Text-text-primary-paragraph, #384250);
+      font-family: "IBM Plex Sans Arabic";
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 24px;
+      text-align: ${isRTL ? 'right' : 'left'};
+    }
+
+    .stat-number {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--Global-spacing-lg, 12px);
+      flex: 1 0 0;
+    }
+
+    .stat-number-text {
+      color: var(--Text-text-display, #1f2a37);
+      font-family: "IBM Plex Sans Arabic";
+      font-size: 48px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 60px;
+      letter-spacing: -0.96px;
+      text-align: ${isRTL ? 'right' : 'left'};
+    }
+
+    .actions-section {
+      background: white;
+      padding: 25px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      border: 1px solid #e5e7eb;
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 35px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      margin-left: 10px;
+      text-align: ${isRTL ? 'right' : 'left'};
+    }
+
+    .actions-section .section-title {
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 15px;
+      margin-bottom: 20px;
+    }
+
+    .action-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 15px;
+      background: white;
+      border-radius: 4px;
+      position: relative;
+      margin-top: 20px;
+      border: 1px solid #f0f0f0;
+      border-left: none;
+      border-bottom: 1px solid #f0f0f0;
+      padding-left: 25px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+      direction: ${isRTL ? 'rtl' : 'ltr'};
+    }
+
+    .action-item::before {
+      content: "";
+      position: absolute;
+      ${isRTL ? 'right: -1px;' : 'left: -1px;'}
+      top: 50%;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 70px;
+      background: #f59e0b;
+      border-radius: ${isRTL ? '0 2px 2px 0;' : '2px 0 0 2px;'}
+    }
+
+    .action-icon {
+      width: 20px;
+      height: 20px;
+      color: #f59e0b;
+    }
+
+    .action-icon-shade {
+      display: flex;
+      width: 40px;
+      height: 40px;
+      padding: 10px;
+      justify-content: center;
+      align-items: center;
+      border-radius: var(--radius-full, 9999px);
+      background: var(--Icon-background-warning-light, #fffaeb);
+    }
+
+    .action-text {
+      flex: 1;
+      font-size: 14px;
+      text-align: ${isRTL ? 'right' : 'left'};
+    }
+
+    .action-text strong {
+      font-weight: 600;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      ${isRTL ? 'left: 15px;' : 'right: 15px;'}
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .close-icon {
+      width: 16px;
+      height: 16px;
+      opacity: 0.6;
+      transition: opacity 0.2s ease;
+    }
+
+    .close-btn:hover .close-icon {
+      opacity: 1;
+    }
+
+    .dash-requests-section {
+      display: flex;
+      height: 420px;
+      padding: 0 16px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: left;
+      gap: 17px;
+      border-radius: var(--spacing-28-px, 8px);
+      border: 1px solid var(--Border-border-neutral-secondary, #e5e7eb);
+      background: var(--Background-background-white, #fff);
+      box-shadow: 0 4px 8px -2px rgba(16, 24, 40, 0.1), 0 2px 4px -2px rgba(16, 24, 40, 0.06);
+    }
+
+    .requests-section {
+      display: flex;
+      height: 600px;
+      padding: 0 16px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: left;
+      margin-top: 30px;
+      gap: 17px;
+      border-radius: var(--spacing-28-px, 8px);
+      border: 1px solid var(--Border-border-neutral-secondary, #e5e7eb);
+      background: var(--Background-background-white, #fff);
+      box-shadow: 0 4px 8px -2px rgba(16, 24, 40, 0.1), 0 2px 4px -2px rgba(16, 24, 40, 0.06);
+    }
+
+    .search-filters {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 20px;
+      padding: 0 16px;
+      margin-left: -8px;
+      flex-wrap: wrap;
+      direction: ${isRTL ? 'rtl' : 'ltr'};
+    }
+
+    .search-input {
+      flex: 2;
+      padding: 12px 16px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 14px;
+      background: white url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIGZpbGw9IiM5OTkiIHZpZXdCb3g9IjAgMCAxNiAxNiI+PHBhdGggZD0iTTExLjc0MiAxMC4zNDRhNi41IDYuNSAwIDEgMC0xLjM5NyAxLjM5OGMtLjAwMS4wMDEtLjAwMi4wMDItLjAwMy4wMDNsLTIuMTg0IDIuMTg0YS43NS43NSAwIDEgMCAxLjA2MSAxLjA2MWwyLjE4NC0yLjE4NGMuMDAxLS4wMDEuMDAyLS4wMDIuMDAzLS4wMDN6TTEyIDUuNWE1LjUgNS41IDAgMSAxLTExIDAgNS41IDUuNSAwIDAgMSAxMSAweiIvPjwvc3ZnPg==") no-repeat ${isRTL ? 'left' : 'right'} 12px center;
+      height: 44px;
+      min-width: 200px;
+      text-align: ${isRTL ? 'right' : 'left'};
+    }
+
+    .filter-select {
+      flex: 2;
+      padding: 12px 16px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 14px;
+      background: white;
+      height: 44px;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: ${isRTL ? 'left' : 'right'} 12px center;
+      background-size: 16px 16px;
+      ${isRTL ? 'padding-left: 40px;' : 'padding-right: 40px;'}
+      min-width: 140px;
+      text-align: ${isRTL ? 'right' : 'left'};
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    /* Table RTL Support */
+    .table-container {
+      overflow-x: auto;
+      margin: 0 8px;
+      direction: ${isRTL ? 'rtl' : 'ltr'};
+    }
+
+    .requests-table {
+      width: calc(100% - 24px);
+      border-collapse: collapse;
+      border: 1px solid #e5e7eb;
+      margin-left: 8px;
+      margin-right: 0;
+      min-width: 600px;
+    }
+
+    .requests-table th,
+    .requests-table td {
+      padding: 16px;
+      text-align: ${isRTL ? 'right' : 'left'};
+      border-right: 1px solid #e5e7eb;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .requests-table th:last-child,
+    .requests-table td:last-child {
+      border-right: none;
+    }
+
+    .requests-table th {
+      background-color: #f9fafb;
+      font-weight: 600;
+      color: #374151;
+      font-size: 14px;
+    }
+
+    .requests-table td {
+      font-size: 14px;
+      color: #374151;
+    }
+
+    .case-number {
+      color: #1b8354;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .case-number:hover {
+      text-decoration: underline;
+    }
+
+    .status-badge {
+      padding: 6px 12px;
+      border-radius: 16px;
+      font-size: 12px;
+      font-weight: 500;
+      border: 2px solid;
+      white-space: nowrap;
+    }
+
+    .status-resolved {
+      background: rgba(220, 252, 231, 0.6);
+      color: #166534;
+      border-color: #86efac;
+    }
+
+    .status-action-required {
+      background: rgba(254, 243, 205, 0.6);
+      color: #92400e;
+      border-color: #fbbf24;
+    }
+
+    .status-draft {
+      background: rgba(219, 234, 254, 0.6);
+      color: #1e40af;
+      border-color: #93c5fd;
+    }
+
+    .dashboard-content {
+      display: none;
+    }
+
+    .dashboard-content.active {
+      display: block;
+    }
+
+    .services-content {
+      display: block;
+    }
+
+    .services-content.active {
+      display: block;
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 8px;
+      margin-top: 20px;
+      position: relative;
+      flex-wrap: wrap;
+      gap: 16px;
+      direction: ${isRTL ? 'rtl' : 'ltr'};
+    }
+
+    .pagination-info {
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    .pagination-controls {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      position: absolute;
+      ${isRTL ? 'right: 50%; left: auto; transform: translateX(50%);' : 'left: 50%; transform: translateX(-50%);'}
+    }
+
+    .pagination-btn {
+      padding: 8px 12px;
+      border: none;
+      background: transparent;
+      color: #374151;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+
+    .pagination-btn:hover {
+      color: #1f2937;
+    }
+
+    .pagination-btn.active {
+      color: #1f2937;
+      font-weight: 600;
+    }
+
+    .pagination-btn.active::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 2px;
+      background-color: #1f2937;
+    }
+
+    /* Services Page Styles with RTL Support */
+    .services-container {
+  width: 100% ;
+  padding: 20px;
+  background: white;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 8px -2px rgba(16, 24, 40, 0.1), 0 2px 4px -2px rgba(16, 24, 40, 0.06);
+  z-index: 10;
+  margin-top: -100px;
+  position: relative;
+  box-sizing: border-box;
+  min-height: auto;
+}
+
+    .header-section {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 30px;
+      align-items: center;
+      direction: ${isRTL ? 'rtl' : 'ltr'};
+    }
+
+    .search-container {
+      position: relative;
+      flex: 1;
+      max-width: 320px;
+    }
+
+    .search-input-services {
+      width: 100%;
+      padding: 12px 15px 10px 45px;
+      border: 2px solid #161616;
+      border-radius: 4px;
+      font-size: 14px;
+      background-color: white;
+      outline: none;
+      transition: border-color 0.3s ease;
+      text-align: ${isRTL ? 'right' : 'left'};
+      ${isRTL ? 'padding-right: 45px; padding-left: 15px;' : ''}
+    }
+
+    .search-input-services:focus {
+      border-color: #161616;
+    }
+
+    .search-icon-services {
+      position: absolute;
+      ${isRTL ? 'right: 15px;' : 'left: 15px;'}
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      color: #161616;
+    }
+
+    .filter-btn {
+      display: flex;
+      align-items: center;
+      width: 132px;
+      height: 45px;
+      gap: 8px;
+      padding: 10px 40px;
+      background-color: #1B8354;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+      font-size: var(--Size-Text-typo-size-text-md, 16px);
+      font-style: normal;
+      font-weight: 500;
+      transition: background-color 0.3s ease;
+    }
+
+    .filter-btn:hover {
+      background-color: #34495e;
+    }
+
+    .nav-tabs {
+      display: flex;
+      margin-bottom: 40px;
+      border-bottom: 2px solid #D2D6DB;
+      direction: ${isRTL ? 'rtl' : 'ltr'};
+    }
+
+    .nav-tab {
+      padding: 15px 0;
+      ${isRTL ? 'margin-left: 40px;' : 'margin-right: 40px;'}
+      color: #384250;
+      text-decoration: none;
+      font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+      font-size: var(--Size-Text-typo-size-text-sm, 14px);
+      font-style: normal;
+      font-weight: 500;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .nav-tab.active {
+      color: #2c3e50;
+    }
+
+    .nav-tab.active::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: #1B8354;
+    }
+
+    .services-grid {
+  display: grid;
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  direction: ${isRTL ? 'rtl' : 'ltr'};
+  box-sizing: border-box;
+  justify-items: stretch;
+  align-items: start;
+}
+
+    .service-card {
+  background: white;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 4px 8px -2px rgba(16, 24, 40, 0.10), 0 2px 4px -2px rgba(16, 24, 40, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #ecf0f1;
+  min-height: 300px;
+  max-width: 100%;
+  text-align: ${isRTL ? 'right' : 'left'};
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+}
+
+    .service-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px #1B8354;
+    }
+
+    .card-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-full, 9999px);
+      background: var(--Icon-Bg-icon-brand-light, #F3FCF6);
+      align-items: center;
+      padding: 14px;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-bottom: 15px;
+      color: #067647;
+    }
+
+    .card-title {
+      color: var(--Text-text-display, #1F2A37);
+      font-family: "IBM Plex Sans Arabic";
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 28px;
+      margin-bottom: 12px;
+      align-self: stretch;
+      text-align: ${isRTL ? 'right' : 'left'};
+    }
+
+    .card-description {
+      font-size: 15px;
+      font-family: "IBM Plex Sans Arabic";
+      display: -webkit-box;
+      width: 100%;
+      -webkit-box-orient: vertical;
+      color: #1F2A37;
+      line-height: 24px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      font-style: normal;
+      font-weight: 400;
+      margin-bottom: 10px;
+      text-align: ${isRTL ? 'right' : 'left'};
+    }
+
+    .service-details-btn {
+      background-color: #1B8354;
+      display: flex;
+      height: 32px;
+      min-height: 32px;
+      max-height: 32px;
+      padding: var(--Global-spacing-none, 0) var(--Button-buttons-md-padding, 12px);
+      justify-content: center;
+      align-items: center;
+      gap: var(--Button-buttons-md-gap, 4px);
+      color: #fff;
+      border: none;
+      border-radius: var(--Radius-radius-sm, 4px);
+      cursor: pointer;
+      font-family: "IBM Plex Sans Arabic";
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    .service-details-btn:hover {
+      background-color: #1B8354;
+    }
+
+    .service-details-btn::after {
+      content: '${isRTL ? '<' : '>'}';
+      font-size: 16px;
+    }
+
+    @media (min-width: 1025px) {
+      .content-area {
+        ${isRTL ? 'margin-right: 271px;' : 'margin-left: 271px;'}
+      }
+    }
+
+    .sidebar-hidden .content-area {
+      ${isRTL ? 'margin-right: 0 !important;' : 'margin-left: 0 !important;'}
+    }
+
+    @media (max-width: 1024px) {
+      .content-area {
+        ${isRTL ? 'margin-right: 0 !important;' : 'margin-left: 0 !important;'}
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .sidebar {
+        ${isRTL ? 'transform: translateX(271px);' : 'transform: translateX(-271px);'}
+      }
+
+      .sidebar.show {
+        transform: translateX(0);
+      }
+
+      .overlay.show {
+        display: block;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .card-back {
+        padding: 16px 80px 24px 32px;
+      }
+
+      .Vector-img {
+        width: 610px;
+        ${isRTL ? 'left: -80px;' : 'right: -80px;'}
+      }
+
+      .vernav {
+        ${isRTL ? 'left: 32px;' : 'right: 32px;'}
+      }
+
+      .BreadCrumbs {
+        ${isRTL ? 'right: 32px;' : 'left: 32px;'}
+      }
+
+      .service-title {
+        ${isRTL ? 'right: 32px;' : 'left: 32px;'}
+        font-size: 32px;
+        line-height: 40px;
+      }
+    }
+
+    @media (min-width: 769px) and (max-width: 1199px) {
+      .card-back {
+        padding: 16px 40px 24px 24px;
+      }
+
+      .Vector-img {
+        width: min(500px, 50vw);
+        ${isRTL ? 'left: -60px;' : 'right: -60px;'}
+      }
+
+      .vernav {
+        ${isRTL ? 'left: 24px;' : 'right: 24px;'}
+      }
+
+      .service-title {
+        font-size: 28px;
+        line-height: 36px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-section {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+      }
+
+      .search-container {
+        max-width: none;
+      }
+
+      .filter-btn {
+        align-self: flex-start;
+        width: 100%;
+        min-width: 100px;
+        justify-content: center;
+      }
+
+      .card-title {
+        font-size: 16px;
+        line-height: 24px;
+      }
+
+      .card-description {
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      .card-back {
+        min-height: 180px;
+        padding: 16px 16px 24px 16px;
+      }
+
+      .Vector-img {
+        width: min(400px, 45vw);
+        ${isRTL ? 'left: -40px;' : 'right: -40px;'}
+        top: -30px;
+      }
+
+      .vernav {
+        ${isRTL ? 'left: 8px;' : 'right: 8px;'}
+        top: 8px;
+        padding: 8px 12px;
+        gap: 12px;
+      }
+
+      .vernav-img {
+        width: 18px;
+        height: 18px;
+      }
+
+      .BreadCrumbs {
+        ${isRTL ? 'right: 16px; left: 120px;' : 'left: 16px; right: 120px;'}
+        top: 12px;
+      }
+
+      .text {
+        font-size: 12px;
+        line-height: 18px;
+      }
+
+      .arrow {
+        width: 14px;
+        height: 14px;
+      }
+
+      .service-title {
+        ${isRTL ? 'right: 16px; left: 16px;' : 'left: 16px; right: 16px;'}
+        top: 45px;
+        font-size: 24px;
+        line-height: 32px;
+      }
+
+      .sidebar {
+        width: 280px;
+        ${isRTL ? 'transform: translateX(280px);' : 'transform: translateX(-280px);'}
+      }
+
+      .sidebar.show {
+        transform: translateX(0);
+      }
+
+      .search-menubar {
+        width: 220px;
+      }
+
+      .sidemenu {
+        width: 220px;
+      }
+
+      .bottomsidemenu {
+        width: 220px;
+      }
+
+      .avatar {
+        width: 60px;
+        height: 60px;
+        font-size: 16px;
+      }
+
+      .tip-banner {
+        width: calc(100% - 32px);
+        height: auto;
+        min-height: 59px;
+        padding: 16px;
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+
+      .tip-text {
+        font-size: 16px;
+        line-height: 24px;
+      }
+
+      .request-workshop-btn {
+        width: 120px;
+        height: 36px;
+      }
+
+      .main-content {
+        padding: 16px;
+      }
+
+      .main-card {
+        padding: 20px;
+      }
+
+      .welcome-section {
+        padding: 20px 0;
+      }
+
+      .welcome-title {
+        font-size: 20px;
+      }
+
+      .welcome-text {
+        font-size: 14px;
+      }
+
+      .stats-grid {
+        gap: 16px;
+        padding: 20px 0;
+      }
+
+      .stat-card {
+        flex: 1 1 calc(50% - 8px);
+        min-width: calc(50% - 8px);
+        height: 140px;
+      }
+
+      .stat-number-text {
+        font-size: 36px;
+        line-height: 44px;
+      }
+
+      .actions-section {
+        padding: 16px;
+        margin-bottom: 20px;
+      }
+
+      .action-item {
+        padding: 12px;
+        ${isRTL ? 'border-right: none; padding-right: 25px; padding-left: 15px;' : 'border-left: none; padding-left: 25px; padding-right: 15px;'}
+        gap: 12px;
+      }
+
+      .action-item::before {
+        height: 60px;
+      }
+
+      .requests-section {
+        padding: 12px;
+        height: auto;
+        justify-content: flex-start;
+      }
+
+      .search-filters {
+        flex-direction: column;
+        gap: 12px;
+        padding: 0 12px 20px 12px;
+        ${isRTL ? 'margin-right: -8px; margin-left: 0;' : 'margin-left: -8px; margin-right: 0;'}
+      }
+
+      .search-input,
+      .filter-select {
+        flex: none;
+        width: 100%;
+      }
+
+      .section-title {
+        ${isRTL ? 'margin-right: 10px; margin-left: 0;' : 'margin-left: 10px; margin-right: 0;'}
+        font-size: 16px;
+      }
+
+      .table-wrapper {
+        margin: 0;
+      }
+
+      .table-container {
+        margin: 0;
+      }
+
+      .requests-table {
+        width: 100%;
+        ${isRTL ? 'margin-right: 8px; margin-left: 0;' : 'margin-left: 8px; margin-right: 0;'}
+        min-width: 500px;
+      }
+
+      .requests-table th,
+      .requests-table td {
+        padding: 12px 8px;
+        font-size: 12px;
+      }
+
+      .status-badge {
+        padding: 4px 8px;
+        font-size: 10px;
+      }
+
+      .pagination {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .pagination-controls {
+        position: static;
+        transform: none;
+      }
+
+      /* Services Page Mobile Styles */
+      .services-container {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 15px;
+        border-radius: 0;
+        border: none;
+        box-shadow: none;
+        height: auto;
+        min-height: 100vh;
+      }
+
+      .services-grid {
+        width: 100%;
+        height: auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
+        padding: 0;
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .card-back {
+        min-height: 160px;
+        padding: 12px;
+      }
+
+      .Vector-img {
+        width: min(300px, 40vw);
+        ${isRTL ? 'left: -30px;' : 'right: -30px;'}
+        top: -20px;
+      }
+
+      .vernav {
+        ${isRTL ? 'left: 4px;' : 'right: 4px;'}
+        top: 8px;
+        gap: 8px;
+        padding: 6px 8px;
+      }
+
+      .vernav-img {
+        width: 16px;
+        height: 16px;
+      }
+
+      .BreadCrumbs {
+        ${isRTL ? 'right: 12px; left: 80px;' : 'left: 12px; right: 80px;'}
+        top: 8px;
+        flex-wrap: wrap;
+      }
+
+      .text {
+        font-size: 11px;
+        line-height: 16px;
+      }
+
+      .service-title {
+        ${isRTL ? 'right: 12px; left: 12px;' : 'left: 12px; right: 12px;'}
+        top: 35px;
+        font-size: 20px;
+        line-height: 28px;
+      }
+
+      .sidebar {
+        width: 260px;
+        ${isRTL ? 'transform: translateX(260px);' : 'transform: translateX(-260px);'}
+      }
+
+      .sidebar.show {
+        transform: translateX(0);
+      }
+
+      .search-menubar {
+        width: 200px;
+      }
+
+      .sidemenu {
+        width: 200px;
+      }
+
+      .bottomsidemenu {
+        width: 200px;
+      }
+
+      .image-container {
+        padding: 12px 20px;
+      }
+
+      .section-container {
+        padding: 12px 15px;
+      }
+
+      .avatar {
+        width: 50px;
+        height: 50px;
+        font-size: 14px;
+      }
+
+      .logo-image {
+        width: 80px;
+        height: 65px;
+      }
+
+      .stat-card {
+        flex: 1 1 100%;
+        min-width: 100%;
+      }
+
+      .stats-grid {
+        gap: 12px;
+      }
+
+      .stat-number-text {
+        font-size: 32px;
+        line-height: 40px;
+      }
+
+      .requests-table {
+        min-width: 500px;
+      }
+
+      .requests-table th,
+      .requests-table td {
+        padding: 10px 6px;
+        font-size: 11px;
+      }
+
+      .status-badge {
+        padding: 4px 8px;
+        font-size: 10px;
+      }
+
+      .pagination-btn {
+        padding: 6px 10px;
+        font-size: 12px;
+      }
+
+      /* Services Page Mobile Styles */
+      .services-container {
+        padding: 10px;
+      }
+
+      .service-card {
+        padding: 15px;
+      }
+
+      .search-input-services {
+        padding: 10px 12px 8px 40px;
+        font-size: 13px;
+        ${isRTL ? 'padding-right: 40px; padding-left: 12px;' : ''}
+      }
+
+      .filter-btn {
+        min-width: 80px;
+        padding: 8px 16px;
+        font-size: 14px;
+      }
+
+      .service-details-btn {
+        height: 28px;
+        font-size: 13px;
+      }
+    }
+
+    @media (max-width: 320px) {
+      .card-back {
+        padding: 8px;
+        min-height: 140px;
+      }
+
+      .Vector-img {
+        width: 200px;
+        ${isRTL ? 'left: -20px;' : 'right: -20px;'}
+      }
+
+      .service-title {
+        font-size: 18px;
+        line-height: 24px;
+        top: 32px;
+      }
+
+      .BreadCrumbs {
+        ${isRTL ? 'left: 70px;' : 'right: 70px;'}
+      }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .stat-card {
+        flex: 1 1 calc(50% - 16px);
+        min-width: calc(50% - 16px);
+      }
+    }
+
+    @media (max-width: 1400px) {
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 14px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .services-container {
+    max-width: calc(100% - 40px);
+    margin: 0 20px;
+    margin-top: -100px;
+    padding: 15px;
+  }
+  
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 12px;
+  }
+}
+
+@media (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 10px;
+  }
+  
+  .service-card {
+    min-height: 260px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 15px;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .services-grid {
+    width: 100%;
+    height: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    padding: 0;
+    gap: 12px;
+  }
+}
+  `}</style>
+  );
+};
+
+export default GlobalStyles;
+
+// Updated ActionsSection.jsx (Component 2)
+import React from 'react';
+import Exclamation from './Exclamation.png';
+import Closer from './Closer.png';
+import { useTranslation } from './TranslationContext';
+
+const ActionsSection = () => {
+  const { t } = useTranslation();
+  
+  return (
+    <div className="actions-section">
+      <h3 className="section-title">{t('actionsRequired')}</h3>
+      <div className="action-item">
+        <img
+          className="action-icon action-icon-shade"
+          src={Exclamation}
+          alt="More info needed"
+        />
+        <div className="action-text">
+          <strong>{t('moreInfoNeeded')}</strong><br />
+          {t('completeDetails')}
+          <strong> {t('complaintEscalationCase')}</strong> {t('processRequest')}
+        </div>
+        <button className="close-btn">
+          <img src={Closer} alt="Close" className="close-icon" />
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default ActionsSection;
+
+// Updated BottomMenu.jsx (Component 3)
+import React from 'react';
+import MenuItem from './MenuItem';
+import menu6 from './menu6.png';
+import menu7 from './menu7.png';
+import { useTranslation } from './TranslationContext';
+
+const BottomMenu = ({ activeMenuItem, onMenuClick }) => {
+  const { t } = useTranslation();
+  
+  return (
+    <div className="bottomsidemenu">
+      <MenuItem
+      src={menu6}
+      alt="Account"
+      text={t('account')}
+      isActive={activeMenuItem === 'account'}
+      onClick={() => onMenuClick('account')}
+      isBottom={true}
+      />
+
+      <MenuItem
+      src={menu7}
+      alt="LogOut"
+      text={t('logout')}
+      isActive={activeMenuItem === 'logout'}
+      onClick={() => onMenuClick('logout')}
+      isBottom={true}
+      />
+    </div>
+  );
+};
+
+export default BottomMenu;
+
+// Updated DashboardContent.jsx (Component 4)
+import React from 'react';
+import TipBanner from './TipBanner';
+import WelcomeSection from './WelcomeSection';
+import StatsGrid from './StatsGrid';
+import ActionsSection from './ActionsSection';
+import RequestsSection from './RequestsSection';
+
+const DashboardContent = ({ isActive }) => (
+  <div id="dashboard-content" className={`dashboard-content ${isActive ? 'active' : ''}`}>
+    <TipBanner />
+    <div className="main-content">
+      <div className="main-card">
+        <WelcomeSection />
+        <StatsGrid />
+        <ActionsSection />
+        <RequestsSection />
+      </div>
+    </div>
+  </div>
+);
+
+export default DashboardContent;
+
+// Updated HamburgerMenu.jsx (Component 5)
+import React from 'react';
+
+const HamburgerMenu = ({ onToggle }) => (
+  <button className="hamburger" onClick={onToggle}>
+    <i className="fas fa-bars"></i>
+  </button>
+);
+
+export default HamburgerMenu;
+
+
+// Updated Header.jsx (Component 6)
+import React from 'react';
+
+const Header = () => (
+  <>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@500&display=swap"
+      rel="stylesheet"
+    />
+  </>
+);
+
+export default Header;
+
+// Updated MainContent.jsx (Component 7)
+import React from 'react';
+import PageHeader from './PageHeader';
+import DashboardContent from './DashboardContent';
+import MyRequestsContent from './MyRequestsContent';
+import ServicesContent from './ServicesContent';
+
+const MainContent = ({ activeMenuItem }) => (
+  <div className="content-area">
+    <PageHeader activeMenuItem={activeMenuItem} />
+    <div id="main-content-area">
+      <DashboardContent isActive={activeMenuItem === 'dashboard'} />
+      <MyRequestsContent isActive={activeMenuItem === 'requests'} />
+      <ServicesContent isActive={activeMenuItem === 'services'} />
+    </div>
+  </div>
+);
+
+export default MainContent;
+
+// Updated MenuItem.jsx (Component 8)
+import React from 'react';
+
+const MenuItem = ({ src, alt, text, isActive, onClick, isBottom = false }) => (
+  <div
+    className={`menuitem1 ${isActive ? 'active' : ''}`}
+    onClick={onClick}
+  >
+    <img src={src} alt={alt} className="menu1img" />
+    <p className="menuheader" style={{ color: isActive ? '#1B8354' : '#161616' }}>
+      {text}
+    </p>
+  </div>
+);
+
+export default MenuItem;
+
+// Updated MyRequestsContent.jsx (Component 9)
+import React from 'react';
+import MyRequestsWelcomeSection from './MyRequestsWelcomeSection';
+import StatsGrid from './StatsGrid';
+import MyRequestsSection from './MyRequestsSection';
+
+const MyRequestsContent = ({ isActive }) => (
+  <div id="my-requests-content" className={`dashboard-content ${isActive ? 'active' : ''}`}>
+    <div className="main-content">
+      <div className="mr-main-card">
+        <MyRequestsWelcomeSection />
+        <StatsGrid />
+      </div>
+      <MyRequestsSection />
+    </div>
+  </div>
+);
+
+export default MyRequestsContent;
+
+// Updated MyRequestsSearchFilters.jsx (Component 10)
+import React from 'react';
+import { useTranslation } from './TranslationContext';
+
+const MyRequestsSearchFilters = () => {
+  const { t } = useTranslation();
+  
+  return (
+    <div className="search-filters">
+      <input type="text" className="search-input" placeholder={`${t('search')}...`} />
+      <select className="filter-select">
+        <option>{t('status')}</option>
+      </select>
+      <select className="filter-select">
+        <option>{t('requestType')}</option>
+      </select>
+    </div>
+  );
+};
+
+export default MyRequestsSearchFilters;
+
+// Updated MyRequestsSection.jsx (Component 11)
+import React from 'react';
+import MyRequestsSearchFilters from './MyRequestsSearchFilters';
+import MyRequestsTable from './MyRequestsTable';
+import Pagination from './Pagination';
+import { useTranslation } from './TranslationContext';
+
+const MyRequestsSection = () => {
+  const { t } = useTranslation();
+  
+  return (
+    <div className="requests-section">
+      <h3 className="section-title">{t('allRequests')}</h3>
+      <MyRequestsSearchFilters />
+      <MyRequestsTable />
+      <Pagination />
+    </div>
+  );
+};
+
+export default MyRequestsSection;
+
+// Updated MyRequestsTable.jsx (Component 12)
+import React from 'react';
+import { useTranslation } from './TranslationContext';
+import edit from './edit.png'
+
+const MyRequestsTable = () => {
+  const { t } = useTranslation();
+  
+  return (
+    <div className="table-container">
+      <table className="requests-table">
+        <thead>
+          <tr>
+            <th>{t('requestNumber')}</th>
+            <th>{t('requestType')}</th>
+            <th>{t('activityType')}</th>
+            <th>{t('status')}</th>
+            <th>{t('submissionDate')}</th>
+            <th>{t('actions')}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="#" className="case-number">43218765</a></td>
+            <td>{t('complaintsEscalationService')}</td>
+            <td>-</td>
+            <td>
+              <span className="status-badge status-action-required">
+                {t('actionRequired')}
+              </span>
+            </td>
+            <td>27-05-2025</td>
+            <td>{t('viewDetails')} &gt;</td>
+          </tr>
+          <tr>
+            <td><a href="#" className="case-number">43218765</a></td>
+            <td>{t('generalComplaints')}</td>
+            <td>{t('waterStorage')}</td>
+            <td>
+              <span className="status-badge status-action-required">
+                {t('actionRequired')}
+              </span>
+            </td>
+            <td>27-05-2025</td>
+            <td>{t('viewDetails')} &gt;</td>
+          </tr>
+          <tr>
+            <td><a href="#" className="case-number">43218765</a></td>
+            <td>{t('licenseIssuance')}</td>
+            <td>{t('waterProduction')}</td>
+            <td>
+              <span className="status-badge status-resolved">
+                {t('resolved')}
+              </span>
+            </td>
+            <td>27-05-2025</td>
+            <td>{t('viewDetails')} &gt;</td>
+          </tr>
+          <tr>
+            <td><a href="#" className="case-number">43218765</a></td>
+            <td>{t('licenseIssuance')}</td>
+            <td>-</td>
+            <td>
+              <span className="status-badge status-draft">{t('draft')}</span>
+            </td>
+            <td>27-05-2025</td>
+            <td>{t('editApplication')} <img src={edit} alt="edit" className="menu1img" /></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  );
+};
+
+export default MyRequestsTable;
+
+// Updated MyRequestsWelcomeSection.jsx (Component 13)
+import React from 'react';
+import { useTranslation } from './TranslationContext';
+
+const MyRequestsWelcomeSection = () => {
+  const { t } = useTranslation();
+  
+  return (
+    <div className="welcome-section">
+      <h2 className="welcome-title">{t('requestsOverview')}</h2>
+    </div>
+  );
+};
+
+export default MyRequestsWelcomeSection;
+
+// Updated Overlay.jsx (Component 14)
+import React from 'react';
+
+const Overlay = ({ isVisible, onClose }) => (
+  <div className={`overlay ${isVisible ? 'show' : ''}`} onClick={onClose}></div>
+);
+
+export default Overlay;
+
+// Updated PageHeader.jsx (Component 15)
+import React from 'react';
+import Moon from './Moon.png';
+import Translate from './Translate.png';
+import Bell from './Bell.png';
+import Vector from './Vector.png';
+import { useTranslation } from './TranslationContext';
+
+const PageHeader = ({ activeMenuItem }) => {
+  const { t, toggleLanguage } = useTranslation();
+  
+  const getPageConfig = (menuItem) => {
+    switch (menuItem) {
+      case 'dashboard':
+        return {
+          breadcrumbs: [{ text: t('dashboard'), href: '#' }],
+          title: t('dashboard')
+        };
+      case 'services':
+        return {
+          breadcrumbs: [
+            { text: t('dashboard'), href: '#' },
+            { text: t('services'), href: '#' }
+          ],
+          title: t('services')
+        };
+      case 'requests':
+        return {
+          breadcrumbs: [
+            { text: t('dashboard'), href: '#' },
+            { text: t('myRequests'), href: '#' }
+          ],
+          title: t('myRequests')
+        };
+      default:
+        return {
+          breadcrumbs: [{ text: t('dashboard'), href: '#' }],
+          title: t('dashboard')
+        };
+    }
+  };
+
+  const config = getPageConfig(activeMenuItem);
+
+  return (
+    <div className="card-back">
+      <img src={Vector} alt="Vector" className="Vector-img" />
+      <div className="vernav">
+        <img src={Moon} alt="Moon" className="vernav-img" />
+        <img 
+          src={Translate} 
+          alt="Translate" 
+          className="vernav-img" 
+          onClick={toggleLanguage}
+          style={{ cursor: 'pointer' }}
+        />
+        <img src={Bell} alt="Bell" className="vernav-img" />
+      </div>
+      <ol className="BreadCrumbs">
+        {config.breadcrumbs.map((crumb, index) => (
+          <React.Fragment key={index}>
+            <li className="link-item">
+              <a href={crumb.href} className="text">{crumb.text}</a>
+            </li>
+            {index < config.breadcrumbs.length - 1 && <span className="arrow"></span>}
+          </React.Fragment>
+        ))}
+      </ol>
+      <h1 className="service-title">{config.title}</h1>
+    </div>
+  );
+};
+
+export default PageHeader;
+
+// Updated Pagination.jsx (Component 16)
+import React, { useState } from 'react';
+import { useTranslation } from './TranslationContext';
+
+const Pagination = () => {
+  const [activePage, setActivePage] = useState(1);
+  const { t } = useTranslation();
+
+  const handlePageClick = (page) => {
+    if (page === '...') return;
+    setActivePage(parseInt(page));
+  };
+
+  return (
+    <div className="pagination">
+      <span className="pagination-info">{t('paginationInfo')}</span>
+      <div className="pagination-controls">
+        <button 
+          className={`pagination-btn ${activePage === 1 ? 'active' : ''}`}
+          onClick={() => handlePageClick(1)}
+        >
+          1
+        </button>
+        <button 
+          className={`pagination-btn ${activePage === 2 ? 'active' : ''}`}
+          onClick={() => handlePageClick(2)}
+        >
+          2
+        </button>
+        <button 
+          className={`pagination-btn ${activePage === 3 ? 'active' : ''}`}
+          onClick={() => handlePageClick(3)}
+        >
+          3
+        </button>
+        <button className="pagination-btn">...</button>
+        <button 
+          className={`pagination-btn ${activePage === 999 ? 'active' : ''}`}
+          onClick={() => handlePageClick(999)}
+        >
+          999
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default Pagination;
+
+// Updated RequestsSection.jsx (Component 17)
+import React from 'react';
+import SearchFilters from './SearchFilters';
+import RequestsTable from './RequestsTable';
+import { useTranslation } from './TranslationContext';
+
+const RequestsSection = () => {
+  const { t } = useTranslation();
+  
+  return (
+    <div className="dash-requests-section">
+      <h3 className="section-title section-title-margin">{t('latestRequests')}</h3>
+      <SearchFilters />
+      <RequestsTable />
+    </div>
+  );
+};
+
+export default RequestsSection;
+
+
+// Updated RequestsTable.jsx (Component 18)
+import React from 'react';
+import { useTranslation } from './TranslationContext';
+import edit from './edit.png'
+
+const RequestsTable = () => {
+  const { t } = useTranslation();
+  
+  return (
+    <div className="table-wrapper">
+      <table className="requests-table">
+        <thead>
+          <tr>
+            <th>{t('requestNumber')}</th>
+            <th>{t('serviceType')}</th>
+            <th>{t('activityType')}</th>
+            <th>{t('status')}</th>
+            <th>{t('submissionDate')}</th>
+            <th>{t('actions')}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="#" className="case-number">43218765</a></td>
+            <td>{t('complaintsEscalationService')}</td>
+            <td>-</td>
+            <td>
+              <span className="status-badge status-action-required">
+                {t('actionRequired')}
+              </span>
+            </td>
+            <td>27-05-2025</td>
+            <td>{t('viewDetails')} &gt;</td>
+          </tr>
+          <tr>
+            <td><a href="#" className="case-number">43218765</a></td>
+            <td>{t('generalComplaints')}</td>
+            <td>{t('waterStorage')}</td>
+            <td>
+              <span className="status-badge status-action-required">
+                {t('actionRequired')}
+              </span>
+            </td>
+            <td>27-05-2025</td>
+            <td>{t('viewDetails')} &gt;</td>
+          </tr>
+      
+          <tr>
+            <td><a href="#" className="case-number">43218765</a></td>
+            <td>{t('licenseIssuance')}</td>
+            <td>-</td>
+            <td>
+              <span className="status-badge status-draft">{t('draft')}</span>
+            </td>
+            <td>27-05-2025</td>
+            <td>{t('editApplication')} <img src={edit} alt="edit" className="menu1img" /></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  );
+};
+
+export default RequestsTable;
+
+// Updated SearchBar.jsx (Component 19)
+import React from 'react';
+import searchicon from './searchicon.png'
+import { useTranslation } from './TranslationContext';
+
+const SearchBar = () => {
+  const { t } = useTranslation();
+  
+  return (
+    <div className="search-menubar">
+      <img src={searchicon} alt="Search Icon" className="search-icon" />
+      <input type="text" placeholder={t('search')} className="placeholdermenu" />
+    </div>
+  );
+};
+
+export default SearchBar;
+
+// Updated SearchFilters.jsx (Component 20)
+import React from 'react';
+import { useTranslation } from './TranslationContext';
+
+const SearchFilters = () => {
+  const { t } = useTranslation();
+  
+  return (
+    <div className="search-filters">
+      <input
+        type="text"
+        className="search-input"
+        placeholder={`${t('search')}...`}
+      />
+      <select className="filter-select">
+        <option>{t('status')}</option>
+      </select>
+      <select className="filter-select">
+        <option>{t('serviceType')}</option>
+      </select>
+    </div>
+  );
+};
+
+export default SearchFilters;
+
+// Updated ServiceCard.jsx (Component 21)
+import React from 'react';
+import { useTranslation } from './TranslationContext';
+
+const ServiceCard = ({ title, description, iconPlaceholder, titleKey, descKey }) => {
+  const { t } = useTranslation();
+  
+  return (
+    <div className="service-card" data-category="individuals">
+      <div className="card-icon">
+        {iconPlaceholder}
+      </div>
+      <h3 className="card-title">{titleKey ? t(titleKey) : title}</h3>
+      <p className="card-description">{descKey ? t(descKey) : description}</p>
+      <button className="service-details-btn">{t('goToService')}</button>
+    </div>
+  );
+};
+
+export default ServiceCard;
+
+// Updated ServicesContent.jsx (Component 22)
+import React from 'react';
+import ServicesSearchHeader from './ServicesSearchHeader';
+import ServicesNavTabs from './ServicesNavTabs';
+import ServicesGrid from './ServicesGrid';
+
+const ServicesContent = ({ isActive }) => (
+  <div id="services-content" className={`dashboard-content ${isActive ? 'active' : ''}`}>
+    <div className="main-content">
+      <div className="services-container">
+        <ServicesSearchHeader />
+        <ServicesNavTabs />
+        <ServicesGrid />
+      </div>
+    </div>
+  </div>
+);
+
+export default ServicesContent;
+
+// Updated ServicesGrid.jsx (Component 23) - SVG ICONS RESTORED
+import React from 'react';
+import ServiceCard from './ServiceCard';
+
+const ServicesGrid = () => (
+  <div className="services-grid">
+    <ServiceCard
+      titleKey="complaintsEscalation"
+      descKey="complaintsEscalationDesc"
+      iconPlaceholder={<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+                    <path d="M7.43582 18.5449C10.3308 18.5514 12.9016 19.6793 14.4056 21.6768C14.771 22.1622 14.8468 22.8578 14.469 23.4248C14.1163 23.9542 13.4163 24.7118 12.1204 25.2686C11.6322 25.4783 11.1265 25.541 10.6722 25.541H4.17118C3.71699 25.541 3.21188 25.4781 2.72391 25.2686C1.42778 24.7117 0.727037 23.9543 0.374301 23.4248C0.0254068 22.901 0.0378571 22.2079 0.437778 21.6768C1.22084 20.6367 2.4564 19.8635 3.69168 19.3525C4.93461 18.8384 6.28727 18.5451 7.39579 18.5449H7.43582ZM7.39579 20.2949C6.55812 20.295 5.43363 20.5259 4.36063 20.9697C3.347 21.389 2.47398 21.9588 1.93778 22.6016C2.16541 22.889 2.60771 23.3136 3.41434 23.6602C3.61897 23.7481 3.8713 23.791 4.17118 23.791H10.6722C10.972 23.791 11.2243 23.748 11.429 23.6602C12.2365 23.3132 12.6791 22.8881 12.9065 22.6006C11.7794 21.2012 9.824 20.3003 7.43192 20.2949H7.39579ZM7.42508 9.22656C9.69662 9.2268 11.5411 11.0647 11.5413 13.3359C11.5413 15.6074 9.69676 17.4461 7.42508 17.4463C5.15321 17.4463 3.3079 15.6075 3.3079 13.3359C3.30811 11.0646 5.15334 9.22656 7.42508 9.22656ZM7.42508 10.9766C6.11623 10.9766 5.05811 12.0347 5.0579 13.3359C5.0579 14.6374 6.1161 15.6963 7.42508 15.6963C8.73387 15.6961 9.79129 14.6373 9.79129 13.3359C9.79108 12.0348 8.73373 10.9768 7.42508 10.9766ZM18.4954 0.449219C22.1662 0.449403 25.2083 3.30918 25.2083 6.91504C25.2082 10.5208 22.1661 13.3807 18.4954 13.3809C18.0101 13.3809 17.5914 13.3179 17.3792 13.2861C17.3302 13.2788 17.2922 13.2734 17.2669 13.2705C17.1921 13.262 17.1237 13.2509 17.0696 13.2412C17.0443 13.2367 17.0198 13.2314 16.9993 13.2275L16.9954 13.2266H16.9925C16.942 13.2553 16.8761 13.2922 16.7903 13.3379C15.6835 13.9276 14.7692 13.9986 13.7532 13.8096C13.45 13.7531 13.1987 13.5413 13.0921 13.252C12.9856 12.9623 13.0392 12.637 13.2337 12.3975C13.4575 12.1217 13.6138 11.7885 13.6848 11.4277C13.6681 11.4091 13.6469 11.3873 13.6204 11.3604C12.4859 10.207 11.7825 8.64226 11.7825 6.91504C11.7825 3.30908 14.8244 0.449219 18.4954 0.449219ZM18.4954 2.19922C15.7188 2.19922 13.5325 4.34619 13.5325 6.91504C13.5325 8.15446 14.0352 9.28573 14.8684 10.1328C15.0176 10.2845 15.2209 10.5035 15.3401 10.8027C15.4722 11.1342 15.4611 11.4534 15.4065 11.7402C15.386 11.848 15.3614 11.9553 15.3323 12.0605C15.53 12.0028 15.7378 11.9161 15.9671 11.7939C16.0343 11.7581 16.0856 11.7289 16.1292 11.7041L16.1458 11.6943C16.1815 11.6739 16.2295 11.6465 16.2727 11.624C16.3332 11.5926 16.4081 11.5584 16.4993 11.5293C16.5877 11.5011 16.6689 11.4852 16.7386 11.4746C16.8621 11.4558 16.9714 11.4604 17.0462 11.4668C17.1225 11.4733 17.1933 11.4843 17.2434 11.4932C17.2883 11.5011 17.3219 11.5076 17.3489 11.5127C17.3968 11.5217 17.4251 11.5268 17.4641 11.5312C17.5493 11.5409 17.6311 11.5532 17.7141 11.5654C17.9301 11.5972 18.1581 11.6309 18.4954 11.6309C21.2718 11.6307 23.4582 9.4837 23.4583 6.91504C23.4583 4.34631 21.2719 2.1994 18.4954 2.19922ZM18.5042 8.63086C18.9874 8.63086 19.3792 9.02261 19.3792 9.50586C19.379 9.98894 18.9873 10.3809 18.5042 10.3809H18.4954C18.0123 10.3809 17.6206 9.98894 17.6204 9.50586C17.6204 9.02261 18.0121 8.63086 18.4954 8.63086H18.5042ZM18.5052 3.37109C18.9883 3.37126 19.3802 3.76295 19.3802 4.24609V7.16797C19.3802 7.65111 18.9883 8.0428 18.5052 8.04297C18.0219 8.04297 17.6302 7.65121 17.6302 7.16797V4.24609C17.6302 3.76284 18.0219 3.37109 18.5052 3.37109Z" fill="#067647"/>
+                    </svg>}
+    />
+    <ServiceCard
+      titleKey="complaintsInquiry"
+      descKey="complaintsInquiryDesc"
+      iconPlaceholder={<svg xmlns="http://www.w3.org/2000/svg" width="22" height="26" viewBox="0 0 22 26" fill="none">
+                     <path d="M15 14.4581C17.6922 14.4581 19.8748 16.6408 19.875 19.3331C19.875 20.3619 19.555 21.3192 19.0098 22.1065L20.9521 24.0479C21.2938 24.3896 21.2937 24.9435 20.9521 25.2852C20.6104 25.6269 20.0566 25.6269 19.7148 25.2852L17.7725 23.3438C16.9855 23.8887 16.0295 24.2081 15 24.2081C12.3076 24.208 10.125 22.0254 10.125 19.3331C10.1252 16.6408 12.3077 14.4581 15 14.4581ZM10.4873 0.458066C11.1908 0.457482 11.7464 0.457769 12.2676 0.64166C12.3752 0.679648 12.481 0.723284 12.584 0.772519C13.0828 1.01107 13.4764 1.40433 13.9736 1.9024C14.0019 1.93073 14.0306 1.95935 14.0596 1.98834L19.585 7.51471C19.6185 7.54828 19.6518 7.58157 19.6846 7.61432C20.2614 8.19008 20.7182 8.64612 20.9639 9.23932C21.2095 9.8324 21.2088 10.4772 21.208 11.2921V14.1671C21.2079 14.6502 20.8162 15.0421 20.333 15.0421C19.85 15.0419 19.4581 14.6501 19.458 14.1671V11.4337C19.458 10.9228 19.4542 10.5991 19.4385 10.3751H19.1025C17.5072 10.3751 16.2213 10.3753 15.21 10.2393C14.1599 10.0981 13.2755 9.79598 12.5732 9.09381C11.871 8.39157 11.5689 7.50722 11.4277 6.45709C11.2918 5.44571 11.292 4.15983 11.292 2.56451V2.22369C11.0974 2.21129 10.8155 2.20807 10.3652 2.20807C8.45116 2.20807 7.09108 2.21017 6.04688 2.33209C5.02178 2.45182 4.4134 2.67778 3.95313 3.04889C3.74289 3.21844 3.55137 3.40993 3.38184 3.62018C3.0107 4.08048 2.78476 4.6887 2.66504 5.71393C2.54312 6.75813 2.54199 8.11821 2.54199 10.0323V15.3331C2.54199 17.5577 2.54388 19.139 2.70508 20.3379C2.8629 21.5114 3.15866 22.188 3.65234 22.6817C4.1015 23.1307 4.70062 23.4145 5.68262 23.5811C6.69023 23.7521 8.00766 23.7857 9.83594 23.7911C10.3191 23.7925 10.7093 24.1849 10.708 24.668C10.7066 25.1512 10.3142 25.5423 9.83105 25.5411C8.0261 25.5358 6.56352 25.5059 5.38965 25.3067C4.19046 25.1032 3.20609 24.7099 2.41504 23.919C1.54195 23.0459 1.1546 21.9382 0.970704 20.5704C0.792055 19.2414 0.791974 17.5433 0.791993 15.3995V9.97564C0.791979 8.13049 0.791612 6.6683 0.926758 5.5108C1.0655 4.32285 1.357 3.34326 2.01953 2.52154C2.26746 2.21409 2.548 1.93449 2.85547 1.68658C3.67726 1.02401 4.65663 0.732527 5.84473 0.593808C7.00212 0.458712 8.46373 0.458052 10.3086 0.458066H10.4873ZM15 16.2081C13.2742 16.2081 11.8752 17.6073 11.875 19.3331C11.875 21.0589 13.274 22.458 15 22.4581C15.8631 22.4581 16.6436 22.1095 17.21 21.543L17.3613 21.3809C17.4097 21.3252 17.4555 21.2672 17.5 21.2081L17.6396 21.0069C17.9471 20.5234 18.125 19.9498 18.125 19.3331C18.1248 17.6073 16.7257 16.2081 15 16.2081ZM13.043 3.44732C13.0472 4.63106 13.0674 5.51903 13.1621 6.22369C13.2772 7.07976 13.4877 7.53361 13.8105 7.8565C14.1334 8.17929 14.5867 8.38984 15.4424 8.50494C16.1471 8.59969 17.0357 8.61981 18.2197 8.62408L13.043 3.44732Z" fill="#067647"/>
+                    </svg>}
+    />
+    <ServiceCard
+      titleKey="incidentReports"
+      descKey="incidentReportsDesc"
+      iconPlaceholder={<svg xmlns="http://www.w3.org/2000/svg" width="24" height="26" viewBox="0 0 24 26" fill="none">
+                    <path d="M12.3862 0.458008C14.5286 0.457998 16.2081 0.458218 17.5405 0.602539C18.9002 0.749845 20.0022 1.05597 20.9429 1.73926C21.5124 2.15302 22.0135 2.65414 22.4272 3.22363C23.1107 4.16434 23.4166 5.26618 23.564 6.62598C23.7083 7.9584 23.7085 9.63781 23.7085 11.7803V14.2197C23.7085 16.3622 23.7083 18.0416 23.564 19.374C23.4166 20.7338 23.1107 21.8357 22.4272 22.7764C22.0135 23.3459 21.5124 23.847 20.9429 24.2607C20.0022 24.944 18.9002 25.2502 17.5405 25.3975C16.2081 25.5418 14.5286 25.542 12.3862 25.542H12.2808C10.1384 25.542 8.45888 25.5418 7.12646 25.3975C5.76684 25.2502 4.66476 24.944 3.72412 24.2607C3.15462 23.847 2.65351 23.3459 2.23975 22.7764C1.55628 21.8357 1.25035 20.7338 1.10303 19.374C0.958674 18.0416 0.958487 16.3622 0.958496 14.2197V11.7803C0.958487 9.63781 0.958674 7.9584 1.10303 6.62598C1.25035 5.26618 1.55628 4.16434 2.23975 3.22363C2.65351 2.65414 3.15463 2.15302 3.72412 1.73926C4.66476 1.05597 5.76684 0.749845 7.12646 0.602539C8.45889 0.458219 10.1384 0.457998 12.2808 0.458008H12.3862ZM12.3335 2.20801C10.1269 2.20801 8.54216 2.20985 7.31494 2.34277C6.10407 2.47396 5.34511 2.72469 4.75244 3.15527C4.33161 3.46102 3.96154 3.83115 3.65576 4.25195C3.22516 4.84462 2.97348 5.60356 2.84229 6.81445C2.70934 8.04165 2.7085 9.62641 2.7085 11.833V14.167C2.7085 16.3736 2.70934 17.9584 2.84229 19.1855C2.97348 20.3964 3.22516 21.1554 3.65576 21.748C3.96154 22.1688 4.33162 22.539 4.75244 22.8447C5.34511 23.2753 6.10407 23.526 7.31494 23.6572C8.54216 23.7902 10.1269 23.792 12.3335 23.792C14.5401 23.792 16.1248 23.7902 17.3521 23.6572C18.5629 23.526 19.3219 23.2753 19.9146 22.8447C20.3354 22.539 20.7054 22.1688 21.0112 21.748C21.4418 21.1554 21.6935 20.3964 21.8247 19.1855C21.9577 17.9584 21.9585 16.3736 21.9585 14.167V11.833C21.9585 9.62641 21.9577 8.04165 21.8247 6.81445C21.6935 5.60356 21.4418 4.84462 21.0112 4.25195C20.7054 3.83115 20.3354 3.46102 19.9146 3.15527C19.3219 2.72469 18.5629 2.47396 17.3521 2.34277C16.1248 2.20985 14.5401 2.20801 12.3335 2.20801ZM17.0005 17.958C17.4835 17.9582 17.8753 18.35 17.8755 18.833C17.8755 19.3161 17.4836 19.7078 17.0005 19.708H7.6665C7.1834 19.7078 6.7915 19.3161 6.7915 18.833C6.79168 18.35 7.18351 17.9582 7.6665 17.958H17.0005ZM12.3335 6.29199C12.9722 6.29199 13.5706 6.66347 13.8296 7.26758L16.6382 13.8223C16.8283 14.2664 16.6223 14.7804 16.1782 14.9707C15.7342 15.161 15.2203 14.9556 15.0298 14.5117L14.2563 12.708H10.4106L9.63818 14.5117C9.44774 14.9557 8.93287 15.161 8.48877 14.9707C8.04485 14.7803 7.83956 14.2663 8.02979 13.8223L10.8384 7.26758C11.0974 6.66366 11.6949 6.29208 12.3335 6.29199ZM11.1606 10.958H13.5063L12.3335 8.22168L11.1606 10.958Z" fill="#067647"/>
+                    </svg>}
+    />
+    <ServiceCard
+      titleKey="incidentReportsInquiry"
+      descKey="incidentReportsInquiryDesc"
+      iconPlaceholder={<svg xmlns="http://www.w3.org/2000/svg" width="26" height="24" viewBox="0 0 26 24" fill="none">
+                    <path d="M23.8335 21.625C24.3167 21.625 24.7085 22.0168 24.7085 22.5C24.7085 22.9832 24.3167 23.375 23.8335 23.375H1.6665C1.1834 23.3748 0.791504 22.9831 0.791504 22.5C0.791504 22.0169 1.1834 21.6252 1.6665 21.625H23.8335ZM16.6587 0.625C20.9112 0.625105 24.3589 4.07263 24.3589 8.3252C24.3588 10.1362 23.7334 11.8014 22.687 13.1162L25.6187 16.0479C25.9604 16.3896 25.9604 16.9434 25.6187 17.2852C25.2769 17.6269 24.7231 17.6269 24.3813 17.2852L21.4497 14.3535C20.1349 15.3999 18.4697 16.0253 16.6587 16.0254C12.4061 16.0254 8.9586 12.5777 8.9585 8.3252C8.9585 4.07256 12.4061 0.625 16.6587 0.625ZM16.6587 2.375C13.3726 2.375 10.7085 5.03906 10.7085 8.3252C10.7086 11.6112 13.3726 14.2754 16.6587 14.2754C19.9447 14.2753 22.6088 11.6112 22.6089 8.3252C22.6089 5.03913 19.9447 2.37511 16.6587 2.375ZM6.3335 12.292C6.81675 12.292 7.2085 12.6837 7.2085 13.167C7.20832 13.6501 6.81664 14.042 6.3335 14.042H1.6665C1.18351 14.0418 0.79168 13.65 0.791504 13.167C0.791504 12.6839 1.1834 12.2922 1.6665 12.292H6.3335ZM6.3335 4.125C6.81673 4.125 7.20848 4.51677 7.2085 5C7.20849 5.48325 6.81674 5.875 6.3335 5.875H1.6665C1.1834 5.87482 0.791504 5.48314 0.791504 5C0.791508 4.51686 1.18341 4.12518 1.6665 4.125H6.3335Z" fill="#085D3A"/>
+                    </svg>}
+    />
+    <ServiceCard
+      titleKey="waterBillCalculator"
+      descKey="waterBillCalculatorDesc"
+      iconPlaceholder={<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12.0605 0.0419925C14.6214 0.0419807 16.624 0.0415464 18.1855 0.230469C19.776 0.422918 21.0426 0.824533 22.0459 1.72754C23.0622 2.64237 23.5261 3.81706 23.7461 5.29004C23.9586 6.71272 23.958 8.53002 23.958 10.8193V13.1807C23.958 15.47 23.9586 17.2873 23.7461 18.71C23.5261 20.1829 23.0622 21.3576 22.0459 22.2725C21.0426 23.1755 19.776 23.5771 18.1855 23.7695C16.624 23.9585 14.6214 23.958 12.0605 23.958H11.9395C9.37864 23.958 7.37602 23.9585 5.81445 23.7695C4.22399 23.5771 2.95744 23.1755 1.9541 22.2725C0.93785 21.3576 0.473948 20.1829 0.253907 18.71C0.0414204 17.2873 0.0419694 15.47 0.0419929 13.1807V10.8193C0.0419694 8.53 0.0414202 6.71272 0.253907 5.29004C0.473948 3.81706 0.93785 2.64237 1.9541 1.72754C2.95744 0.824533 4.22399 0.422918 5.81445 0.230469C7.37602 0.0415461 9.37863 0.0419807 11.9395 0.0419925H12.0605ZM12 1.79199C9.36534 1.79199 7.46864 1.79302 6.02441 1.96777C4.59673 2.14053 3.74478 2.47052 3.125 3.02832C2.51869 3.57414 2.17105 4.30521 1.98535 5.54785C1.79435 6.82643 1.79199 8.51311 1.79199 10.8916V13.1084C1.79199 15.4869 1.79435 17.1736 1.98535 18.4521C2.17105 19.6948 2.51869 20.4259 3.125 20.9717C3.74478 21.5295 4.59673 21.8595 6.02441 22.0322C7.46864 22.207 9.36534 22.208 12 22.208C14.6347 22.208 16.5314 22.207 17.9756 22.0322C19.4033 21.8595 20.2552 21.5295 20.875 20.9717C21.4813 20.4259 21.829 19.6948 22.0146 18.4521C22.2057 17.1736 22.208 15.4869 22.208 13.1084V10.8916C22.208 8.51311 22.2057 6.82643 22.0146 5.54785C21.829 4.30521 21.4813 3.57414 20.875 3.02832C20.2552 2.47052 19.4033 2.14053 17.9756 1.96777C16.5314 1.79302 14.6347 1.79199 12 1.79199ZM9.04785 13.7148C9.38956 13.3731 9.94345 13.3731 10.2852 13.7148C10.6269 14.0566 10.6269 14.6104 10.2852 14.9521L8.86231 16.375L10.2852 17.7979C10.6269 18.1396 10.6269 18.6934 10.2852 19.0352C9.94345 19.3769 9.38956 19.3769 9.04785 19.0352L7.625 17.6123L6.20215 19.0352C5.86044 19.3769 5.30655 19.3769 4.96484 19.0352C4.62314 18.6934 4.62314 18.1396 4.96484 17.7979L6.3877 16.375L4.96484 14.9521C4.62314 14.6104 4.62314 14.0566 4.96484 13.7148C5.30655 13.3731 5.86044 13.3731 6.20215 13.7148L7.625 15.1377L9.04785 13.7148ZM19 17.542C19.4832 17.542 19.875 17.9337 19.875 18.417C19.8748 18.9001 19.4831 19.292 19 19.292H14.333C13.85 19.2918 13.4582 18.9 13.458 18.417C13.458 17.9339 13.8499 17.5422 14.333 17.542H19ZM19 14.042C19.4832 14.042 19.875 14.4337 19.875 14.917C19.8748 15.4001 19.4831 15.792 19 15.792H14.333C13.85 15.7918 13.4582 15.4 13.458 14.917C13.458 14.4339 13.8499 14.0422 14.333 14.042H19ZM16.667 4.125C17.1501 4.12518 17.542 4.51686 17.542 5V6.45801H19C19.4831 6.45801 19.8748 6.84991 19.875 7.33301C19.875 7.81626 19.4832 8.20801 19 8.20801H17.542V9.66699C17.5418 10.15 17.15 10.5418 16.667 10.542C16.1839 10.542 15.7922 10.1501 15.792 9.66699V8.20801H14.333C13.8499 8.20783 13.458 7.81615 13.458 7.33301C13.4582 6.85002 13.85 6.45818 14.333 6.45801H15.792V5C15.792 4.51675 16.1837 4.125 16.667 4.125ZM9.66699 6.45801C10.15 6.45818 10.5418 6.85002 10.542 7.33301C10.542 7.81615 10.1501 8.20783 9.66699 8.20801H5C4.51675 8.20801 4.125 7.81626 4.125 7.33301C4.12518 6.84991 4.51686 6.45801 5 6.45801H9.66699Z" fill="#067647"/>
+                    </svg>}
+    />
+    <ServiceCard
+      titleKey="meetThePresident"
+      descKey="meetThePresidentDesc"
+      iconPlaceholder={<svg xmlns="http://www.w3.org/2000/svg" width="26" height="20" viewBox="0 0 26 20" fill="none">
+                    <path d="M14.0151 1.14852C14.9589 0.889581 15.9894 0.953061 16.897 1.00789L17.0122 1.01473C18.0015 1.07542 18.9457 1.51413 19.6714 2.2491C20.4761 3.06075 21.1572 3.56438 22.061 3.56453H24.9976C25.4805 3.56453 25.8724 3.95664 25.8726 4.43953C25.8726 4.92253 25.4806 5.31453 24.9976 5.31453H22.061C20.4653 5.31438 19.3712 4.43263 18.4263 3.47957C18.0028 3.05028 17.4626 2.79567 16.9038 2.7618L16.7866 2.75496C16.0145 2.70714 15.1398 2.65509 14.4761 2.83699C13.7994 3.02365 13.2949 3.59016 12.7104 4.24812L11.0005 6.17391C10.604 6.62076 10.6039 7.37557 11.0005 7.82234C11.2921 8.15105 11.7136 8.202 12.0483 7.95125C12.1719 7.85912 12.3099 7.7418 12.4556 7.61824C12.8907 7.24842 13.3852 6.82793 13.9731 6.63777C15.2867 6.21326 16.0717 7.27869 16.4077 7.7325L19.1147 11.3868C20.0384 12.6359 20.5014 13.2627 21.0122 13.5323C21.487 13.7831 22.1237 13.793 23.645 13.793H24.9956C25.4786 13.793 25.8706 14.185 25.8706 14.668C25.8705 15.151 25.4786 15.543 24.9956 15.543H23.6489C21.9915 15.543 21.0779 15.5432 20.2007 15.0802C19.9092 14.9264 19.6511 14.7346 19.396 14.4952L17.9282 15.9151C15.9776 17.8004 14.9058 18.8354 13.4194 19.0128C13.3601 19.0197 13.2951 19.0255 13.23 19.0313H13.2095C13.1222 19.0395 13.0349 19.0411 12.9487 19.0411C11.5654 19.0407 10.3226 18.2406 8.16943 16.8526C7.11136 16.1713 6.58273 15.8302 6.06592 15.6739L5.98193 15.6485C5.45934 15.5039 4.82245 15.504 3.55811 15.504H1.6665C1.18377 15.5038 0.791693 15.1117 0.791504 14.629C0.791504 14.1461 1.18365 13.7542 1.6665 13.754H3.55811C4.98953 13.754 5.70856 13.7536 6.46338 13.9659L6.56787 13.9971C7.32504 14.2258 7.96032 14.636 9.11182 15.378C11.1531 16.6938 12.1755 17.3525 13.0854 17.2872C13.1261 17.2837 13.1668 17.2801 13.2075 17.2755C14.114 17.1669 14.9813 16.3303 16.7056 14.6632L18.2593 13.1593C18.0907 12.9361 17.9092 12.6937 17.7124 12.4278L15.0044 8.77156C14.7334 8.40397 14.613 8.30784 14.5591 8.29109C14.5591 8.29109 14.5443 8.2925 14.5151 8.30184C14.2562 8.38601 13.9026 8.68558 13.5913 8.95027C13.4328 9.08544 13.2673 9.22517 13.103 9.34871C12.0332 10.1525 10.6 9.99983 9.6958 8.9825C8.70666 7.86832 8.70653 6.12277 9.6958 5.00984L11.2368 3.27352L10.2056 2.84578C9.4239 2.52145 8.56047 2.7896 7.95264 3.54793C7.18965 4.49743 6.1175 5.04207 5.00928 5.04207H1.6665C1.18365 5.04189 0.791504 4.64996 0.791504 4.16707C0.791543 3.68421 1.18368 3.29225 1.6665 3.29207H5.00928C5.59252 3.29207 6.15343 2.9934 6.5874 2.45223C7.68524 1.08373 9.36913 0.60307 10.8765 1.22957L12.5015 1.90535C12.5178 1.91217 12.5336 1.92013 12.5493 1.92781C12.9629 1.58894 13.4348 1.30814 14.0151 1.14852Z" fill="#067647"/>
+                    </svg>}
+    />
+    <ServiceCard
+      titleKey="nonNetworkedWaterServices"
+      descKey="nonNetworkedWaterServicesDesc"
+      iconPlaceholder={<svg xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 18" fill="none">
+                    <path fillRule="evenodd" clipRule="evenodd" d="M16.9553 3.74973L17.7696 3.74973C18.2935 3.74972 18.7393 3.7497 19.1097 3.7857C19.5043 3.82406 19.8703 3.9072 20.2226 4.10668C20.575 4.30616 20.8346 4.57727 21.0705 4.89591C21.2919 5.195 21.5213 5.57726 21.7908 6.0265L23.0732 8.16381C23.0872 8.18715 23.101 8.2102 23.1147 8.23298C23.3579 8.63762 23.5499 8.95724 23.6503 9.31964C23.7507 9.68203 23.7504 10.0549 23.7501 10.527C23.7501 10.5536 23.7501 10.5805 23.7501 10.6077L23.7501 12.5445C23.7502 12.9773 23.7502 13.3741 23.7068 13.6969C23.659 14.0524 23.5466 14.4281 23.2375 14.7372C22.9285 15.0462 22.5528 15.1586 22.1973 15.2064C22.0319 15.2287 21.8471 15.2395 21.648 15.2448C21.3232 16.4016 20.2607 17.2497 19.0001 17.2497C17.7413 17.2497 16.6801 16.404 16.3536 15.2497H7.64658C7.32012 16.404 6.25887 17.2497 5.0001 17.2497C3.74132 17.2497 2.68008 16.404 2.35361 15.2497H2.2501C2.23413 15.2497 2.21809 15.2498 2.202 15.2498C2.02008 15.2501 1.83077 15.2503 1.65869 15.2161C0.96448 15.078 0.42181 14.5354 0.283722 13.8411C0.249493 13.6691 0.249776 13.4798 0.250049 13.2978C0.250073 13.2817 0.250097 13.2657 0.250097 13.2497C0.250097 13.2338 0.250073 13.2177 0.250049 13.2016C0.249776 13.0197 0.249493 12.8304 0.283723 12.6583C0.42181 11.9641 0.96448 11.4214 1.65869 11.2834C1.83077 11.2491 2.02008 11.2494 2.20199 11.2497C2.21809 11.2497 2.23413 11.2497 2.2501 11.2497H14.2501L14.2501 6.45499C14.25 6.02217 14.25 5.62534 14.2934 5.30253C14.3412 4.94705 14.4536 4.57132 14.7627 4.2623C15.0717 3.95327 15.4474 3.84083 15.8029 3.79303C16.1257 3.74963 16.5225 3.74968 16.9553 3.74973ZM15.7501 13.7497H16.3536C16.6801 12.5955 17.7413 11.7497 19.0001 11.7497C20.2569 11.7497 21.3168 12.5928 21.645 13.7443C21.7873 13.7401 21.9011 13.7328 21.9974 13.7198C22.094 13.7068 22.1424 13.6915 22.1641 13.6826C22.1692 13.6805 22.1725 13.6789 22.1744 13.6779L22.1769 13.6765L22.1782 13.6741C22.1792 13.6721 22.1809 13.6688 22.1829 13.6638C22.1919 13.642 22.2072 13.5936 22.2202 13.4971C22.2485 13.2863 22.2501 12.9923 22.2501 12.4997V10.6077C22.2501 10.465 22.2497 10.3476 22.2486 10.2497L19.9554 10.2497C19.5225 10.2498 19.1257 10.2498 18.8029 10.2064C18.4474 10.1586 18.0717 10.0462 17.7627 9.73717C17.4536 9.42815 17.3412 9.05242 17.2934 8.69694C17.25 8.37413 17.25 7.9773 17.2501 7.54448L17.2501 6.99973C17.2501 6.58552 17.5859 6.24973 18.0001 6.24973C18.4143 6.24973 18.7501 6.58552 18.7501 6.99973V7.49973C18.7501 7.99234 18.7517 8.28635 18.78 8.49707C18.793 8.59363 18.8083 8.64199 18.8173 8.66377C18.8193 8.66882 18.8209 8.67213 18.822 8.67406L18.8233 8.67651L18.8258 8.67787C18.8277 8.67888 18.831 8.6805 18.8361 8.68258C18.8578 8.69154 18.9062 8.70683 19.0028 8.71981C19.2135 8.74814 19.5075 8.74973 20.0001 8.74973H21.6755L20.5222 6.82762C20.2302 6.34104 20.0379 6.02205 19.865 5.78847C19.7017 5.56794 19.5898 5.4721 19.4836 5.41198C19.3774 5.35186 19.2377 5.30521 18.9645 5.27867C18.6753 5.25055 18.3028 5.24973 17.7353 5.24973H17.0001C16.5075 5.24973 16.2135 5.25133 16.0028 5.27966C15.9062 5.29264 15.8578 5.30793 15.8361 5.31689C15.831 5.31897 15.8277 5.32059 15.8258 5.3216L15.8233 5.32297L15.822 5.32541C15.8209 5.32734 15.8193 5.33065 15.8173 5.3357C15.8083 5.35748 15.793 5.40584 15.78 5.5024C15.7517 5.71312 15.7501 6.00713 15.7501 6.49973V13.7497ZM14.2501 13.7497V12.7497H7.12152C7.36062 13.0393 7.54159 13.3785 7.64658 13.7497H14.2501ZM2.87868 12.7497H2.2501C2.12885 12.7497 2.05666 12.7498 2.00231 12.7517C1.96792 12.7529 1.95301 12.7545 1.94939 12.7549C1.85179 12.7751 1.77551 12.8514 1.75529 12.949C1.75485 12.9526 1.75324 12.9676 1.75206 13.002C1.7502 13.0563 1.7501 13.1285 1.7501 13.2497C1.7501 13.371 1.7502 13.4432 1.75206 13.4975C1.75324 13.5319 1.75485 13.5468 1.75529 13.5504C1.77551 13.648 1.85179 13.7243 1.94938 13.7445C1.95301 13.745 1.96792 13.7466 2.00231 13.7478C2.05666 13.7496 2.12885 13.7497 2.2501 13.7497H2.35361C2.4586 13.3785 2.63958 13.0393 2.87868 12.7497ZM5.0001 13.2497C4.30974 13.2497 3.7501 13.8094 3.7501 14.4997C3.7501 15.1901 4.30974 15.7497 5.0001 15.7497C5.69045 15.7497 6.2501 15.1901 6.2501 14.4997C6.2501 13.8094 5.69045 13.2497 5.0001 13.2497ZM19.0001 13.2497C18.3097 13.2497 17.7501 13.8094 17.7501 14.4997C17.7501 15.1901 18.3097 15.7497 19.0001 15.7497C19.6905 15.7497 20.2501 15.1901 20.2501 14.4997C20.2501 13.8094 19.6905 13.2497 19.0001 13.2497Z" fill="#067647"/>
+                    <path fillRule="evenodd" clipRule="evenodd" d="M4.07857 0.749622C4.12283 0.749678 4.16743 0.749734 4.2124 0.749734H9.2878C9.33276 0.749734 9.37736 0.749678 9.42162 0.749622C10.3984 0.748385 11.2062 0.747361 11.9646 1.3586C12.3199 1.645 12.5582 1.94511 12.7235 2.31721C12.8661 2.63833 12.9439 2.99697 13.0202 3.34831C13.0234 3.3631 13.0266 3.37787 13.0298 3.39263C13.1727 4.05007 13.2501 4.76057 13.2501 5.49973C13.2501 6.2389 13.1727 6.9494 13.0298 7.60684C13.0266 7.6216 13.0234 7.63637 13.0202 7.65116C12.9439 8.0025 12.8661 8.36114 12.7235 8.68226C12.5582 9.05436 12.3199 9.35446 11.9646 9.64087C11.2062 10.2521 10.3984 10.2511 9.42162 10.2498C9.37736 10.2498 9.33276 10.2497 9.2878 10.2497H4.2124C4.16743 10.2497 4.12283 10.2498 4.07857 10.2498C3.10181 10.2511 2.29402 10.2521 1.53564 9.64087C1.18029 9.35446 0.941991 9.05436 0.776721 8.68226C0.634095 8.36114 0.556268 8.0025 0.480022 7.65116C0.476814 7.63637 0.473607 7.6216 0.470399 7.60684C0.327485 6.9494 0.250097 6.2389 0.250097 5.49973C0.250097 4.76057 0.327485 4.05007 0.4704 3.39263C0.473608 3.37787 0.476814 3.36309 0.480023 3.34831C0.556268 2.99696 0.634096 2.63833 0.776721 2.31721C0.941991 1.94511 1.18029 1.645 1.53564 1.3586C2.29402 0.747361 3.10181 0.748385 4.07857 0.749622ZM5.5001 8.74973H8.0001V2.24973H5.5001V8.74973ZM4.0001 2.25015V8.74932C3.00784 8.74504 2.76358 8.70401 2.47693 8.47298C2.28287 8.31657 2.2042 8.20084 2.14759 8.07338C2.07433 7.90845 2.0258 7.70053 1.93617 7.28822C1.81675 6.73889 1.7501 6.13535 1.7501 5.49973C1.7501 4.86412 1.81675 4.26058 1.93617 3.71125C2.0258 3.29894 2.07433 3.09102 2.14759 2.92609C2.2042 2.79862 2.28287 2.6829 2.47693 2.52649C2.76358 2.29546 3.00784 2.25442 4.0001 2.25015ZM9.5001 2.25015V8.74932C10.4924 8.74504 10.7366 8.70401 11.0233 8.47298C11.2173 8.31657 11.296 8.20084 11.3526 8.07338C11.4259 7.90845 11.4744 7.70053 11.564 7.28822C11.6834 6.73889 11.7501 6.13535 11.7501 5.49973C11.7501 4.86412 11.6834 4.26058 11.564 3.71125C11.4744 3.29894 11.4259 3.09102 11.3526 2.92609C11.296 2.79862 11.2173 2.6829 11.0233 2.52649C10.7366 2.29546 10.4924 2.25442 9.5001 2.25015Z" fill="#067647"/>
+                    </svg>}
+    />
+  </div>
+);
+
+export default ServicesGrid;
+
+// Updated ServicesNavTabs.jsx (Component 24)
+import React from 'react';
+
+const ServicesNavTabs = () => (
+  <nav className="nav-tabs">
+    {/* Navigation tabs would go here if needed */}
+  </nav>
+);
+
+export default ServicesNavTabs;
+
+// Updated ServicesSearchHeader.jsx (Component 25) - SEARCH ICON RESTORED
+import React, { useState } from 'react';
+import { useTranslation } from './TranslationContext';
+
+const ServicesSearchHeader = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const { t } = useTranslation();
+
+  const handleSearch = () => {
+    console.log('Searching for:', searchTerm);
+  };
+
+  return (
+    <div className="header-section">
+      <div className="search-container">
+        <div className="search-icon-services">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path fillRule="evenodd" clipRule="evenodd" d="M8.16699 0.0415039C3.67968 0.0415039 0.0419922 3.67919 0.0419922 8.1665C0.0419922 12.6538 3.67968 16.2915 8.16699 16.2915C10.1857 16.2915 12.0324 15.5553 13.4534 14.3368L16.8917 17.7751C17.1358 18.0192 17.5315 18.0192 17.7756 17.7751C18.0197 17.531 18.0197 17.1353 17.7756 16.8912L14.3373 13.4529C15.5558 12.0319 16.292 10.1852 16.292 8.1665C16.292 3.67919 12.6543 0.0415039 8.16699 0.0415039ZM1.29199 8.1665C1.29199 4.36955 4.37004 1.2915 8.16699 1.2915C11.964 1.2915 15.042 4.36955 15.042 8.1665C15.042 11.9635 11.964 15.0415 8.16699 15.0415C4.37004 15.0415 1.29199 11.9635 1.29199 8.1665Z" fill="#161616"/>
+          </svg>
+        </div>
+        <input 
+          type="text" 
+          className="search-input-services" 
+          placeholder={t('search')}
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+      </div>
+      <button className="filter-btn" onClick={handleSearch}>
+        {t('search')}
+      </button>
+    </div>
+  );
+};
+
+export default ServicesSearchHeader;
+
+// Updated Sidebar.jsx (Component 26)
+import React from 'react';
+import SearchBar from './SearchBar';
+import UserAvatar from './UserAvatar';
+import SideMenu from './SideMenu';
+import BottomMenu from './BottomMenu';
+import SWA from './SWA.png';
+
+const Sidebar = ({ isVisible, activeMenuItem, onMenuClick }) => (
+  <div className={`sidebar ${isVisible ? 'show' : ''}`} id="sidebar">
+    <div className="image-container">
+      <img
+        className="logo-image"
+        src={SWA}
+        alt="Saudi Water Authority Logo"
+      />
+
+      <section className="section-container" style={{ marginTop: '20px' }}>
+        <SearchBar />
+        <UserAvatar />
+        <SideMenu activeMenuItem={activeMenuItem} onMenuClick={onMenuClick} />
+        <BottomMenu activeMenuItem={activeMenuItem} onMenuClick={onMenuClick} />
+      </section>
+    </div>
+  </div>
+);
+
+export default Sidebar;
+
+// Updated SideMenu.jsx (Component 27)
+import React from 'react';
+import MenuItem from './MenuItem';
+import menu1 from './menu1.png';
+import menu2 from './menu2.png';
+import menu3 from './menu3.png';
+import { useTranslation } from './TranslationContext';
+
+const SideMenu = ({ activeMenuItem, onMenuClick }) => {
+  const { t } = useTranslation();
+  
+  return (
+    <div className="sidemenu" style={{ marginTop: '20px' }}>
+      <div className="hr1">
+        <hr className="line" />
+      </div>
+
+      <MenuItem
+        src={menu1}
+        alt="DashBoard"
+        text={t('dashboard')}
+        isActive={activeMenuItem === 'dashboard'}
+        onClick={() => onMenuClick('dashboard')}
+      />
+      <div className="hr1">
+        <hr className="line" />
+      </div>
+
+      <MenuItem
+        src={menu2}
+        alt="Services"
+        text={t('services')}
+        isActive={activeMenuItem === 'services'}
+        onClick={() => onMenuClick('services')}
+      />
+      <div className="hr1">
+        <hr className="line" />
+      </div>
+
+      <MenuItem
+        src={menu3}
+        alt="My Requests"
+        text={t('myRequests')}
+        isActive={activeMenuItem === 'requests'}
+        onClick={() => onMenuClick('requests')}
+      />
+    </div>
+  );
+};
+
+export default SideMenu;
+
+// Updated StatCard.jsx (Component 28)
+import React from 'react';
+
+const StatCard = ({ icon, label, number, filter }) => (
+  <div className={`stat-card ${filter === 'pending' ? 'pending' : ''}`} data-filter={filter}>
+    <div className="stat-label">
+      <img src={icon} alt={label} className="stat-icon" />
+      <span className="stat-label-text">{label}</span>
+    </div>
+    <div className="stat-number stat-number-text">{number}</div>
+  </div>
+);
+
+export default StatCard;
+
+// Updated StatsGrid.jsx (Component 29)
+import React from 'react';
+import StatCard from './StatCard';
+import TotalCases from './TotalCases.png'
+import Opened from './Opened.png';
+import Closed from './Closed.png';
+import Pendings from './Pendings.png';
+import { useTranslation } from './TranslationContext';
+
+const StatsGrid = () => {
+  const { t } = useTranslation();
+  
+  return (
+    <div className="stats-grid">
+      <StatCard icon={TotalCases} label={t('totalCases')} number="12" filter="total" />
+      <StatCard icon={Opened} label={t('open')} number="5" filter="open" />
+      <StatCard icon={Closed} label={t('closed')} number="5" filter="closed" />
+      <StatCard icon={Pendings} label={t('pendingActions')} number="2" filter="pending" />
+    </div>
+  );
+};
+
+export default StatsGrid;
+
+// Updated SWAWaterPortal.jsx (Component 30) - MAIN COMPONENT WITH TRANSLATION PROVIDER
+import React, { useState, useEffect } from 'react';
+import { TranslationProvider } from './TranslationContext';
+import GlobalStyles from './GlobalStyles';
+import Header from './Header';
+import HamburgerMenu from './HamburgerMenu';
+import Overlay from './Overlay';
+import Sidebar from './Sidebar';
+import MainContent from './MainContent';
+
+const SWAWaterPortal = () => {
+  const [activeMenuItem, setActiveMenuItem] = useState('dashboard');
+  const [sidebarVisible, setSidebarVisible] = useState(false);
+
+  const setActive = (menuType) => {
+    setActiveMenuItem(menuType);
+    if (window.innerWidth <= 1024) {
+      setSidebarVisible(false);
+    }
+  };
+
+  const toggleSidebar = () => {
+    setSidebarVisible(!sidebarVisible);
+  };
+
+  const closeSidebar = () => {
+    setSidebarVisible(false);
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 1024) {
+        setSidebarVisible(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return (
+    <TranslationProvider>
+      <div>
+        <GlobalStyles />
+        <Header />
+        
+        <HamburgerMenu onToggle={toggleSidebar} />
+        <Overlay isVisible={sidebarVisible} onClose={closeSidebar} />
+
+        <div className="main-container">
+          <Sidebar 
+            isVisible={sidebarVisible} 
+            activeMenuItem={activeMenuItem} 
+            onMenuClick={setActive} 
+          />
+          <MainContent activeMenuItem={activeMenuItem} />
+        </div>
+      </div>
+    </TranslationProvider>
+  );
+};
+
+export default SWAWaterPortal;
+
+// Updated TipBanner.jsx (Component 31)
+import React from 'react';
+import { useTranslation } from './TranslationContext';
+
+const TipBanner = () => {
+  const { t } = useTranslation();
+  
+  return (
+    <div className="tip-banner">
+      <div className="tip-text">
+        <strong>{t('tipPrefix')}</strong> {t('tipMessage')}
+      </div>
+      <button className="request-workshop-btn">
+        <span className="request-workshop-text">{t('requestWorkshop')}</span>
+      </button>
+    </div>
+  );
+};
+
+export default TipBanner;
+
+// TranslationContext.jsx (Updated to use centralized language utils)
+import React, { createContext, useContext, useState, useEffect } from 'react';
+
+// Import the centralized language utils (adjust path as needed)
+import { 
+  getStoredLanguage, 
+  storeLanguage, 
+  setupLanguageListener, 
+  applyLanguageSettings,
+  isRTL 
+} from '../../../utils/LanguageUtils'; // Adjust path to match your structure
+
+const TranslationContext = createContext();
+
+export const useTranslation = () => {
+  const context = useContext(TranslationContext);
+  if (!context) {
+    throw new Error('useTranslation must be used within a TranslationProvider');
+  }
+  return context;
+};
+
+// Keep your existing translations dictionary
+const translations = {
+  en: {
+    // Navigation
+    dashboard: "Dashboard",
+    services: "Services", 
+    myRequests: "My Requests", 
+    account: "Account", 
+    logout: "Log Out", 
+    search: "Search",
+    
+    // Dashboard
+    hiRead: "Hi Read!", 
+    welcomeMessage: "Saudi Water Authority Portal a seamless gateway for managing water services, offering secure and efficient digital solutions.",
+    totalCases: "Total Cases", 
+    open: "Open", 
+    closed: "Closed", 
+    pendingActions: "Pending Actions", 
+    actionsRequired: "Actions Required",
+    latestRequests: "Latest Requests", 
+    allRequests: "All Requests", 
+    requestsOverview: "Requests Overview",
+    
+    // Table headers
+    requestNumber: "Request Number", 
+    serviceType: "Service Type", 
+    requestType: "Request Type", 
+    activityType: "Activity Type",
+    status: "Status", 
+    submissionDate: "Submission Date", 
+    actions: "Actions", 
+    actionRequired: "Action Required",
+    resolved: "Resolved", 
+    draft: "Draft", 
+    viewDetails: "View Details", 
+    editApplication: "Edit Application",
+    
+    // Actions
+    moreInfoNeeded: "More info needed:", 
+    completeDetails: "Please complete the required details in",
+    complaintEscalationCase: "Complaint Escalation Case", 
+    processRequest: "to process your request.",
+    
+    // Tip banner
+    tipPrefix: "Tip:", 
+    tipMessage: "Report leaks promptly—a dripping tap wastes 6,000+ liters/year",
+    requestWorkshop: "Request Workshop", 
+    
+    // User info
+    individual: "Individual", 
+    paginationInfo: "1-10 of 16",
+    
+    // Services
+    complaintsEscalation: "Complaints Escalation",
+    complaintsEscalationDesc: "This service allows beneficiaries to escalate their complaints to the Authority if the complaint was closed by the service provider without resolution...",
+    complaintsInquiry: "Complaints Inquiry",
+    complaintsInquiryDesc: "This platform allows beneficiaries to inquire about the status and details of their water and sewage service complaints.",
+    incidentReports: "Incident Reports",
+    incidentReportsDesc: "This platform allows users to efficiently submit, track, and manage Citizens Violation reports, providing a centralized system for documenting...",
+    incidentReportsInquiry: "Incident Reports Inquiry",
+    incidentReportsInquiryDesc: "This platform allows beneficiaries to inquire about the status and details of their water and sewage service Violation Reports.",
+    waterBillCalculator: "Water Bill Calculator",
+    waterBillCalculatorDesc: "The Water Bill Calculator helps users estimate their water bill based on consumption, calculating costs according to usage and applicable tariffs, fa...",
+    meetThePresident: "Meet the President",
+    meetThePresidentDesc: "Descriptive body copy with more detailed information about the card contents...",
+    nonNetworkedWaterServices: "Non-Networked Water Services License Request (Tanker)",
+    nonNetworkedWaterServicesDesc: "Descriptive body copy with more detailed information about the card contents...",
+    goToService: "Go To Service",
+
+    // Table data values (add these)
+    complaintsEscalationService: "Complaints Escalation",
+    generalComplaints: "General Complaints", 
+    licenseIssuance: "License Issuance",
+    waterStorage: "Water Storage",
+    waterProduction: "Water Production",
+  },
+  ar: {
+    // Navigation
+    dashboard: "لوحة التحكم",
+    services: "الخدمات", 
+    myRequests: "طلباتي", 
+    account: "الحساب", 
+    logout: "تسجيل الخروج", 
+    search: "بحث",
+    
+    // Dashboard
+    hiRead: "مرحباً ريد!", 
+    welcomeMessage: "بوابة الهيئة السعودية للمياه هي بوابة سلسة لإدارة خدمات المياه، تقدم حلولاً رقمية آمنة وفعالة.",
+    totalCases: "إجمالي الحالات", 
+    open: "مفتوح", 
+    closed: "مغلق", 
+    pendingActions: "الإجراءات المعلقة", 
+    actionsRequired: "الإجراءات المطلوبة",
+    latestRequests: "أحدث الطلبات", 
+    allRequests: "جميع الطلبات", 
+    requestsOverview: "نظرة عامة على الطلبات",
+    
+    // Table headers
+    requestNumber: "رقم الطلب", 
+    serviceType: "نوع الخدمة", 
+    requestType: "نوع الطلب", 
+    activityType: "نوع النشاط",
+    status: "الحالة", 
+    submissionDate: "تاريخ التقديم", 
+    actions: "الإجراءات", 
+    actionRequired: "إجراء مطلوب",
+    resolved: "تم الحل", 
+    draft: "مسودة", 
+    viewDetails: "عرض التفاصيل", 
+    editApplication: "تعديل الطلب",
+    
+    // Actions
+    moreInfoNeeded: "مطلوب معلومات إضافية:", 
+    completeDetails: "يرجى إكمال التفاصيل المطلوبة في",
+    complaintEscalationCase: "حالة تصعيد الشكوى", 
+    processRequest: "لمعالجة طلبك.",
+    
+    // Tip banner
+    tipPrefix: "نصيحة:", 
+    tipMessage: "أبلغ عن التسريبات فوراً - الصنبور المتسرب يهدر أكثر من 6000 لتر/سنة",
+    requestWorkshop: "طلب ورشة عمل", 
+    
+    // User info
+    individual: "فرد", 
+    paginationInfo: "1-10 من 16",
+    
+    // Services
+    complaintsEscalation: "تصعيد الشكاوى",
+    complaintsEscalationDesc: "تتيح هذه الخدمة للمستفيدين تصعيد شكاواهم إلى الهيئة إذا تم إغلاق الشكوى من قبل مقدم الخدمة دون حل...",
+    complaintsInquiry: "الاستعلام عن الشكاوى",
+    complaintsInquiryDesc: "تتيح هذه المنصة للمستفيدين الاستعلام عن حالة وتفاصيل شكاوى خدمات المياه والصرف الصحي.",
+    incidentReports: "تقارير الحوادث",
+    incidentReportsDesc: "تتيح هذه المنصة للمستخدمين تقديم وتتبع وإدارة تقارير مخالفات المواطنين بكفاءة، مما يوفر نظاماً مركزياً لتوثيق...",
+    incidentReportsInquiry: "الاستعلام عن تقارير الحوادث",
+    incidentReportsInquiryDesc: "تتيح هذه المنصة للمستفيدين الاستعلام عن حالة وتفاصيل تقارير مخالفات خدمات المياه والصرف الصحي.",
+    waterBillCalculator: "حاسبة فاتورة المياه",
+    waterBillCalculatorDesc: "تساعد حاسبة فاتورة المياه المستخدمين في تقدير فاتورة المياه بناءً على الاستهلاك، وحساب التكاليف وفقاً للاستخدام والتعريفات المطبقة...",
+    meetThePresident: "لقاء مع الرئيس",
+    meetThePresidentDesc: "نص وصفي مع معلومات أكثر تفصيلاً حول محتويات البطاقة...",
+    nonNetworkedWaterServices: "طلب ترخيص خدمات المياه غير المشبوكة (صهريج)",
+    nonNetworkedWaterServicesDesc: "نص وصفي مع معلومات أكثر تفصيلاً حول محتويات البطاقة...",
+    goToService: "الذهاب للخدمة",
+
+    // Table data values (add these)
+    complaintsEscalationService: "تصعيد الشكاوى",
+    generalComplaints: "الشكاوى العامة",
+    licenseIssuance: "إصدار التراخيص", 
+    waterStorage: "تخزين المياه",
+    waterProduction: "إنتاج المياه",
+  }
+};
+
+export const TranslationProvider = ({ children }) => {
+  // Use centralized language system instead of local state
+  const [language, setLanguage] = useState(() => getStoredLanguage());
+  const [isRTLMode, setIsRTLMode] = useState(() => isRTL(getStoredLanguage()));
+
+  // Set up language change listener using centralized system
+  useEffect(() => {
+    const cleanup = setupLanguageListener((newLanguage) => {
+      setLanguage(newLanguage);
+      setIsRTLMode(isRTL(newLanguage));
+      console.log(`Dashboard: Language changed to ${newLanguage} via centralized system`);
+    });
+
+    // Apply language settings on mount
+    applyLanguageSettings(language);
+
+    return cleanup;
+  }, []);
+
+  const toggleLanguage = () => {
+    const newLanguage = language === 'en' ? 'ar' : 'en';
+    
+    // Use centralized storage - this will trigger the listener above
+    storeLanguage(newLanguage);
+    
+    // Apply language settings immediately
+    applyLanguageSettings(newLanguage);
+    
+    console.log(`Dashboard: Language toggled to ${newLanguage} using centralized system`);
+  };
+
+  const t = (key) => translations[language][key] || key;
+
+  return (
+    <TranslationContext.Provider value={{ 
+      language, 
+      isRTL: isRTLMode, 
+      toggleLanguage, 
+      t 
+    }}>
+      {children}
+    </TranslationContext.Provider>
+  );
+};
+
+// Updated UserAvatar.jsx (Component 32)
+import React from 'react';
+import { useTranslation } from './TranslationContext';
+
+const UserAvatar = () => {
+  const { t, isRTL } = useTranslation(); // Add isRTL here
+  
+  return (
+    <div
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: '12px',
+        width: '100%',
+        padding: '8px 0',
+        marginLeft: isRTL ? '0' : '-30px',
+        marginRight: isRTL ? '-30px' : '0',
+      }}
+    >
+      <div className="avatar">SK</div>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '4px',
+          alignItems: 'flex-start',
+        }}
+      >
+        <p
+          style={{
+            color: '#161616',
+            fontFamily: 'var(--Font-Family-font-family-text, "IBM Plex Sans Arabic")',
+            fontSize: '14px',
+            fontWeight: '600',
+            lineHeight: '20px',
+            margin: '0',
+            whiteSpace: 'nowrap',
+          }}
+        >
+          Read Abdullah
+        </p>
+        <div
+          style={{
+            display: 'flex',
+            height: '20px',
+            padding: 'var(--Global-spacing-none, 0) var(--Global-spacing-md, 8px)',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: 'var(--Global-spacing-xs, 4px)',
+            flexShrink: '0',
+            borderRadius: 'var(--radius-sm, 4px)',
+            border: '1px solid var(--Border-border-neutral-secondary, #e5e7eb)',
+            background: 'var(--Tag-tag-background-neutral-light, #f9fafb)',
+          }}
+        >
+          <p
+            style={{
+              color: '#161616',
+              fontFamily: 'var(--Font-Family-font-family-text, "IBM Plex Sans Arabic")',
+              fontSize: '14px',
+              fontWeight: '600',
+              lineHeight: '20px',
+              margin: '0',
+            }}
+          >
+            {t('individual')}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default UserAvatar;
+
+// Updated WelcomeSection.jsx (Component 33)
+import React from 'react';
+import { useTranslation } from './TranslationContext';
+
+const WelcomeSection = () => {
+  const { t } = useTranslation();
+  
+  return (
+    <div className="welcome-section">
+      <h2 className="welcome-title">{t('hiRead')}</h2>
+      <p className="welcome-text">
+        {t('welcomeMessage')}
+      </p>
+    </div>
+  );
+};
+
+export default WelcomeSection;

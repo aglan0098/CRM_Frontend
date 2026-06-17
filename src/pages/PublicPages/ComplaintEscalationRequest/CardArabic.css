@@ -1,0 +1,1336 @@
+/* ========================================
+   Arabic RTL Stylesheet for Service Page
+   ======================================== */
+
+html,
+body {
+    overflow-x: hidden;
+    /* prevent zoom-in horizontal scrollbars from minor overflows */
+    direction: rtl;
+    /* Enable RTL direction */
+}
+
+.Vector-imgAr {
+    width: 697px;
+    height: 652.987px;
+    fill: rgba(184, 234, 203, 0.2);
+}
+
+.GateAr {
+    background-color: #f7fdf9;
+    margin-right: -120px;
+    /* RTL: swap left to right */
+}
+
+.SerivceAr {
+    display: flex;
+    padding: var(--Global-spacing-5xl, 40px) var(--Global-spacing-8xl, 80px);
+    align-items: flex-start;
+    gap: 199px;
+    align-self: stretch;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    /* keep centered like footer body */
+    /* RTL: Keep normal flex direction so Info Card stays on left */
+}
+
+.DescriptionAr {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--Global-spacing-xl, 16px);
+    align-self: stretch;
+}
+
+.ContentAr {
+    display: flex;
+    align-items: flex-end;
+    gap: var(--Global-spacing-4xl, 32px);
+    align-self: stretch;
+    /* RTL: Keep normal flex direction, content is already RTL by text alignment */
+}
+
+.TitleAr {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--Global-spacing-md, 8px);
+    flex: 1 0 0;
+}
+
+.ButtonAr {
+    display: flex;
+    height: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    padding: var(--Global-spacing-none, 0) var(--Button-buttons-lg-padding, 16px);
+    justify-content: center;
+    align-items: center;
+    gap: var(--Button-buttons-lg-gap, 4px);
+    border-radius: var(--Radius-radius-sm, 4px);
+    background: var(--Button-button-background-primary-default, #1b8354);
+    color: var(--Text-text-oncolor-primary, #fff);
+
+    /* Text md/Medium */
+    font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+    font-size: var(--Size-Text-typo-size-text-md, 16px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: var(--Line-Height-Text-line-heights-text-md, 24px);
+    /* 150% */
+    border: none;
+    cursor: pointer;
+}
+
+.BreadcrumbAr {
+    display: flex;
+    padding: var(--Global-spacing-none, 0);
+    align-items: flex-start;
+    gap: var(--Global-spacing-none, 0);
+    flex-direction: row;
+    /* RTL: reverse breadcrumb order */
+}
+
+.Serivce-InfoAr {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 96px;
+}
+
+._Breadcrumb-ItemAr {
+    display: flex;
+    padding-left: var(--Link-link-sm-gap, 4px);
+    /* RTL: swap right to left */
+    align-items: center;
+    gap: var(--Link-link-sm-gap, 4px);
+
+    color: var(--Text-text-default, #161616);
+
+    /* Text sm/Regular */
+    font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+    font-size: var(--Size-Text-typo-size-text-sm, 14px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--Line-Height-Text-line-heights-text-sm,
+            20px);
+    /* 142.857% */
+}
+
+._Breadcrumb-Item-TextAr {
+    color: var(--Grays-Gray-2, var(--Grays-Gray-2, #aeaeb2));
+
+    /* Text sm/Regular */
+    font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+    font-size: var(--Size-Text-typo-size-text-sm, 14px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--Line-Height-Text-line-heights-text-sm,
+            20px);
+    /* 142.857% */
+}
+
+.arrowAr {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scaleX(-1);
+    /* RTL: flip arrow direction horizontally */
+}
+
+.arrowAr svg {
+    width: 6px;
+    height: 12px;
+}
+
+.T_TitleAr {
+    color: var(--Text-text-default, #161616);
+
+    /* Display sm/Bold */
+    font-family: var(--Font-Family-font-family-display, "IBM Plex Sans Arabic");
+    font-size: var(--Size-Display-typo-size-display-sm, 30px);
+    font-style: normal;
+    font-weight: 700;
+    line-height: var(--Line-Height-Display-line-heights-display-sm,
+            38px);
+    /* 126.667% */
+}
+
+.T-DescriptionAr {
+    width: 720px;
+    color: var(--Text-text-default, #161616);
+
+    /* Text md/Regular */
+    font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+    font-size: var(--Size-Text-typo-size-text-md, 16px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--Line-Height-Text-line-heights-text-md, 24px);
+    /* 150% */
+    text-align: right;
+    /* RTL: align text right */
+}
+
+.LinkAr {
+    display: flex;
+    padding: var(--Global-spacing-none, 0);
+    align-items: center;
+    gap: var(--Link-link-md-gap, 8px);
+    color: var(--Link-link-primary, #1b8354);
+
+    /* Text md/Regular */
+    font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+    font-size: var(--Size-Text-typo-size-text-md, 16px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--Line-Height-Text-line-heights-text-md, 24px);
+    /* 150% */
+    flex-direction: row;
+    /* RTL: icon on left side */
+}
+
+.PDF-ImgAr {
+    width: 16.253px;
+    height: 17.917px;
+    flex-shrink: 0;
+    fill: var(--Link-link-icon-primary-focused, #1b8354);
+}
+
+.InfoAr {
+    display: flex;
+    /* width: 900px; */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--Global-spacing-3xl, 24px);
+    align-self: stretch;
+    background-color: white;
+    position: relative;
+    /* enable full-bleed background without affecting layout */
+    z-index: 0;
+    /* create stacking context for ::before */
+    padding: var(--Global-spacing-3xl, 24px) 0;
+    /* slightly increase vertical height */
+}
+
+/* Make the white background of .InfoAr span the full viewport width
+   while keeping the content width and the Info-Card layout intact. */
+.InfoAr::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 50%;
+    /* RTL: swap left to right */
+    transform: translateX(50%);
+    /* RTL: flip transform direction */
+    width: calc(100vw + 600px);
+    /* extended width to ensure coverage */
+    background: #fff;
+    z-index: -1;
+    /* sit behind .InfoAr content and siblings */
+    pointer-events: none;
+}
+
+.Hor-Tab-ListAr {
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+    margin-right: -15px;
+    /* RTL: swap left to right */
+    flex-direction: row-reverse;
+    /* RTL: reverse tab order */
+    justify-content: flex-end;
+    /* RTL: align tabs to the right */
+}
+
+.Hor-TabAr {
+    display: flex;
+    padding: var(--Tab-horizontal-tab-md-button-v-padding, 12px) var(--Tab-horizontal-tab-md-button-h-padding, 16px);
+    justify-content: center;
+    align-items: center;
+    gap: var(--Tab-tab-button-gap, 4px);
+    border-radius: var(--Radius-radius-sm, 4px);
+    color: var(--Text-text-primary-paragraph, #384250);
+    background: none;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+    position: relative;
+
+    /* Text sm/Medium */
+    font-family: "IBM Plex Sans Arabic";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    /* 142.857% */
+}
+
+.Hor-TabAr:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+.Hor-TabAr:focus-visible {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+.Hor-Tab--activeAr {
+    color: var(--Text-text-default, #161616);
+    font-weight: 700;
+}
+
+.Hor-Tab--activeAr::after {
+    content: "";
+    position: absolute;
+    right: 16px;
+    /* RTL: swap left to right */
+    left: 16px;
+    /* RTL: swap right to left */
+    bottom: 4px;
+    height: 3px;
+    border-radius: 999px;
+    background: var(--Button-button-background-primary-default, #1b8354);
+}
+
+.StepsAr {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--Global-spacing-xl, 16px);
+    align-self: stretch;
+}
+
+.List-ItemAr {
+    display: flex;
+    padding: var(--Global-spacing-none, 0);
+    align-items: center;
+    gap: var(--Global-spacing-md, 8px);
+    /* flex-direction: row-reverse; */
+    /* REMOVED - numbers should be on right naturally in RTL */
+}
+
+.Tab-PanelAr {
+    width: 100%;
+}
+
+.Tab-Panel-BodyAr {
+    display: flex;
+    flex-direction: column;
+    gap: var(--Global-spacing-lg, 12px);
+    padding-top: var(--Global-spacing-xl, 16px);
+    color: var(--Text-text-default, #161616);
+
+    /* Text md/Regular */
+    font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+    font-size: var(--Size-Text-typo-size-text-md, 16px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--Line-Height-Text-line-heights-text-md, 24px);
+    /* 150% */
+    text-align: right;
+    /* RTL: align text right */
+}
+
+.Tab-ListAr {
+    margin-top: var(--Global-spacing-md, 8px);
+    margin-bottom: var(--Global-spacing-md, 8px);
+    padding-right: 32px;
+    /* RTL: swap left to right */
+    display: flex;
+    flex-direction: column;
+    gap: var(--Global-spacing-xs, 4px);
+}
+
+.Tab-List--bulletedAr {
+    list-style: disc;
+    list-style-position: inside;
+    /* RTL: bullets inside for proper alignment */
+}
+
+.Tab-ListAr li {
+    color: var(--Text-text-default, #161616);
+
+    /* Text md/Regular */
+    font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+    font-size: var(--Size-Text-typo-size-text-md, 16px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--Line-Height-Text-line-heights-text-md, 24px);
+    /* 150% */
+    text-align: right;
+    /* RTL: align text right */
+}
+
+.T-Steps-NumAr {
+    color: var(--Text-text-default, #161616);
+
+    /* Text md/Regular */
+    font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+    font-size: var(--Size-Text-typo-size-text-md, 16px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--Line-Height-Text-line-heights-text-md, 24px);
+    /* 150% */
+}
+
+.T-Steps-TextAr {
+    color: var(--Text-text-default, #161616);
+
+    /* Text md/Regular */
+    font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+    font-size: var(--Size-Text-typo-size-text-md, 16px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--Line-Height-Text-line-heights-text-md, 24px);
+    /* 150% */
+    text-align: right;
+    /* RTL: align text right */
+}
+
+.Info-CardAr {
+    display: flex;
+    width: 416px;
+    padding: var(--Global-spacing-5xl, 40px);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--Global-spacing-3xl, 24px);
+    border-radius: var(--Radius-radius-lg, 16px);
+    border: 1px solid var(--Border-border-background-neutral, #d2d6db);
+    background: var(--Background-background-white, #fff);
+    position: relative;
+    /* keep card visually above any wide backgrounds */
+    z-index: 2;
+}
+
+.IC-Service-InfoAr {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--Global-spacing-xl, 16px);
+    align-self: stretch;
+}
+
+.IC-SI-ContentAr {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--Global-spacing-md, 8px);
+    align-self: stretch;
+    /* RTL: Normal flex direction, text alignment handles RTL */
+}
+
+.UserAr {
+    display: flex;
+    width: 24px;
+    height: 24px;
+    padding: 1.25px 2.25px;
+    justify-content: center;
+    align-items: center;
+}
+
+.IconAr {
+    width: 19.5px;
+    height: 21.5px;
+    flex-shrink: 0;
+}
+
+.Inner-ContentAr {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--Global-spacing-xs, 4px);
+    flex: 1 0 0;
+    text-align: right;
+    /* RTL: align text right */
+}
+
+.Inner-Content-T1Ar {
+    align-self: stretch;
+    color: var(--Text-text-display, #1f2a37);
+
+    /* Text md/Bold */
+    font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+    font-size: var(--Size-Text-typo-size-text-md, 16px);
+    font-style: normal;
+    font-weight: 700;
+    line-height: var(--Line-Height-Text-line-heights-text-md, 24px);
+    /* 150% */
+    text-align: right;
+    /* RTL: align text right */
+}
+
+.Inner-Content-T2Ar {
+    align-self: stretch;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--Global-spacing-xs, 4px);
+    color: var(--Text-text-display, #1f2a37);
+
+    /* Text md/Regular */
+    font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+    font-size: var(--Size-Text-typo-size-text-md, 16px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--Line-Height-Text-line-heights-text-md, 24px);
+    /* 150% */
+    color: var(--Link-link-primary, #1b8354);
+    /* RTL: Normal flex direction for proper text flow */
+}
+
+.Inner-Content-T2Ar-Blk {
+    align-self: stretch;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--Global-spacing-xs, 4px);
+    color: var(--Text-text-display, #1f2a37);
+
+    /* Text md/Regular */
+    font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+    font-size: var(--Size-Text-typo-size-text-md, 16px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--Line-Height-Text-line-heights-text-md, 24px);
+    /* 150% */
+    /* color: var(--Link-link-primary, #1b8354); */
+    /* RTL: Normal flex direction for proper text flow */
+}
+
+.Line-1Ar {
+    width: 336px;
+    height: 1px;
+    background: var(--Border-border-neutral-primary, #d2d6db);
+}
+
+.Contact-InfoAr {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--Global-spacing-xl, 16px);
+    align-self: stretch;
+}
+
+.Inner-Content-LowerAr {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--Global-spacing-xs, 4px);
+    flex: 1 0 0;
+}
+
+.Inner-Content-Lower-T1Ar {
+    align-self: stretch;
+    color: var(--Text-text-display, #1f2a37);
+
+    /* Text lg/Bold */
+    font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+    font-size: var(--Size-Text-typo-size-text-Ig, 18px);
+    font-style: normal;
+    font-weight: 700;
+    line-height: var(--Line-Height-Text-line-heights-text-Ig,
+            28px);
+    /* 155.556% */
+    text-align: right;
+    /* RTL: align text right */
+}
+
+.Inner-Content-Lower-T2Ar {
+    display: flex;
+    padding: var(--Global-spacing-none, 0);
+    align-items: center;
+    gap: var(--Link-link-md-gap, 8px);
+    color: var(--Link-link-primary, #1b8354);
+
+    /* Text md/Regular */
+    font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+    font-size: var(--Size-Text-typo-size-text-md, 16px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--Line-Height-Text-line-heights-text-md, 24px);
+    /* 150% */
+    /* RTL: Normal flex direction */
+}
+
+.Inner-Content-Lower-T2-ImgAr {
+    display: flex;
+    width: 20px;
+    height: 20px;
+    padding: 1.875px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Service-2Ar {
+    display: flex;
+    padding: var(--Global-spacing-5xl, 40px) var(--Global-spacing-8xl, 80px);
+    align-items: flex-start;
+    gap: 199px;
+    align-self: stretch;
+    background: var(--Background-background-primary-25, #f7fdf9);
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    /* center like footer */
+}
+
+.SectionAr {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--Global-spacing-3xl, 24px);
+    flex: 1 0 0;
+    overflow: visible;
+    /* clip carousel slides when translating */
+}
+
+.Section-ContentAr {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: var(--Global-spacing-xl, 16px);
+    align-self: stretch;
+}
+
+.FramesAr {
+    display: flex;
+    padding-left: 10px;
+    /* RTL: swap right to left */
+    align-items: flex-start;
+    gap: 24px;
+    /* we translate this row for sliding; parent clips overflow */
+    will-change: transform;
+    transition: transform 400ms ease;
+    align-self: stretch;
+    justify-content: flex-start;
+    margin: 0 auto;
+    min-width: 1280px;
+    flex-direction: row-reverse;
+    /* RTL: reverse card order */
+}
+
+.Service-CardAr {
+    display: flex;
+    width: 420px;
+    padding: var(--Global-spacing-xl, 16px);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--Card-card-lg-gap, 24px);
+    border-radius: var(--radius-lg, 16px);
+    border: 1px solid var(--Border-border-neutral-primary, #d2d6db);
+    background: var(--Background-background-card, #fff);
+    scroll-snap-align: start;
+}
+
+.Service-CardAr:hover {
+    box-shadow: 0 8px 6px 0 rgba(0, 0, 0, 0.05),
+        0 -1px 1px 0 rgba(255, 255, 255, 0.1) inset,
+        0 1px 1px 0 rgba(255, 255, 255, 0.25) inset;
+    backdrop-filter: blur(50px);
+}
+
+.Serivice-Card-Icon-DivAr {
+    display: flex;
+    width: 48px;
+    height: 48px;
+    padding: 12px;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--radius-full, 9999px);
+    background: var(--Icon-Bg-icon-brand-light, #f3fcf6);
+}
+
+.Serivice-Card-Icon-Div-InnerAr {
+    display: flex;
+    width: 24px;
+    height: 24px;
+    padding: 1.25px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.Serivice-Card-IconAr {
+    width: 21.5px;
+    height: 21.5px;
+    flex-shrink: 0;
+}
+
+.Service-Card-ContentAr {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--Global-spacing-md, 8px);
+    align-self: stretch;
+}
+
+.Service-Card-Content-T1Ar {
+    color: var(--Text-text-display, #1f2a37);
+
+    /* Text lg/Bold */
+    font-family: "IBM Plex Sans Arabic";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px;
+    /* 155.556% */
+    text-align: right;
+    /* RTL: align text right */
+}
+
+.Service-Card-Content-T2Ar {
+    color: var(--Text-text-display, #1f2a37);
+
+    /* Text md/Regular */
+    font-family: "IBM Plex Sans Arabic";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    /* 150% */
+    text-align: right;
+    /* RTL: align text right */
+}
+
+.Service-Card-TagAr {
+    display: flex;
+    height: 24px;
+    padding: var(--Global-spacing-none, 0) var(--Global-spacing-md, 8px);
+    justify-content: center;
+    align-items: center;
+    gap: var(--Global-spacing-xs, 4px);
+    border-radius: var(--radius-sm, 4px);
+    border: 1px solid var(--Tag-tag-border-success-light, #abefc6);
+    background: var(--Tag-tag-background-success-light, #ecfdf3);
+    color: var(--Tag-tag-text-success, #085d3a);
+    text-align: center;
+
+    /* Text xs/Medium */
+    font-family: "IBM Plex Sans Arabic";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    /* 150% */
+}
+
+.Service-Card-ButtonAr {
+    display: flex;
+    height: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    padding: var(--Global-spacing-none, 0) var(--Button-buttons-lg-padding, 16px);
+    justify-content: center;
+    align-items: center;
+    gap: var(--Button-buttons-lg-gap, 4px);
+    border-radius: var(--Radius-radius-sm, 4px);
+    background: var(--Button-button-background-primary-default, #1b8354);
+    color: var(--Text-text-oncolor-primary, #fff);
+
+    /* Text md/Medium */
+    font-family: "IBM Plex Sans Arabic";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    /* 150% */
+    border: none;
+    cursor: pointer;
+}
+
+.Section-Content-Title-TAr {
+    align-self: stretch;
+    color: var(--Text-text-default, #161616);
+
+    /* Display sm/Bold */
+    font-family: var(--Font-Family-font-family-display, "IBM Plex Sans Arabic");
+    font-size: var(--Size-Display-typo-size-display-sm, 30px);
+    font-style: normal;
+    font-weight: 700;
+    line-height: var(--Line-Height-Display-line-heights-display-sm,
+            38px);
+    /* 126.667% */
+    text-align: right;
+    /* RTL: align text right */
+}
+
+.Section-Content-Desc-TAr {
+    width: 720px;
+    color: var(--Text-text-default, #161616);
+
+    /* Text md/Regular */
+    font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+    font-size: var(--Size-Text-typo-size-text-md, 16px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--Line-Height-Text-line-heights-text-md, 24px);
+    /* 150% */
+    text-align: right;
+    /* RTL: align text right */
+}
+
+.Controls-ContainerAr {
+    display: flex;
+    padding: var(--Global-spacing-lg, 12px);
+    justify-content: center;
+    /* ensure centered */
+    align-items: center;
+    gap: var(--Global-spacing-md, 8px);
+    border-radius: var(--Radius-radius-full, 9999px);
+    width: 100%;
+    margin: 0 auto;
+    margin-right: -250px;
+    /* RTL: swap left to right */
+    flex-direction: row-reverse;
+    /* RTL: reverse dot order */
+}
+
+.CarousalAr {
+    display: flex;
+    width: 12px;
+    height: 12px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.Carousal-ImgAr {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--Background-background-neutral-200, #e5e7eb);
+    transition: background 0.3s ease;
+}
+
+.Carousal-ImgAr.active {
+    background: var(--Button-button-background-primary-default, #1b8354);
+}
+
+.Comments-N-SuggestonsAr {
+    display: flex;
+    padding: var(--Global-spacing-5xl, 40px) var(--Global-spacing-8xl, 80px);
+    align-items: flex-start;
+    gap: var(--Global-spacing-4xl, 32px);
+    align-self: stretch;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    /* match footer behavior */
+}
+
+.CnS-CardAr {
+    display: flex;
+    padding: var(--Global-spacing-xl, 16px);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--Card-card-lg-gap, 24px);
+    flex: 1 0 0;
+    min-width: 1280px;
+    border-radius: var(--radius-lg, 16px);
+    border: 1px solid var(--Border-border-neutral-primary, #d2d6db);
+    background: var(--Background-background-card, #fff);
+}
+
+.Cns-Card-Icon-DivAr {
+    display: flex;
+    width: 48px;
+    height: 48px;
+    padding: 12px;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--radius-full, 9999px);
+    background: var(--Icon-Bg-icon-brand-light, #f3fcf6);
+}
+
+.CnS-Card-IconAr {
+    display: flex;
+    width: 24px;
+    height: 24px;
+    padding: 1.25px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.CnS-Card-ContentAr {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--Global-spacing-md, 8px);
+    align-self: stretch;
+}
+
+.CnS-Card-Content-T1Ar {
+    color: var(--Text-text-display, #1f2a37);
+
+    /* Text lg/Bold */
+    font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+    font-size: var(--Size-Text-typo-size-text-Ig, 18px);
+    font-style: normal;
+    font-weight: 700;
+    line-height: var(--Line-Height-Text-line-heights-text-Ig,
+            28px);
+    /* 155.556% */
+    text-align: right;
+    /* RTL: align text right */
+}
+
+.CnS-Card-Content-T2Ar {
+    color: var(--Text-text-display, #1f2a37);
+
+    /* Text md/Regular */
+    font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+    font-size: var(--Size-Text-typo-size-text-md, 16px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--Line-Height-Text-line-heights-text-md, 24px);
+    /* 150% */
+    text-align: right;
+    /* RTL: align text right */
+}
+
+.Cns-Card-ActionsAr {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--Global-spacing-xl, 16px);
+    align-self: stretch;
+}
+
+.CnS-Card-ButtonAr {
+    display: flex;
+    height: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    padding: var(--Global-spacing-none, 0) var(--Button-buttons-lg-padding, 16px);
+    justify-content: center;
+    align-items: center;
+    gap: var(--Button-buttons-lg-gap, 4px);
+    border-radius: var(--Radius-radius-sm, 4px);
+    background: var(--Button-button-background-primary-default, #1b8354);
+    color: var(--Text-text-oncolor-primary, #fff);
+
+    /* Text md/Medium */
+    font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+    font-size: var(--Size-Text-typo-size-text-md, 16px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: var(--Line-Height-Text-line-heights-text-md, 24px);
+    /* 150% */
+    border: none;
+    cursor: pointer;
+}
+
+.Modified-DateAr {
+    display: flex;
+    padding: var(--Global-spacing-xl, 16px) var(--Global-spacing-8xl, 80px);
+    align-items: center;
+    gap: var(--Global-spacing-md, 8px);
+    align-self: stretch;
+}
+
+.Modified-Date-TAr {
+    max-width: 1280px;
+    flex: 1 0 0;
+    color: var(--Text-text-default, #161616);
+    text-align: left;
+    /* RTL: swap to left for alignment */
+
+    /* Text sm/Regular */
+    font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+    font-size: var(--Size-Text-typo-size-text-sm, 14px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--Line-Height-Text-line-heights-text-sm,
+            20px);
+    /* 142.857% */
+    margin-right: 180px;
+    /* RTL: swap left to right */
+}
+
+.RatingAr {
+    display: flex;
+    width: 100%;
+    height: 88px;
+    padding: var(--Global-spacing-3xl, 24px) var(--Global-spacing-8xl, 80px);
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid var(--Border-border-primary, #1b8354);
+    background: var(--Background-background-white, #fff);
+    border-bottom: 2px solid var(--Border-border-primary, #1b8354);
+}
+
+.Rating-bodyAr {
+    display: flex;
+    max-width: 1280px;
+    align-items: center;
+    gap: var(--Global-spacing-xl, 280px);
+    flex: 1 0 0;
+    margin-right: 170px;
+    /* RTL: swap left to right */
+    flex-direction: row;
+    /* RTL: reverse layout */
+    justify-content: space-between;
+}
+
+.Rating-ContentAr {
+    display: flex;
+    align-items: center;
+    gap: var(--Global-spacing-3xl, 24px);
+    flex: 1 0 0;
+    margin-right: 0;
+    /* RTL: swap left to right */
+    flex-direction: row-reverse;
+    /* RTL: reverse content order */
+}
+
+.Rating-Content-Left-Text-TAr {
+    color: var(--Text-text-default, #161616);
+
+    /* Text md/Regular */
+    font-family: "IBM Plex Sans Arabic";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    /* 150% */
+    text-align: right;
+    /* RTL: align text right */
+}
+
+.Rating-Content-Left-Digit-TAr {
+    color: var(--Text-text-default, #161616);
+
+    /* Text md/Bold */
+    font-family: "IBM Plex Sans Arabic";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    margin: 0 4px;
+    /* Add spacing around the number */
+}
+
+.RatingStarAr {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--Global-spacing-xs, 4px);
+    flex-direction: row;
+    /* RTL: reverse star order (5 to 1) */
+}
+
+.StarAr {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+}
+
+.Rating-Content-Right-TAr {
+    color: var(--Text-text-secondary-paragraph, #6c737f);
+
+    /* Text sm/Regular */
+    font-family: "IBM Plex Sans Arabic";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    /* 142.857% */
+    padding-top: 2.5px;
+}
+
+.Rating-ActionsAr {
+    display: flex;
+    justify-content: flex-end;
+    /* RTL: swap from flex-end */
+    align-items: center;
+    flex: 1 0 0;
+}
+
+.Rate-TagAr {
+    display: flex;
+    height: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    padding: var(--Global-spacing-none, 0) var(--Button-buttons-lg-padding, 16px);
+    justify-content: center;
+    align-items: center;
+    gap: var(--Button-buttons-lg-gap, 4px);
+    border-radius: var(--Radius-radius-sm, 4px);
+    background: var(--Button-button-background-primary-default, #1b8354);
+    color: var(--Text-text-oncolor-primary, #fff);
+
+    /* Text md/Medium */
+    font-family: "IBM Plex Sans Arabic";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    /* 150% */
+    cursor: pointer;
+}
+
+.FeedbackAr {
+    display: flex;
+    width: 100%;
+    height: 88px;
+    padding: 24px 80px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.Feedback-SectionAr {
+    display: flex;
+    max-width: 1280px;
+    align-items: center;
+    gap: var(--Global-spacing-xl, 16px);
+    flex: 1 0 0;
+    margin-right: 170px;
+}
+
+.Feedback-Section-ContentAr {
+    display: flex;
+    align-items: center;
+    gap: var(--Global-spacing-3xl, 24px);
+    flex: 1 0 0;
+    flex-direction: row;
+    /* RTL: reverse layout */
+}
+
+.Content-TextAr {
+    color: var(--Text-text-default, #161616);
+
+    /* Text md/Regular */
+    font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+    font-size: var(--Size-Text-typo-size-text-md, 16px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--Line-Height-Text-line-heights-text-md, 24px);
+    /* 150% */
+}
+
+.Content-ActionsAr {
+    display: flex;
+    align-items: center;
+    gap: var(--Global-spacing-xl, 16px);
+    flex-direction: row-reverse;
+    /* RTL: reverse button order */
+}
+
+.choiceAr {
+    display: flex;
+    height: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    padding: var(--Global-spacing-none, 0) var(--Button-buttons-lg-padding, 16px);
+    justify-content: center;
+    align-items: center;
+    gap: var(--Button-buttons-lg-gap, 4px);
+    border-radius: var(--Radius-radius-sm, 4px);
+    background: var(--Button-button-background-primary-default, #1b8354);
+    color: var(--Text-text-oncolor-primary, #fff);
+
+    /* Text md/Medium */
+    font-family: "IBM Plex Sans Arabic";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    /* 150% */
+    border: none;
+    cursor: pointer;
+}
+
+.Feedback-Section-TextAr {
+    flex: 1 0 0;
+    color: var(--Text-text-default, #161616);
+    text-align: left;
+    /* RTL: swap to left */
+    margin-right: -170px;
+    /* RTL: swap left to right */
+
+    /* Text sm/Regular */
+    font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+    font-size: var(--Size-Text-typo-size-text-sm, 14px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--Line-Height-Text-line-heights-text-sm,
+            20px);
+    /* 142.857% */
+}
+
+.Footer-AboveAr {
+    background-color: white;
+}
+
+/* ------------------ Responsive tweaks ------------------ */
+@media (max-width: 1200px) {
+
+    .RatingAr,
+    .FeedbackAr {
+        width: 100%;
+        padding-right: 40px;
+        /* RTL: swap left to right */
+        padding-left: 40px;
+        /* RTL: swap right to left */
+    }
+
+    .SerivceAr {
+        gap: 80px;
+        padding-right: 40px;
+        /* RTL: swap left to right */
+        padding-left: 40px;
+        /* RTL: swap right to left */
+    }
+
+    .Service-2Ar {
+        gap: 80px;
+        padding-right: 40px;
+        /* RTL: swap left to right */
+        padding-left: 40px;
+        /* RTL: swap right to left */
+    }
+
+    .GateAr {
+        margin-right: 0;
+    }
+
+    .FramesAr {
+        min-width: 100%;
+        width: 100%;
+    }
+    
+    .CnS-CardAr {
+        min-width: 100%;
+        width: 100%;
+    }
+
+    .Rating-bodyAr {
+        gap: 40px;
+        margin-right: 0;
+    }
+
+    .Feedback-SectionAr {
+        margin-right: 0;
+    }
+    
+    .Feedback-Section-TextAr {
+        margin-right: 0;
+    }
+
+    .Modified-Date-TAr {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 900px) {
+    .SerivceAr {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .Info-CardAr {
+        width: 100%;
+    }
+
+    .Section-Content-Desc-TAr,
+    .T-DescriptionAr {
+        width: auto;
+        max-width: 100%;
+    }
+
+    .FramesAr {
+        gap: 16px;
+    }
+
+    .Service-CardAr {
+        width: 82vw;
+        /* show a large card on mobile */
+        max-width: 420px;
+    }
+
+    .Controls-ContainerAr {
+        padding-right: 0;
+        /* RTL: swap left to right */
+        padding-left: 0;
+        /* RTL: swap right to left */
+        margin-right: 0;
+    }
+    
+    .Line-1Ar {
+        max-width: 100%;
+    }
+    
+    .Comments-N-SuggestonsAr {
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+    
+    .Modified-DateAr {
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .RatingAr,
+    .FeedbackAr {
+        height: auto;
+        padding: 16px 20px;
+    }
+
+    .Rating-bodyAr,
+    .Feedback-SectionAr {
+        gap: 12px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .Feedback-Section-ContentAr {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .ButtonAr,
+    .Service-Card-ButtonAr,
+    .CnS-Card-ButtonAr,
+    .choiceAr,
+    .Rate-TagAr {
+        height: 36px;
+        min-height: 36px;
+        max-height: 36px;
+    }
+    
+    .SerivceAr, .Service-2Ar, .Comments-N-SuggestonsAr {
+        padding-right: 16px;
+        padding-left: 16px;
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
+    
+    .Modified-DateAr {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+    
+    .Rating-ContentAr {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .Rating-ActionsAr {
+        justify-content: flex-start;
+    }
+    
+    .T_TitleAr, .Section-Content-Title-TAr {
+        font-size: 24px;
+        line-height: 32px;
+    }
+}

@@ -1,0 +1,198 @@
+/* FI Modal styles */
+.fi-btn {
+  background: #1B8354;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.fi-btn:hover {
+  background: #154f3e;
+}
+
+.fi-btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.fi-btn:disabled:hover {
+  background: #9ca3af;
+}
+
+.fi-hidden {
+  display: none;
+}
+
+/* FI Modal styles */
+.fi-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.fi-modal-overlay.show {
+  display: flex;
+}
+
+.fi-modal {
+  background: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px; /* Increased from 600px to accommodate longer text */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+.fi-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 24px 0 24px;
+  border: none;
+}
+
+.fi-success-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fi-success-icon svg {
+  display: block; /* Prevents inline spacing issues */
+}
+
+.fi-modal-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.fi-modal-close:hover {
+  background: #f3f4f6;
+}
+
+.fi-modal-content {
+  padding: 24px;
+  background: white;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.fi-modal-content h2 {
+  margin: 0 0 12px 0;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 22.29px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.2; /* Reduced for tighter spacing */
+  letter-spacing: 0.209px;
+  color: #1F2A37;
+  background: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  white-space: nowrap;
+}
+
+.fi-modal-content p {
+  margin: 0;
+  font-family: "IBM Plex Sans Arabic", Arial, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  color: #1F2A37;
+  line-height: 1.3; /* Reduced for tighter spacing */
+  background: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  white-space: nowrap;
+}
+
+.fi-modal-footer {
+  padding: 0 24px 24px 24px;
+  display: flex;
+  justify-content: flex-end;
+  border: none;
+}
+
+/* FI RTL Support */
+.fi-modal-header {
+  flex-direction: row;
+}
+.fi-rtl {
+  direction: rtl;
+}
+
+/* RTL modal header layout */
+.fi-modal .fi-rtl .fi-modal-header {
+  flex-direction: row-reverse;
+}
+
+
+.fi-rtl .fi-modal-footer {
+  justify-content: flex-start;
+}
+
+.fi-rtl .fi-modal-content h2,
+.fi-rtl .fi-modal-content p {
+  text-align: right;
+}
+
+/* Legacy RTL support */
+.fi-app.rtl .fi-modal-footer {
+  justify-content: flex-start;
+}
+
+.fi-app.rtl .fi-modal-header {
+  flex-direction: row-reverse;
+}
+
+/* Responsive adjustments for better text display */
+@media (max-width: 768px) {
+  .fi-modal {
+    width: 95%;
+    max-width: 95vw;
+  }
+  
+  .fi-modal-content {
+    padding: 20px 15px;
+  }
+  
+  .fi-modal-content h2 {
+    font-size: clamp(18px, 4vw, 22.29px);
+  }
+  
+  .fi-modal-content p {
+    font-size: clamp(16px, 3.5vw, 20px);
+  }
+}

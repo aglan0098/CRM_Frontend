@@ -1,0 +1,35 @@
+/* Mobile View Adjustments */
+@media (max-width: 640px) {
+  .hero {
+    height: auto;
+    min-height: 600px;
+  }
+  
+  /* Adjust hero content spacing */
+  .relative.z-20 {
+    padding-top: 80px;
+    padding-bottom: 60px;
+  }
+  
+  /* Make search input full width */
+  .max-w-\[550px\] {
+    width: 100%;
+  }
+  
+  /* Adjust input height for mobile */
+  .h-\[65px\] {
+    height: 56px;
+  }
+}
+
+/* Tablet View Adjustments (if needed) */
+@media (min-width: 641px) and (max-width: 1023px) {
+  /* Maintain desktop layout */
+  .sm\:flex {
+    display: flex !important;
+  }
+  
+  .sm\:hidden {
+    display: none !important;
+  }
+}

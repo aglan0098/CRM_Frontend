@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Colors */
+    --primary-background: #1b8354;
+    --primary-foreground: #ffffff;
+    --primary-light: #2aa06e;
+    --primary-dark: #074c30;
+
+    /* Secondary Colors */
+    --secondary-background: #ffffff;
+    --secondary-foreground: #161616;
+    --secondary-light: #f6fef9;
+    --secondary-dark: #0c111b;
+
+    /* Accent Colors */
+    --accent-color: #4dffeaff;
+    --accent-foreground: #ffffff;
+    --accent-light: #75fbab;
+    --accent-dark: #1a4cf6;
+
+    /* Border Colors */
+    --border-primary: #009951;
+    --border-secondary: #e0e0e0;
+    --border-light: #e3dbd8;
+    --border-dark: #9da4ae;
+  }
+}
+
+@layer utilities {
+  /* Background Color Utilities */
+  .bg-primary-green {
+    background-color: var(--primary-background);
+  }
+
+  .bg-primary-light {
+    background-color: var(--primary-light);
+  }
+
+  .bg-primary-dark {
+    background-color: var(--primary-dark);
+  }
+
+  .bg-secondary-white {
+    background-color: var(--secondary-background);
+  }
+
+  .bg-secondary-light {
+    background-color: var(--secondary-light);
+  }
+
+  .bg-secondary-dark {
+    background-color: var(--secondary-dark);
+  }
+
+  .bg-accent {
+    background-color: var(--accent-color);
+  }
+
+  .bg-accent-light {
+    background-color: var(--accent-light);
+  }
+
+  .bg-accent-dark {
+    background-color: var(--accent-dark);
+  }
+
+  /* Text Color Utilities */
+  .text-primary-white {
+    color: var(--primary-foreground);
+  }
+
+  .text-secondary-dark {
+    color: var(--secondary-foreground);
+  }
+
+  .text-accent {
+    color: var(--accent-color);
+  }
+
+  /* Border Color Utilities */
+  .border-primary {
+    border-color: var(--border-primary);
+  }
+
+  .border-secondary {
+    border-color: var(--border-secondary);
+  }
+
+  .border-light {
+    border-color: var(--border-light);
+  }
+
+  .border-dark {
+    border-color: var(--border-dark);
+  }
+  
+  /* Gradient Utilities */
+  .bg-gradient-hero {
+    background: linear-gradient(90deg, #053321 0%, rgba(15, 153, 99, 0.6) 100%);
+  }
+  
+  .bg-gradient-search {
+    background: linear-gradient(57deg, #1a4cf6 0%, #75fbab 100%);
+  }
+}

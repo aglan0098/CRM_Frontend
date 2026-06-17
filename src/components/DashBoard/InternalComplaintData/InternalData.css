@@ -1,0 +1,994 @@
+/* Add zoom-responsive container */
+body {
+  zoom: 1;
+  transform-origin: top left;
+}
+ 
+.internal-card-back {
+  width: 100%;
+  height: 244px;
+  /* max-width: 1500px;         Prevents stretching on large screens */
+  min-width: 300px; /* Prevents collapsing on small screens */
+  padding: 1rem; /* Responsive spacing */
+  position: relative;
+  flex-shrink: 0;
+  background: var(--Background-background-primary-25, #f7fdf9);
+  transform-origin: top left;
+  box-sizing: border-box;
+}
+ 
+/* RTL adjustments for main container */
+.rtl .internal-card-back {
+  direction: rtl;
+}
+ 
+.internal-vector-img {
+  /* width: auto;
+    height: 508px;
+    flex-shrink: 0;
+    fill: rgba(184, 234, 203, 0.20); */
+ 
+  width: 50%;
+  height: 50%;
+  object-fit: cover;
+}
+ 
+.internal-vernav {
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  display: inline-flex;
+  padding: var(--spacing-416-px, 16px) var(--spacing-624-px, 26px);
+  align-items: flex-start;
+  gap: 20px;
+  font-weight: bolder;
+}
+ 
+/* RTL adjustments for navigation */
+.rtl .internal-vernav {
+  right: auto;
+  left: 20px;
+  flex-direction: row-reverse;
+}
+ 
+/* RTL specific navigation class */
+.internal-vernav-rtl {
+  position: absolute;
+  top: 5px;
+  left: 60px;
+  display: inline-flex;
+  padding: var(--spacing-416-px, 16px) var(--spacing-624-px, 26px);
+  align-items: flex-start;
+  gap: 20px;
+  font-weight: bolder;
+  flex-direction: row-reverse;
+}
+ 
+.internal-vernav-img {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  padding: 1.042px 1.457px 1.041px 1.458px;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1/1;
+}
+ 
+.internal-breadcrumbs {
+  width: 317px;
+  height: 20px;
+  display: inline-flex;
+  padding: var(--Global-spacing-none, 0px);
+  align-items: flex-start;
+  position: absolute;
+  top: 32px;
+  left: 79px;
+  gap: var(--Global-spacing-none, 0px);
+}
+ 
+/* RTL adjustments for breadcrumbs */
+.rtl .internal-breadcrumbs {
+  left: auto;
+  right: 79px;
+  flex-direction: row-reverse;
+}
+ 
+/* RTL specific breadcrumbs class */
+.internal-breadcrumbs-rtl {
+  width: 317px;
+  height: 20px;
+  display: inline-flex;
+  padding: var(--Global-spacing-none, 0px);
+  align-items: flex-start;
+  position: absolute;
+  top: 32px;
+  right: 200px; /*change from 130*/
+  gap: var(--Global-spacing-none, 0px);
+  flex-direction: row-reverse;
+}
+ 
+.internal-link-item {
+  display: flex;
+  padding-right: var(--Link-link-sm-gap, 4px);
+  align-items: center;
+  gap: var(--Link-link-sm-gap, 4px);
+}
+ 
+/* RTL adjustments for link items */
+.rtl .internal-link-item {
+  padding-right: 0;
+  padding-left: var(--Link-link-sm-gap, 4px);
+  flex-direction: row-reverse;
+}
+ 
+.internal-text {
+  padding: var(--Global-spacing-none, 0px);
+  text-decoration: none;
+  color: var(--Link-link-primary-visited, #14573a);
+  font-family: var(--Font-Family-font-family-text, 'IBM Plex Sans Arabic');
+  font-size: var(--Size-Text-typo-size-text-sm, 14px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: var(--Line-Height-Text-line-heights-text-sm, 20px); /* 142.857% */
+}
+ 
+.internal-arrow {
+  display: flex;
+  width: 16px;
+  height: 16px;
+  padding: 2.222px 4.827px 2.22px 5.442px;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+ 
+/* RTL adjustments for arrows - flip direction */
+.rtl .internal-arrow {
+  transform: scaleX(-1);
+}
+ 
+.internal-service-title {
+  position: absolute;
+  top: 80px;
+  left: 75px;
+  color: var(--Text-text-default, #161616);
+  font-family: var(--Font-Family-font-family-display, 'IBM Plex Sans Arabic');
+  font-size: var(--Size-Display-typo-size-display-sm, 30px);
+  font-style: normal;
+  font-weight: 700;
+  line-height: var(--Line-Height-Display-line-heights-display-sm, 38px); /* 126.667% */
+  margin: 0;
+}
+ 
+/* RTL adjustments for service title */
+.rtl .internal-service-title {
+  left: auto;
+  right: 75px;
+  text-align: right;
+}
+ 
+/* RTL specific service title class */
+.internal-service-title-rtl {
+  position: absolute;
+  top: 80px;
+  right: 290px; /*changed from 190px*/
+  color: var(--Text-text-default, #161616);
+  font-family: var(--Font-Family-font-family-display, 'IBM Plex Sans Arabic');
+  font-size: var(--Size-Display-typo-size-display-sm, 30px);
+  font-style: normal;
+  font-weight: 700;
+  line-height: var(--Line-Height-Display-line-heights-display-sm, 38px); /* 126.667% */
+  margin: 0;
+  text-align: right;
+}
+ 
+.internal-table-data {
+  display: flex;
+  width: 90%;
+  height: 740px;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: border-radius-md;
+  background: var(--Background-background-card, #fff);
+  box-shadow: 0px 3px 12px 0px rgba(47, 43, 61, 0.14);
+  margin-left: 70px;
+  margin-top: 0;
+  top: -105px;
+  position: relative;
+}
+ 
+.rtl .internal-table-data {
+  display: flex;
+  width: 70%;
+  height: 740px;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: border-radius-md;
+  background: var(--Background-background-card, #fff);
+  box-shadow: 0px 3px 12px 0px rgba(47, 43, 61, 0.14);
+  margin-left: 70px;
+  margin-top: 0;
+  top: -105px;
+  position: relative;
+}
+ 
+/* RTL adjustments for table data container */
+.rtl .internal-table-data {
+  direction: rtl;
+  margin-left: auto;
+  margin-right: 290px; /*70px;*/
+}
+ 
+.internal-table-header {
+  display: flex;
+  padding: card-padding;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: var(--spacing-312-px, 12px);
+  align-self: stretch;
+}
+ 
+/* RTL adjustments for table header */
+.rtl .internal-table-header {
+  align-items: flex-start;
+}
+ 
+.internal-filter1-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  align-self: flex-start;
+  margin-left: 0;
+  justify-content: center;
+  margin-top: 10px;
+  /* border: 1px solid black; */
+}
+ 
+/* RTL adjustments for filter row */
+.rtl .internal-filter1-row {
+  align-self: flex-end;
+  /* margin-left: auto;
+    margin-right: 30px; */
+  flex-direction: row-reverse;
+}
+ 
+.internal-headbut {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 20px;
+  justify-content: flex-start;
+  /* border: 1px solid black; */
+}
+ 
+/* RTL adjustments for header button container */
+.rtl .internal-headbut {
+  justify-content: flex-end;
+  /* flex-direction: row-reverse; */
+}
+ 
+.internal-tablehead {
+  color: var(--Text-text-primary-paragraph, #384250);
+  font-family: 'IBM Plex Sans Arabic';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px; /* 155.556% */
+  /* margin-left: -140px; */
+  margin-top: 30px;
+  margin-left: 10px;
+}
+ 
+/* RTL adjustments for table head */
+.rtl .internal-tablehead {
+  margin-left: auto;
+  margin-right: -140px;
+  text-align: right;
+}
+ 
+.internal-line1 {
+  width: 100%;
+  height: 1px;
+  background-color: #d2d6db;
+  border: none;
+  margin: 0;
+  display: block;
+  margin-left: -70px;
+  margin-top: 20px;
+}
+ 
+/* RTL adjustments for line */
+.rtl .internal-line1 {
+  margin-left: auto;
+  margin-right: 1px;
+}
+ 
+.internal-esclatebut {
+  display: flex;
+  width: 102px;
+  height: 40px;
+  padding: var(--Global-spacing-none, 0px) var(--Button-buttons-lg-padding, 16px);
+  justify-content: center;
+  align-items: center;
+  gap: var(--Button-buttons-lg-gap, 4px);
+  flex-shrink: 0;
+  color: var(--Text-text-oncolor-primary, #fff);
+  font-family: 'IBM Plex Sans Arabic';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+  background: var(--Button-button-background-primary-default, #1b8354);
+  border: none;
+  border-radius: 6px;
+  margin-left: 143px;
+  margin-top: 30px;
+}
+ 
+/* RTL adjustments for escalate button */
+.rtl .internal-esclatebut {
+  margin-left: auto;
+  margin-right: 143px;
+}
+ 
+.internal-search-menubar {
+  position: relative;
+  width: 48%;
+  height: 40px;
+  border: 1px solid #9da4ae;
+  border-radius: 6px;
+  background-color: #ffffff;
+}
+ 
+.internal-search-icon {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  left: 10px;
+  top: 52%;
+  transform: translateY(-50%);
+}
+ 
+/* RTL adjustments for search icon */
+.rtl .internal-search-icon {
+  left: auto;
+  right: 10px;
+}
+ 
+.internal-placeholdermenu {
+  width: 100%;
+  height: 100%;
+  padding-left: 35px;
+  border: none;
+  outline: none;
+  font-family: var(--Font-Family-font-family-text, 'IBM Plex Sans Arabic');
+  font-size: var(--Size-Text-typo-size-text-md, 16px);
+  font-style: normal;
+  font-weight: 400;
+  color: var(--Form-field-text-placeholder, #6c737f);
+  background-color: transparent;
+  line-height: var(--Line-Height-Text-line-heights-text-md, 24px);
+}
+ 
+/* RTL adjustments for placeholder menu */
+.rtl .internal-placeholdermenu {
+  padding-left: 12px;
+  padding-right: 35px;
+  text-align: right;
+}
+ 
+.internal-status-filter {
+  position: relative;
+  width: 48%;
+  height: 40px;
+  border: 1px solid #9da4ae;
+  border-radius: 6px;
+  background-color: #ffffff;
+  font-family: var(--Font-Family-font-family-text, 'IBM Plex Sans Arabic');
+  font-size: var(--Size-Text-typo-size-text-md, 16px);
+  color: var(--Form-field-text-placeholder, #6c737f);
+  padding: 0 12px;
+  outline: none;
+}
+ 
+/* RTL adjustments for status filter */
+.rtl .internal-status-filter {
+  text-align: right;
+  direction: rtl;
+}
+ 
+.internal-table-footer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  margin-top: 20px;
+}
+ 
+.rtl .internal-table-footer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  margin-top: 20px;
+  margin-right: 500px;
+}
+ 
+/* RTL adjustments for table footer */
+/* .rtl .internal-table-footer {
+  flex-direction: row-reverse;
+} */
+ 
+.internal-row-pages {
+  color: var(--Colors-Bright_Gray-Dark, #b2b2b2);
+  font-family: 'IBM Plex Sans Arabic';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+  margin: 0;
+  padding: 20px 0;
+  margin-left: -1px;
+  margin-top: 170px;
+}
+ 
+/* RTL adjustments for row pages */
+.rtl .internal-row-pages {
+  margin-left: auto;
+  margin-right: 50%;
+  text-align: right;
+}
+ 
+.internal-pagination {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  font-family: Arial, sans-serif;
+  margin: 170px 0 0 0;
+  padding-left: 0;
+  list-style: none;
+  margin-right: 50%;
+}
+ 
+/* RTL adjustments for pagination */
+.rtl .internal-pagination {
+  justify-content: flex-end;
+  margin-right: 0;
+  margin-left: 480px;
+  flex-direction: row-reverse;
+}
+ 
+.internal-pagination a {
+  color: #161616;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+ 
+.internal-pagination a:hover {
+  background-color: #f0f0f0;
+}
+ 
+.internal-pagination .active {
+  color: #161616;
+  position: relative;
+}
+ 
+.internal-pagination .active::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 5px;
+  right: 5px;
+  height: 4px;
+  background-color: #1b8354;
+  border-radius: 2px;
+}
+ 
+.internal-pagination .ellipsis {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #161616;
+  border-radius: 3px;
+  color: #161616;
+}
+ 
+.internal-headtable {
+  display: flex;
+  width: 1039px;
+  height: 48px;
+  align-items: flex-start;
+  position: absolute;
+  left: 21px;
+  top: 153px;
+  border-top: 1px solid var(--Table-table-cell-border, #d2d6db);
+  border-bottom: 1px solid var(--Table-table-cell-border, #d2d6db);
+  background: var(--Background-background-body, #f9fafb);
+}
+ 
+/* RTL adjustments for head table */
+.rtl .internal-headtable {
+  left: auto;
+  right: 21px;
+}
+ 
+/* Added table styles */
+.internal-data-table {
+  width: calc(100% - 60px);
+  border-collapse: collapse;
+  margin: 20px 30px 0 30px;
+  font-family: 'IBM Plex Sans Arabic';
+}
+ 
+/* RTL adjustments for data table */
+.rtl .internal-data-table {
+  direction: rtl;
+}
+ 
+.internal-data-table th {
+  background-color: #f9fafb;
+  border-top: 1px solid #d2d6db;
+  border-bottom: 1px solid #d2d6db;
+  border-right: 1px solid #d2d6db;
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 500;
+  color: #384250;
+}
+ 
+/* RTL adjustments for table headers */
+.rtl .internal-data-table th {
+  text-align: right;
+  border-right: none;
+  border-left: 1px solid #d2d6db;
+}
+ 
+/* Fix first column border in RTL */
+.rtl .internal-data-table th:first-child {
+  border-right: 1px solid #d2d6db;
+}
+ 
+.internal-data-table td {
+  padding: 16px;
+  border-bottom: 1px solid #e5e5e5;
+  border-right: 1px solid #d2d6db;
+  font-size: 14px;
+  color: #161616;
+}
+ 
+/* RTL adjustments for table cells */
+.rtl .internal-data-table td {
+  text-align: right;
+  border-right: none;
+  border-left: 1px solid #d2d6db;
+}
+ 
+/* Fix first column border in RTL */
+.rtl .internal-data-table td:first-child {
+  border-right: 1px solid #d2d6db;
+}
+ 
+.internal-number {
+  color: #1b8354;
+  text-decoration: none;
+  font-weight: 500;
+}
+ 
+.internal-status-badge {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  background-color: #fff3cd;
+  color: #856404;
+}
+ 
+.internal-file-link {
+  color: #1b8354;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+ 
+/* RTL adjustments for file link */
+.rtl .internal-file-link {
+  flex-direction: row-reverse;
+}
+ 
+.internal-table-container {
+  width: calc(100% - 05px);
+  padding: 0;
+  margin: -5px 10px 0 30px;
+}
+ 
+/* RTL adjustments for table container */
+.rtl .internal-table-container {
+  margin: -5px 30px 0 10px;
+}
+ 
+.internal-help-btn {
+  position: relative;
+  margin: 30px auto 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #1b8354;
+  color: white;
+  border: none;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  left: 610px;
+  top: -120px;
+}
+ 
+/* RTL adjustments for help button */
+.rtl .internal-help-btn {
+  left: auto;
+  right: 610px;
+}
+ 
+/* RTL specific help button class */
+.internal-help-btn-rtl {
+  position: relative;
+  margin: 30px auto 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #1b8354;
+  color: white;
+  border: none;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  right: 680px;
+  top: -120px;
+}
+ 
+/* Beautiful refresh icon styles */
+.internal-refresh-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  margin-top: 30px;
+  position: relative;
+}
+ 
+.internal-refresh-btn:hover:not(:disabled) {
+  background-color: rgba(27, 131, 84, 0.1);
+  transform: scale(1.05);
+}
+ 
+.internal-refresh-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+ 
+.internal-refresh-icon {
+  width: 20px;
+  height: 20px;
+  color: #1b8354;
+  transition: transform 0.6s ease;
+  stroke-width: 2;
+}
+ 
+.internal-refresh-icon.spinning {
+  animation: internalSmoothSpin 1.5s ease-in-out infinite;
+}
+ 
+.internal-refresh-btn:hover .internal-refresh-icon:not(.spinning) {
+  transform: rotate(180deg);
+}
+ 
+@keyframes internalSmoothSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+ 
+/* Beautiful SVG refresh icon */
+.internal-refresh-svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+ 
+/* Additional RTL-specific styles for better Arabic support */
+.rtl,
+.rtl * {
+  font-family: 'IBM Plex Sans Arabic', Arial, sans-serif;
+}
+ 
+/* Bell container and notification styles */
+.internal-bell-container {
+  position: relative;
+  display: inline-block;
+}
+ 
+.internal-notification-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #dc3545;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+  font-weight: bold;
+  min-width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+ 
+.internal-notification-badge.large-count {
+  border-radius: 10px;
+  padding: 2px 5px;
+  min-width: 22px;
+}
+ 
+/* RTL adjustments for notification badge */
+.rtl .internal-notification-badge {
+  right: auto;
+  left: -8px;
+}
+ 
+/* Legacy bell container and notification styles for backward compatibility */
+.bell-container {
+  position: relative;
+  display: inline-block;
+}
+ 
+.notification-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #dc3545;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+  font-weight: bold;
+  min-width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+ 
+.notification-badge.large-count {
+  border-radius: 10px;
+  padding: 2px 5px;
+  min-width: 22px;
+}
+ 
+/* RTL adjustments for legacy notification badge */
+.rtl .notification-badge {
+  right: auto;
+  left: -8px;
+}
+ 
+/* Ensure proper text alignment in RTL mode */
+.rtl * {
+  text-align: inherit;
+}
+ 
+/* Override specific elements that need left alignment in RTL */
+.rtl .internal-data-table th:first-child,
+.rtl .internal-data-table td:first-child {
+  text-align: right;
+}
+ 
+/* Ensure buttons maintain proper spacing in RTL */
+.rtl .internal-headbut > * {
+  margin-left: 0;
+  margin-right: 10px;
+}
+ 
+.rtl .internal-headbut > *:not(:last-child) {
+  margin-left: 20px;
+}
+ 
+/* Fix refresh button positioning in RTL */
+.rtl .internal-refresh-btn {
+  margin-left: auto;
+  margin-right: 0;
+}
+ 
+/* Responsive adjustments for RTL */
+@media (max-width: 768px) {
+  .internal-vernav-rtl {
+    left: 10px;
+  }
+ 
+  .internal-breadcrumbs-rtl {
+    right: 40px;
+  }
+ 
+  .internal-service-title-rtl {
+    right: 40px;
+  }
+ 
+  .rtl .internal-table-data {
+    margin-right: 20px;
+  }
+ 
+  .rtl .internal-filter1-row {
+    margin-right: 15px;
+    flex-direction: column;
+    gap: 8px;
+  }
+ 
+  .rtl .internal-tablehead {
+    margin-right: 60px;
+  }
+ 
+  .rtl .internal-pagination {
+    margin-left: 200px;
+  }
+ 
+  .internal-help-btn-rtl {
+    right: 300px;
+  }
+}
+ 
+/* Add new lines below */
+/* Add these CSS fixes to your InternalData.css file */
+ 
+/* Fix the main ihelp container for RTL */
+.rtl .ihelp {
+  width: 70%;
+  margin-top: -100px;
+  margin-left: auto;
+  margin-right: 290px; /* Align with the table */
+}
+ 
+/* Fix the help button container alignment */
+.rtl .ihelp__btns {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 50px;
+}
+ 
+/* Add proper help button styles for RTL */
+.escalation-ihelp-btn-rtl {
+  position: relative;
+  margin: 30px auto 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #1b8354;
+  color: white;
+  border: none;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  top: -10px;
+  left: 20px; /* Position from left in RTL */
+}
+ 
+.escalation-ihelp-btn {
+  position: relative;
+  margin: 0 0 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #1b8354;
+  color: white;
+  border: none;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  top: 5px;
+  right: 20px; /* Position from right in LTR */
+}
+ 
+/* Fix the button container positioning */
+.ihelp__btn--left {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: -30px;
+  margin-bottom: 10px;
+}
+ 
+.ihelp__btn--right {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0;
+  margin-right: -20px;
+  margin-bottom: 10px;
+}
+ 
+/* Additional fixes for better RTL support */
+.rtl .internal-table-data {
+  width: 70%;
+  margin-left: auto;
+  margin-right: 290px;
+}
+ 
+.rtl .internal-table-footer {
+  margin-right: 0;
+  padding: 20px 30px;
+}
+ 
+.rtl .internal-pagination {
+  margin-left: 0;
+  margin-right: 0;
+}
+ 
+/* Remove debug borders - uncomment these if you want to remove the black borders */
+ 
+.ihelp {
+  width: 90.5%;
+  margin-top: -100px;
+  margin-left: 70px;
+  /* margin-right: 290px; Align with the table */
+  /* border: 1px solid black; */
+}
+ 
+.ihelp__btns {
+  border: none;
+}
+ 
+.internal-filter1-row {
+  border: none;
+}
+ 
+/* Responsive fixes for mobile RTL */
+@media (max-width: 768px) {
+  .rtl .ihelp {
+    width: 90%;
+    margin-right: 20px;
+  }
+ 
+  .escalation-ihelp-btn-rtl {
+    left: 10px;
+  }
+ 
+  .escalation-ihelp-btn {
+    right: 10px;
+  }
+}

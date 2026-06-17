@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.modal-box{
+    width: 710.318px;
+    display: flex;
+    flex-direction: column;
+    padding: var(--Global-spacing-xl, 16px) 24px;
+    align-items: flex-start;
+    gap: var(--Card-card-lg-gap, 24px);
+    border-radius: 20.549px;
+    background: var(--Background-background-card, #FFF);
+    box-shadow: 0px 5.572px 11.145px -2.786px rgba(16, 24, 40, 0.10), 0px 2.786px 5.572px -2.786px rgba(16, 24, 40, 0.06);
+}
+
+.inner-1{
+    display: flex;
+    padding: 8px 0px;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.inner-1-left{
+    display: flex;
+width: 48px;
+height: 48px;
+padding: 2.5px;
+justify-content: center;
+align-items: center;
+aspect-ratio: 1/1;
+}
+
+.tick-button{
+    width: 43px;
+height: 43px;
+flex-shrink: 0;
+}
+
+.inner-1-right{
+    display: flex;
+width: 40px;
+height: 40px;
+padding: 7.083px 7.083px 7.084px 7.084px;
+justify-content: center;
+align-items: center;
+aspect-ratio: 1/1;
+}
+
+.cross-button{
+    width: 25.833px;
+height: 25.833px;
+flex-shrink: 0;
+}
+
+.inner-2{
+    display: flex;
+padding: 8px 0px;
+flex-direction: column;
+align-items: flex-start;
+gap: var(--Global-spacing-md, 8px);
+align-self: stretch;
+}
+
+.inner-2-upper{
+    align-self: stretch;
+    color: var(--Text-text-display, #1F2A37);
+font-family: var(--Title-Medium-Font, Roboto);
+font-size: 22.29px;
+font-style: normal;
+font-weight: 500;
+line-height: 33.435px; /* 150% */
+letter-spacing: 0.209px;
+}
+
+.inner-2-lower{
+width: 644px;
+color: var(--Text-text-display, #1F2A37);
+/* Text xl/Regular */
+font-family: "IBM Plex Sans Arabic";
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: 30px; /* 150% */
+}
+
+.inner-3{
+    display: flex;
+padding: 8px 0px;
+align-items: center;
+gap: var(--Global-spacing-xl, 16px);
+align-self: stretch;
+}
+
+.inner-3-entity{
+    display: flex;
+width: 132px;
+height: 40px;
+min-height: 40px;
+max-height: 40px;
+padding: var(--Global-spacing-none, 0px) var(--Button-buttons-lg-padding, 16px);
+justify-content: center;
+align-items: center;
+gap: var(--Button-buttons-lg-gap, 4px);
+border-radius: var(--Radius-radius-sm, 4px);
+background: var(--Button-button-background-primary-default, #1B8354);
+}
+
+
+.close-button{
+    color: var(--Text-text-oncolor-primary, #FFF);
+/* Text md/Medium */
+font-family: "IBM Plex Sans Arabic";
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 24px; /* 150% */
+}

@@ -1,0 +1,318 @@
+/* OTP Verification Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "IBM Plex Sans Arabic";
+}
+
+.otp-page-container {
+  font-family: "IBM Plex Sans Arabic";
+}
+
+.login-container {
+  background: #FFF;
+  border-radius: 16px;
+  padding: 48px 72px 40px 72px;
+  width: 540px;
+  max-width: 620px;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  box-shadow: 40px 40px 60px 0px rgba(0, 0, 0, 0.15);
+}
+
+.login-title {
+  margin-bottom: 10px;
+  color: var(--foreground-high, #101828);
+  font-family: "IBM Plex Sans Arabic";
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%; /* 28px */
+}
+
+.verification-text {
+  margin-bottom: 32px;
+  color: var(--Text-text-primary-paragraph, #384250);
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: "IBM Plex Sans Arabic";
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px; /* 129.412% */
+  letter-spacing: -0.43px;
+}
+
+.otp-label {
+  margin-bottom: 16px;
+  color: var(--Text-text-primary-paragraph, #384250);
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: "IBM Plex Sans Arabic";
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px; /* 129.412% */
+  letter-spacing: -0.43px;
+}
+
+.otp-container {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 16px;
+  margin-left: -20px;
+}
+
+.otp-input {
+  width: 52.7px;
+  height: 48px;
+  border: 2px solid #9DA4AE;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: "IBM Plex Sans Arabic";
+  transition: border-color 0.3s ease;
+  background: #FFF;
+  outline: none;
+  /* Remove red underline and autocomplete styling */
+  text-decoration: none;
+  -webkit-text-decoration: none;
+  text-decoration-line: none;
+  /* Remove browser autocomplete styling */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* Remove any text input specific styling */
+  -webkit-text-fill-color: initial;
+  -webkit-background-clip: text;
+  /* Disable spellcheck and autocomplete */
+  spellcheck: false;
+  autocomplete: off;
+  /* Remove any box-shadow that might cause extra borders */
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.otp-input:focus {
+  border-color: #2d5a27;
+  /* Remove any additional focus styling */
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  outline: none;
+  text-decoration: none;
+}
+
+.otp-input.filled {
+  border-color: #2d5a27;
+  background: #FFF;
+  /* Remove any additional styling for filled state */
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  text-decoration: none;
+}
+
+/* Remove any browser-specific input styling */
+.otp-input::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.otp-input::-moz-placeholder {
+  color: transparent;
+}
+
+.otp-input:-ms-input-placeholder {
+  color: transparent;
+}
+
+.otp-input::placeholder {
+  color: transparent;
+}
+
+/* Remove autocomplete styling */
+.otp-input:-webkit-autofill,
+.otp-input:-webkit-autofill:hover,
+.otp-input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+  -webkit-text-fill-color: #000 !important;
+  border: 2px solid #2d5a27 !important;
+}
+
+.error-message {
+  color: #1F2A37;
+  font-family: "IBM Plex Sans Arabic";
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  min-height: 20px;
+  line-height: 20px;
+}
+
+.verify-button {
+  width: 100%;
+  padding: 16px;
+  background: #E5E7EB;
+  color: #FFF;
+  border: none;
+  border-radius: 4px;
+  font-family: "IBM Plex Sans Arabic";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  cursor: not-allowed;
+  transition: background-color 0.3s ease;
+  margin-bottom: 24px;
+}
+
+.verify-button.active {
+  background: #104631;
+  cursor: pointer;
+}
+
+.verify-button.active:hover {
+  background: #0d3a28;
+}
+
+.resend-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  color: #6C737F;
+  font-size: 14px;
+  font-family: "IBM Plex Sans Arabic";
+}
+
+.resend-link {
+  color: #1B8354;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.resend-link:hover {
+  text-decoration: underline;
+}
+
+.resend-link.disabled {
+  color: #9DA4AE;
+  cursor: not-allowed;
+  text-decoration: none;
+}
+
+.resend-link.disabled:hover {
+  text-decoration: none;
+}
+
+.timer {
+  color: #1B8354;
+  font-weight: 500;
+}
+
+/* ========================= */
+/* MOBILE RESPONSIVENESS */
+/* ========================= */
+
+/* Tablet and below */
+@media (max-width: 768px) {
+  .login-container {
+    width: 90%;
+    max-width: 90%;
+    padding: 36px 32px 32px 32px;
+  }
+
+  .login-title {
+    font-size: 24px;
+  }
+
+  .verification-text,
+  .otp-label {
+    font-size: 16px;
+  }
+
+  .otp-container {
+    margin-left: 0;
+    gap: 10px;
+  }
+
+  .otp-input {
+    width: 48px;
+    height: 44px;
+    font-size: 16px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .login-container {
+    width: 95%;
+    max-width: 95%;
+    padding: 24px 20px 24px 20px;
+    box-shadow: 20px 20px 40px 0px rgba(0, 0, 0, 0.15);
+  }
+
+  .login-title {
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+
+  .verification-text,
+  .otp-label {
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+
+  .otp-container {
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .otp-input {
+    width: 42px;
+    height: 42px;
+    font-size: 16px;
+    border-width: 1.5px;
+  }
+
+  .error-message {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+
+  .verify-button {
+    padding: 14px;
+    font-size: 16px;
+    min-height: 48px;
+    margin-bottom: 20px;
+  }
+
+  .resend-section {
+    font-size: 13px;
+    flex-wrap: wrap;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+  .login-container {
+    padding: 20px 16px;
+  }
+
+  .login-title {
+    font-size: 20px;
+  }
+
+  .otp-container {
+    gap: 6px;
+  }
+
+  .otp-input {
+    width: 38px;
+    height: 40px;
+    font-size: 15px;
+  }
+}

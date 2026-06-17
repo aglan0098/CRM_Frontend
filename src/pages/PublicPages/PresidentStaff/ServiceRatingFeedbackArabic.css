@@ -1,0 +1,276 @@
+/* ========================================
+   Arabic RTL Stylesheet for Service Rating & Feedback
+   ======================================== */
+
+   .PE-Modified-DateAr {
+    display: flex;
+    padding: var(--Global-spacing-xl, 16px) var(--Global-spacing-8xl, 80px);
+    align-items: center;
+    gap: var(--Global-spacing-md, 8px);
+    align-self: stretch;
+}
+
+.PE-Modified-Date-TAr {
+    max-width: 1280px;
+    flex: 1 0 0;
+    color: var(--Text-text-default, #161616);
+    text-align: left;
+    /* RTL: swap to left for alignment */
+
+    /* Text sm/Regular */
+    font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+    font-size: var(--Size-Text-typo-size-text-sm, 14px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--Line-Height-Text-line-heights-text-sm,
+            20px);
+    /* 142.857% */
+    margin-right: 35px;
+    /* RTL: swap left to right */
+}
+
+.PE-RatingAr {
+    display: flex;
+    width: 100%;
+    height: 88px;
+    padding: var(--Global-spacing-3xl, 24px) var(--Global-spacing-8xl, 80px);
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid var(--Border-border-primary, #1b8354);
+    background: var(--Background-background-white, #fff);
+    border-bottom: 2px solid var(--Border-border-primary, #1b8354);
+}
+
+.PE-Rating-bodyAr {
+    display: flex;
+    max-width: 1280px;
+    align-items: center;
+    gap: var(--Global-spacing-xl, 280px);
+    flex: 1 0 0;
+    margin-right: 0px;
+    /* RTL: swap left to right */
+    flex-direction: row;
+    /* RTL: reverse layout */
+    justify-content: space-between;
+}
+
+.PE-Rating-ContentAr {
+    display: flex;
+    align-items: center;
+    gap: var(--Global-spacing-3xl, 24px);
+    flex: 1 0 0;
+    margin-right: 0;
+    /* RTL: swap left to right */
+    flex-direction: row-reverse;
+    /* RTL: reverse content order */
+}
+
+.PE-Rating-Content-Left-Text-TAr {
+    color: var(--Text-text-default, #161616);
+
+    /* Text md/Regular */
+    font-family: "IBM Plex Sans Arabic";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    /* 150% */
+    text-align: right;
+    /* RTL: align text right */
+}
+
+.PE-Rating-Content-Left-Digit-TAr {
+    color: var(--Text-text-default, #161616);
+
+    /* Text md/Bold */
+    font-family: "IBM Plex Sans Arabic";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    margin: 0 4px;
+    /* Add spacing around the number */
+}
+
+.PE-RatingStarAr {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--Global-spacing-xs, 4px);
+    flex-direction: row;
+    /* RTL: reverse star order (5 to 1) */
+}
+
+.PE-StarAr {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+}
+
+.PE-Rating-Content-Right-TAr {
+    color: var(--Text-text-secondary-paragraph, #6c737f);
+
+    /* Text sm/Regular */
+    font-family: "IBM Plex Sans Arabic";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    /* 142.857% */
+    padding-top: 2.5px;
+}
+
+.PE-Rating-ActionsAr {
+    display: flex;
+    justify-content: flex-end;
+    /* RTL: swap from flex-end */
+    align-items: center;
+    flex: 1 0 0;
+}
+
+.PE-Rate-TagAr {
+    display: flex;
+    height: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    padding: var(--Global-spacing-none, 0) var(--Button-buttons-lg-padding, 16px);
+    justify-content: center;
+    align-items: center;
+    gap: var(--Button-buttons-lg-gap, 4px);
+    border-radius: var(--Radius-radius-sm, 4px);
+    background: var(--Button-button-background-primary-default, #1b8354);
+    color: var(--Text-text-oncolor-primary, #fff);
+
+    /* Text md/Medium */
+    font-family: "IBM Plex Sans Arabic";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    /* 150% */
+    cursor: pointer;
+}
+
+.PE-FeedbackAr {
+    display: flex;
+    width: 100%;
+    height: 88px;
+    padding: 24px 80px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.PE-Feedback-SectionAr {
+    display: flex;
+    max-width: 1280px;
+    align-items: center;
+    gap: var(--Global-spacing-xl, 16px);
+    flex: 1 0 0;
+    margin-right: 0px;
+}
+
+.PE-Feedback-Section-ContentAr {
+    display: flex;
+    align-items: center;
+    gap: var(--Global-spacing-3xl, 24px);
+    flex: 1 0 0;
+    flex-direction: row;
+    /* RTL: reverse layout */
+}
+
+.PE-Content-TextAr {
+    color: var(--Text-text-default, #161616);
+
+    /* Text md/Regular */
+    font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+    font-size: var(--Size-Text-typo-size-text-md, 16px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--Line-Height-Text-line-heights-text-md, 24px);
+    /* 150% */
+}
+
+.PE-Content-ActionsAr {
+    display: flex;
+    align-items: center;
+    gap: var(--Global-spacing-xl, 16px);
+    flex-direction: row-reverse;
+    /* RTL: reverse button order */
+}
+
+.PE-choiceAr {
+    display: flex;
+    height: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    padding: var(--Global-spacing-none, 0) var(--Button-buttons-lg-padding, 16px);
+    justify-content: center;
+    align-items: center;
+    gap: var(--Button-buttons-lg-gap, 4px);
+    border-radius: var(--Radius-radius-sm, 4px);
+    background: var(--Button-button-background-primary-default, #1b8354);
+    color: var(--Text-text-oncolor-primary, #fff);
+
+    /* Text md/Medium */
+    font-family: "IBM Plex Sans Arabic";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    /* 150% */
+    border: none;
+    cursor: pointer;
+}
+
+.PE-Feedback-Section-TextAr {
+    flex: 1 0 0;
+    color: var(--Text-text-default, #161616);
+    text-align: left;
+    /* RTL: swap to left */
+    margin-right: 0px;
+    /* RTL: swap left to right */
+
+    /* Text sm/Regular */
+    font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+    font-size: var(--Size-Text-typo-size-text-sm, 14px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--Line-Height-Text-line-heights-text-sm,
+            20px);
+    /* 142.857% */
+}
+
+/* ------------------ Responsive tweaks ------------------ */
+@media (max-width: 1200px) {
+
+    .PE-RatingAr,
+    .PE-FeedbackAr {
+        width: 100%;
+        padding-right: 40px;
+        /* RTL: swap left to right */
+        padding-left: 40px;
+        /* RTL: swap right to left */
+    }
+}
+
+@media (max-width: 600px) {
+
+    .PE-RatingAr,
+    .PE-FeedbackAr {
+        height: auto;
+        padding: 16px 20px;
+    }
+
+    .PE-Rating-bodyAr,
+    .PE-Feedback-SectionAr {
+        gap: 12px;
+    }
+
+    .PE-choiceAr,
+    .PE-Rate-TagAr {
+        height: 36px;
+        min-height: 36px;
+        max-height: 36px;
+    }
+}
+

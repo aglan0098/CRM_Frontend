@@ -1,0 +1,213 @@
+/* CSS Variables - Add these at the top of your UpperCard.css */
+:root {
+  --Background-background-primary-25: #f7fdf9;
+  --Link-link-primary-visited: #14573a;
+  --Text-text-default: #161616;
+  --Font-Family-font-family-text: "IBM Plex Sans Arabic", Arial, sans-serif;
+  --Font-Family-font-family-display: "IBM Plex Sans Arabic", Arial, sans-serif;
+  --Size-Text-typo-size-text-sm: 14px;
+  --Size-Display-typo-size-display-sm: 30px;
+  --Line-Height-Text-line-heights-text-sm: 20px;
+  --Line-Height-Display-line-heights-display-sm: 38px;
+  --spacing-416-px: 16px;
+  --spacing-624-px: 24px;
+  --Link-link-sm-gap: 4px;
+  --Global-spacing-none: 0px;
+}
+
+/* Original styles with responsive modifications */
+.card-back {
+  width: 100%;
+  max-width: 1665px;
+  height: 244px;
+  position: relative;
+  flex-shrink: 0;
+  background: var(--Background-background-primary-25, #f7fdf9);
+}
+
+.Vector-img {
+  width: 610px;
+  height: 508px;
+  flex-shrink: 0;
+  fill: rgba(184, 234, 203, 0.2);
+}
+
+.vernav {
+  position: absolute;
+  top: 16px;
+  right: 60px;
+  display: inline-flex;
+  padding: var(--spacing-416-px, 16px) var(--spacing-624-px, 24px);
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.vernav-img {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  padding: 1.042px 1.457px 1.041px 1.458px;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1/1;
+}
+
+.BreadCrumbs {
+  width: 317px;
+  height: 20px;
+  display: inline-flex;
+  padding: var(--Global-spacing-none, 0px);
+  align-items: flex-start;
+  position: absolute;
+  top: 16px;
+  left: 24px;
+  gap: var(--Global-spacing-none, 0px);
+}
+
+.link-item {
+  display: flex;
+  padding-right: var(--Link-link-sm-gap, 4px);
+  align-items: center;
+  gap: var(--Link-link-sm-gap, 4px);
+}
+
+.text {
+  padding: var(--Global-spacing-none, 0px);
+  text-decoration: none;
+  color: var(--Link-link-primary-visited, #14573a);
+  font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+  font-size: var(--Size-Text-typo-size-text-sm, 14px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: var(
+    --Line-Height-Text-line-heights-text-sm,
+    20px
+  ); /* 142.857% */
+}
+
+.arrow {
+  display: flex;
+  width: 16px;
+  height: 16px;
+  padding: 2.222px 4.827px 2.22px 5.442px;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+/* Fix for arrow character encoding issue */
+.arrow::before {
+  content: "â€º";
+}
+
+.service-title {
+  position: absolute;
+  top: 60px;
+  left: 24px;
+  color: var(--Text-text-default, #161616);
+  font-family: var(--Font-Family-font-family-display, "IBM Plex Sans Arabic");
+  font-size: var(--Size-Display-typo-size-display-sm, 30px);
+  font-style: normal;
+  font-weight: 700;
+  line-height: var(
+    --Line-Height-Display-line-heights-display-sm,
+    38px
+  ); /* 126.667% */
+  margin: 0;
+}
+
+/* RESPONSIVE STYLES */
+
+/* Tablet and small desktop */
+@media (max-width: 768px) {
+  .card-back {
+    height: auto;
+    min-height: 180px;
+    padding-bottom: 24px;
+  }
+
+  .Vector-img {
+    width: 400px;
+    height: 333px;
+  }
+
+  .vernav {
+    right: 16px;
+    top: 8px;
+    padding: 8px 12px;
+    gap: 12px;
+  }
+
+  .vernav-img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .BreadCrumbs {
+    left: 16px;
+    top: 12px;
+    width: auto;
+    max-width: calc(100% - 120px);
+  }
+
+  .text {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .arrow {
+    width: 14px;
+    height: 14px;
+  }
+
+  .service-title {
+    left: 16px;
+    right: 16px;
+    top: 45px;
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .card-back {
+    min-height: 160px;
+  }
+
+  .Vector-img {
+    width: 300px;
+    height: 250px;
+  }
+
+  .vernav {
+    right: 8px;
+    top: 8px;
+    gap: 8px;
+    padding: 6px 8px;
+  }
+
+  .vernav-img {
+    width: 16px;
+    height: 16px;
+  }
+
+  .BreadCrumbs {
+    left: 12px;
+    top: 8px;
+    max-width: calc(100% - 100px);
+  }
+
+  .text {
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .service-title {
+    left: 12px;
+    right: 12px;
+    top: 35px;
+    font-size: 20px;
+    line-height: 28px;
+  }
+}

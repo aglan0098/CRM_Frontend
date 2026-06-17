@@ -1,0 +1,175 @@
+.request-limit-modal-overlay-ar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.request-limit-modal-content-ar {
+  position: relative;
+  display: flex;
+  width: 600px;
+  padding: var(--Model-modal-padding, 24px);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--Model-modal-gap, 8px);
+  border-radius: var(--Radius-radius-md, 8px);
+  background: var(--Background-background-white, #FFF);
+  box-shadow: 0 32px 64px -12px rgba(16, 24, 40, 0.14);
+  direction: rtl;
+}
+
+/* Section 1: Warning Icon, Close Button, and Title */
+.request-limit-modal-section-1-ar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--Model-modal-gap, 8px);
+  align-self: stretch;
+}
+
+/* Sub-section 1: Warning Icon and Close Button */
+.request-limit-modal-section-1-sub1-ar {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--Global-spacing-md, 8px);
+  align-self: stretch;
+  justify-content: space-between;
+  position: relative;
+}
+
+.request-limit-modal-icon-ar {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  padding: 6px;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--radius-full, 9999px);
+}
+
+.request-limit-modal-close-ar {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: -10px;
+  top: -10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.request-limit-modal-close-ar:hover {
+  background-color: #f3f4f6;
+}
+
+/* Sub-section 2: Title */
+.request-limit-modal-section-1-sub2-ar {
+  flex: 1 0 0;
+}
+
+.request-limit-modal-title-ar {
+  flex: 1 0 0;
+  color: var(--Text-text-display, #1F2A37);
+  font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+  font-size: var(--Size-Text-typo-size-text-Ig, 18px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: var(--Line-Height-Text-line-heights-text-Ig, 28px);
+  margin: 0;
+  text-align: right;
+}
+
+/* Section 2: Body text */
+.request-limit-modal-section-2-ar {
+  display: flex;
+  padding-bottom: var(--Model-modal-content-bottom-padding, 16px);
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+.request-limit-modal-text-ar {
+  align-self: stretch;
+  color: var(--Text-text-primary-paragraph, #384250);
+  font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+  font-size: var(--Size-Text-typo-size-text-sm, 14px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: var(--Line-Height-Text-line-heights-text-sm, 20px);
+  margin: 0;
+  text-align: right;
+}
+
+/* Section 3: Action buttons */
+.request-limit-modal-section-3-ar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--Button-buttons-group-gap, 8px);
+  align-self: stretch;
+}
+
+.request-limit-modal-button-ar {
+  display: flex;
+  height: 32px;
+  min-height: 32px;
+  max-height: 32px;
+  padding: var(--Global-spacing-none, 0) var(--Button-buttons-md-padding, 12px);
+  justify-content: center;
+  align-items: center;
+  gap: var(--Button-buttons-md-gap, 4px);
+  border-radius: var(--Radius-radius-sm, 4px);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.request-limit-modal-button-primary-ar {
+  background: var(--Button-button-background-primary-default, #1B8354);
+  color: white;
+  border: none;
+}
+
+.request-limit-modal-button-primary-ar:hover {
+  background-color: #14573a;
+}
+
+.request-limit-modal-button-secondary-ar {
+  border: 1px solid var(--Border-border-neutral-primary, #D2D6DB);
+  background-color: transparent;
+  color: #161616;
+}
+
+.request-limit-modal-button-secondary-ar:hover {
+  background-color: #F3F4F6;
+}
+
+@media (max-width: 640px) {
+  .request-limit-modal-content-ar {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .request-limit-modal-section-3-ar {
+    flex-direction: column;
+  }
+
+  .request-limit-modal-button-ar {
+    width: 100%;
+  }
+}
+

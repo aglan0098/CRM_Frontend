@@ -1,0 +1,561 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", "Tahoma", "Arial", sans-serif;
+  background-color: #fff;
+  color: #000;
+  direction: rtl; /* RTL direction */
+  text-align: right; /* RTL text alignment */
+}
+
+/* Navbar Container */
+.navbar-arabic {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 32px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  position: relative;
+  z-index: 1000;
+  direction: rtl; /* RTL for navbar */
+}
+
+/* Logo */
+.logo-container-arabic {
+  display: flex;
+}
+
+.logo-arabic {
+  height: 45px;
+  min-width: 45px;
+  flex-shrink: 0;
+}
+
+/* Mobile Menu Toggle - hidden on desktop */
+.mobile-menu-toggle-arabic {
+  display: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  order: 1;
+  margin-left: auto; /* Changed from margin-right for RTL */
+}
+
+/* Nav Left - Desktop (becomes right in RTL) */
+.nav-left-arabic {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  direction: rtl; /* RTL direction */
+}
+
+/* Nav Menu - Desktop */
+.nav-menu-arabic {
+  list-style: none;
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  direction: rtl; /* RTL direction */
+}
+
+.nav-item-arabic {
+  position: relative;
+}
+
+.nav-link-arabic {
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+  padding-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  position: relative;
+  direction: rtl; /* RTL direction */
+}
+
+.nav-link-arabic::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0; /* Changed from left for RTL */
+  height: 2px;
+  width: 0;
+  background-color: #a8e6c3;
+  transition: width 0.3s ease;
+}
+
+.nav-link-arabic:hover::after {
+  width: 100%;
+}
+
+/* Dropdown Menu - Desktop */
+.dropdown-content-arabic {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 200px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  border-radius: 4px;
+  z-index: 999;
+  top: 100%;
+  right: 0; /* Changed from left for RTL */
+  padding: 10px 0;
+  direction: rtl; /* RTL direction */
+  text-align: right; /* RTL text alignment */
+}
+
+.dropdown-content-arabic a {
+  color: #333;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+  text-align: right; /* RTL text alignment */
+}
+
+.dropdown-content-arabic a:hover {
+  background-color: #f5f5f5;
+  color: #2BAE66;
+}
+
+.dropdown-content-arabic.show-arabic {
+  display: block;
+}
+
+/* Nav Right - Desktop (becomes left in RTL) */
+.nav-right-arabic {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 14px;
+  direction: rtl; /* RTL direction */
+}
+
+/* Language Switch - Desktop */
+.lang-switch-arabic {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+  cursor: pointer;
+  direction: rtl; /* RTL direction */
+}
+
+.lang-switch-arabic .dropdown-content-arabic {
+  min-width: 120px;
+  left: 0; /* Changed from right for RTL */
+  right: auto;
+}
+
+/* User Dropdown - Desktop */
+.user-dropdown-container-arabic {
+  position: relative;
+}
+
+.user-dropdown-arabic {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  direction: rtl; /* RTL direction */
+}
+
+.user-icon-arabic {
+  color: #555;
+}
+
+.user-dropdown-arabic .dropdown-content-arabic {
+  left: 0; /* Changed from right for RTL */
+  right: auto;
+  min-width: 150px;
+}
+
+/* Login Button - Desktop */
+.login-btn-arabic {
+  background-color: green;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.3s;
+  direction: rtl; /* RTL direction */
+}
+
+.login-btn-arabic:hover {
+  background-color: #24995a;
+}
+
+/* Chevron Icon Animation - Desktop */
+.nav-link-arabic .fa-chevron-down,
+.lang-switch-arabic .fa-chevron-down,
+.user-dropdown-arabic .fa-chevron-down {
+  transition: transform 0.3s ease;
+  font-size: 14px;
+  margin-right: 4px; /* Changed from margin-left for RTL */
+}
+
+.nav-item-arabic.dropdown-arabic.show-arabic .fa-chevron-down,
+.lang-switch-arabic.dropdown-arabic.show-arabic .fa-chevron-down,
+.user-dropdown-arabic.show-arabic .fa-chevron-down {
+  transform: rotate(180deg);
+}
+
+/* Mobile Menu Styles (hidden on desktop) */
+.mobile-menu-arabic {
+  display: none;
+  position: fixed;
+  top: 60px;
+  right: 0; /* Changed from left for RTL */
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 998;
+  padding: 20px;
+  overflow-y: auto;
+  transform: translateX(100%); /* Changed from -100% for RTL */
+  transition: transform 0.3s ease;
+  width: auto;
+  direction: rtl; /* RTL direction */
+  text-align: right; /* RTL text alignment */
+}
+
+.mobile-menu-arabic.open-arabic {
+  transform: translateX(0);
+}
+
+.mobile-nav-menu-arabic {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  direction: rtl; /* RTL direction */
+}
+
+.mobile-nav-item-arabic {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.mobile-nav-link-arabic {
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  direction: rtl; /* RTL direction */
+  text-align: right; /* RTL text alignment */
+}
+
+.mobile-dropdown-content-arabic {
+  display: none;
+  padding-right: 15px; /* Changed from padding-left for RTL */
+  padding-top: 10px;
+  direction: rtl; /* RTL direction */
+}
+
+.mobile-dropdown-content-arabic.show-arabic {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mobile-dropdown-content-arabic a {
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  text-align: right; /* RTL text alignment */
+}
+
+.mobile-nav-right-arabic {
+  margin-top: 30px;
+  direction: rtl; /* RTL direction */
+}
+
+.mobile-nav-icons-arabic {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.mobile-nav-icon-arabic {
+  font-size: 16px;
+  color: #555;
+}
+
+.mobile-login-btn-arabic {
+  background-color: green;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  justify-content: center;
+  margin: 15px 0;
+  direction: rtl; /* RTL direction */
+}
+
+/* Username display in user dropdown */
+.username-arabic {
+  margin-right: 5px; /* Changed from margin-left for RTL */
+  margin-left: 5px;
+  max-width: 120px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* User information in dropdown */
+.user-info-arabic {
+  padding: 10px 15px;
+  border-bottom: 1px solid #eee;
+  background-color: #f9f9f9;
+  direction: rtl; /* RTL direction */
+  text-align: right; /* RTL text alignment */
+}
+
+.user-name-arabic {
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin-bottom: 3px;
+}
+
+.user-phone-arabic {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Logout icon styling */
+.logout-icon-arabic {
+  margin-left: 5px; /* Changed from margin-right for RTL */
+}
+
+/* Adjust user dropdown width to fit content */
+.user-dropdown-container-arabic .dropdown-content-arabic {
+  min-width: 150px;
+}
+
+/* Mobile menu user dropdown adjustments */
+.mobile-user-dropdown-container-arabic .mobile-dropdown-content-arabic {
+  min-width: 150px;
+}
+
+/* Ensure the Login and user dropdown positions match */
+.nav-right-arabic {
+  display: flex;
+  align-items: center;
+}
+
+.mobile-user-dropdown-container-arabic {
+  margin-top: 20px;
+}
+
+.mobile-user-dropdown-arabic {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 0;
+  border-top: 1px solid #eee;
+  cursor: pointer;
+  direction: rtl; /* RTL direction */
+}
+
+.mobile-user-dropdown-arabic span {
+  font-size: 16px;
+}
+
+/* Mobile Language Switch */
+.mobile-lang-switch-arabic {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+  cursor: pointer;
+  direction: rtl; /* RTL direction */
+}
+
+/* Nav Icons */
+.nav-icon-arabic {
+  color: #555;
+}
+
+/* Icon and Chevron Classes */
+.icon-arabic {
+  transition: all 0.3s ease;
+}
+
+.chevron-icon-arabic {
+  transition: transform 0.3s ease;
+  font-size: 14px;
+  margin-right: 4px; /* Changed from margin-left for RTL */
+}
+
+.rotate-arabic {
+  transform: rotate(180deg);
+}
+
+/* Login Arrow */
+.login-arrow-arabic {
+  margin-left: 4px; /* Changed from margin-right for RTL */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .navbar-arabic {
+    padding: 10px 20px;
+    flex-wrap: nowrap;
+  }
+
+  .mobile-menu-toggle-arabic {
+    display: block;
+    order: 1;
+  }
+
+  .logo-container-arabic {
+    order: 3;
+    order: 3; /* Move to end of flex container */
+    margin-right: auto; /* Changed from margin-left for RTL */
+    margin-left: 0; /* Changed from margin-right for RTL */
+  }
+
+  .nav-left-arabic, .nav-right-arabic {
+    display: none;
+  }
+
+  .mobile-menu-arabic {
+    display: block;
+  }
+}
+
+/* Dark Mode */
+body.dark {
+  background-color: #1b1b1b;
+  color: #eee;
+}
+
+body.dark .navbar-arabic {
+  background-color: #222;
+}
+
+body.dark .nav-link-arabic {
+  color: #ccc;
+}
+
+body.dark .dropdown-content-arabic {
+  background-color: #333;
+}
+
+body.dark .dropdown-content-arabic a {
+  color: #eee;
+}
+
+body.dark .dropdown-content-arabic a:hover {
+  background-color: #444;
+}
+
+body.dark .login-btn-arabic {
+  background-color: #0f5132;
+}
+
+body.dark .nav-icon-arabic {
+  color: #aaa;
+}
+
+body.dark .mobile-menu-toggle-arabic {
+  color: #eee;
+}
+
+body.dark .mobile-menu-arabic {
+  background-color: #222;
+}
+
+body.dark .mobile-nav-link-arabic {
+  color: #eee;
+}
+
+body.dark .mobile-nav-item-arabic {
+  border-bottom-color: #444;
+}
+
+body.dark .mobile-dropdown-content-arabic a {
+  color: #ccc;
+}
+
+body.dark .mobile-user-dropdown-arabic {
+  border-top-color: #444;
+}
+
+/* Hide User Dropdown Sections */
+.user-dropdown-container-arabic,
+.mobile-user-dropdown-container-arabic {
+  display: block !important;
+}
+
+/* Adjust spacing for remaining elements */
+.nav-right-arabic {
+  gap: 20px; /* Maintain original spacing between remaining elements */
+}
+
+.mobile-nav-right-arabic {
+  margin-top: 20px; /* Keep original mobile spacing */
+}
+/* Arabic Loading placeholder styles */
+.auth-loading-arabic, .mobile-auth-loading-arabic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-placeholder-arabic, .mobile-loading-placeholder-arabic {
+  width: 100px; /* Slightly wider for Arabic text */
+  height: 36px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading-shimmer-arabic 1.5s infinite;
+  border-radius: 20px;
+}
+
+.mobile-loading-placeholder-arabic {
+  width: 120px; /* Wider for mobile Arabic */
+  height: 40px;
+}
+
+@keyframes loading-shimmer-arabic {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* RTL specific adjustments */
+.rtl .loading-placeholder-arabic,
+.rtl .mobile-loading-placeholder-arabic {
+  direction: rtl;
+}
+
+/* Dark mode loading placeholder */
+.dark .loading-placeholder-arabic,
+.dark .mobile-loading-placeholder-arabic {
+  background: linear-gradient(90deg, #2a2a2a 25%, #3a3a3a 50%, #2a2a2a 75%);
+  background-size: 200% 100%;
+}

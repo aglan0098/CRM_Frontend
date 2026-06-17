@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap');
+.CAterms-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.CAterms-modal-content {
+  background: #FFF;
+  border-radius: 8px;
+  padding: 32px;
+  width: 697px;
+  max-width: 80vw;
+  max-height: 65vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 40px 40px 60px 0px rgba(0, 0, 0, 0.15);
+}
+
+.CAterms-modal-content.rtl {
+  direction: rtl;
+}
+
+.CAterms-modal-title {
+  color: #101828;
+  font-family: "IBM Plex Sans Arabic";
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.CAterms-modal-subtitle {
+  color: #344054;
+  font-family: "IBM Plex Sans Arabic";
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.CAterms-modal-text {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 24px;
+  padding-right: 8px;
+  background-color: #F3F4F6;
+  padding: 16px;
+}
+
+/* Custom scrollbar styling */
+.CAterms-modal-text::-webkit-scrollbar {
+  width: 8px;
+}
+
+.CAterms-modal-text::-webkit-scrollbar-track {
+  background: #F3F4F6;
+  border-radius: 4px;
+}
+
+.CAterms-modal-text::-webkit-scrollbar-thumb {
+  background: #D2D6DB;
+  border-radius: 4px;
+  min-height: 40px;
+}
+
+.CAterms-modal-text::-webkit-scrollbar-thumb:hover {
+  background: #9CA3AF;
+}
+
+.CAterms-modal-text p {
+  color: #475467;
+  font-family: "IBM Plex Sans Arabic";
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.CAterms-modal-text strong {
+  color: #101828;
+  font-weight: 600;
+}
+
+.CAterms-modal-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 12px;
+  margin-bottom: 20px;
+  margin-left: -16px;
+}
+
+.CAterms-modal-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  background: #0EA5E9;
+  color: white;
+  border-radius: 50%;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.CAterms-modal-info span {
+  color: #0F172A;
+  font-family: "IBM Plex Sans Arabic";
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.CAterms-modal-email {
+  color: #1B8354;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.CAterms-modal-email:hover {
+  text-decoration: underline;
+}
+
+.CAterms-modal-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 24px;
+  margin-right: 16px;
+}
+
+.CAterms-modal-checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.CAterms-modal-checkbox label {
+  color: var(--Form-field-text-label, #161616);
+  font-family: "IBM Plex Sans Arabic";
+  font-size: 14px;
+  line-height: 1.5;
+  cursor: pointer;
+  user-select: none;
+}
+
+.CAterms-modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.CAterms-modal-cancel {
+  display: flex;
+height: 32px;
+min-height: 32px;
+max-height: 32px;
+padding: var(--Global-spacing-none, 0) var(--Button-buttons-md-padding, 12px);
+justify-content: center;
+align-items: center;
+gap: var(--Button-buttons-md-gap, 4px);
+border-radius: var(--Radius-radius-sm, 4px);
+border: 1px solid var(--Border-border-neutral-primary, #D2D6DB);
+}
+
+.CAterms-modal-cancel:hover {
+  background: #F9FAFB;
+  border-color: #98A2B3;
+}
+
+.CAterms-modal-continue {
+  display: flex;
+height: 32px;
+min-height: 32px;
+max-height: 32px;
+padding: var(--Global-spacing-none, 0) var(--Button-buttons-md-padding, 12px);
+justify-content: center;
+align-items: center;
+gap: var(--Button-buttons-md-gap, 4px);
+border-radius: var(--Radius-radius-sm, 4px);
+background: var(--Button-button-background-primary-default, #1B8354);
+color: white;
+}
+
+.CAterms-modal-continue:hover:not(:disabled) {
+  background: #0d3a28;
+}
+
+.CAterms-modal-continue:disabled {
+  background: #D0D5DD;
+  cursor: not-allowed;
+  color: #FFF;
+}
+
+/* RTL support */
+.CAterms-modal-content.rtl .CAterms-modal-buttons {
+  flex-direction: row-reverse;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .CAterms-modal-content {
+    width: 95%;
+    max-height: 90vh;
+    padding: 24px;
+  }
+
+  .CAterms-modal-title {
+    font-size: 20px;
+  }
+
+  .CAterms-modal-subtitle {
+    font-size: 16px;
+  }
+
+  .CAterms-modal-buttons {
+    flex-direction: column;
+  }
+
+  .CAterms-modal-cancel,
+  .CAterms-modal-continue {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .CAterms-modal-content {
+    padding: 20px;
+    max-height: 92vh;
+  }
+
+  .CAterms-modal-title {
+    font-size: 18px;
+  }
+
+  .CAterms-modal-subtitle {
+    font-size: 14px;
+  }
+
+  .CAterms-modal-text p {
+    font-size: 13px;
+  }
+
+  .CAterms-modal-info {
+    padding: 10px;
+  }
+
+  .CAterms-modal-info span {
+    font-size: 13px;
+  }
+
+  .CAterms-modal-icon {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    font-size: 12px;
+  }
+}
+

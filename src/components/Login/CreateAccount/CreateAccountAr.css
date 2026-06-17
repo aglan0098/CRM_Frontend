@@ -1,0 +1,431 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  
+  .CA-container {
+    background: #FFF;
+    border-radius: 16px;
+    padding: 32px 40px;
+    width: 720px;
+    max-width: 750px;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    box-shadow: 40px 40px 60px 0px rgba(0, 0, 0, 0.15);
+  }
+  
+  .CA-title {
+    margin-bottom: 32px;
+    color: var(--foreground-high, #101828);
+    font-family: "IBM Plex Sans";
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+    text-align: center;
+  }
+  
+  .CAform-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  
+  .CAform-group {
+    margin-bottom: 24px;
+    flex: 1;
+  }
+  
+  .CAform-group.full-width {
+    width: 100%;
+  }
+  
+  .CAform-label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--Form-field-text-label, #161616);
+    font-family: "IBM Plex Sans Arabic";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+  }
+  
+  .CArequired {
+    color: var(--Form-field-border-error, #B42318);
+    font-family: "IBM Plex Sans Arabic";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+  }
+  
+  .CAform-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #D0D5DD;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    background: #FFF;
+    font-family: "IBM Plex Sans";
+  }
+  
+  .CAform-input:focus {
+    outline: none;
+    border-color: #2d5a27;
+    background: white;
+  }
+  
+  .CAform-input::placeholder {
+    color: #667085;
+  }
+  
+  .CAdate-input {
+    position: relative;
+  }
+  
+  .CAdate-input input {
+    padding-right: 40px;
+  }
+  
+  .CAdate-input::after {
+    content: '';
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%23667085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>') no-repeat center;
+    pointer-events: none;
+  }
+  
+  .CAbutton-row {
+    display: flex;
+    gap: 16px;
+    margin-top: 32px;
+    margin-bottom: 24px;
+  }
+  
+  .CAcancel-button {
+    flex: 1;
+    padding: 16px;
+    border: 1px solid #D0D5DD;
+    border-radius: 8px;
+    font-family: "IBM Plex Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #FFF;
+    color: #344054;
+  }
+  
+  .CAcancel-button:hover {
+    background: #F9FAFB;
+    border-color: #B42318;
+  }
+  
+  .CAsignup-button {
+    flex: 1;
+    padding: 16px;
+    border: none;
+    border-radius: 8px;
+    font-family: "IBM Plex Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #104631;
+    color: #FFF;
+  }
+  
+  .CAsignup-button:hover {
+    background: #0d3a28;
+  }
+  
+  .CAsignup-button:disabled {
+    background: #D0D5DD;
+    cursor: not-allowed;
+  }
+  
+  .CAlogin-link {
+    text-align: center;
+    font-size: 14px;
+    color: #475467;
+    font-family: "IBM Plex Sans";
+  }
+  
+  .CAlogin-link a {
+    color: #104631;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .CAlogin-link a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Modal Styles */
+  .CAmodal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .CAmodal-content {
+    background: #FFF;
+    border-radius: 16px;
+    padding: 32px;
+    width: 400px;
+    max-width: 90vw;
+    text-align: center;
+    box-shadow: 40px 40px 60px 0px rgba(0, 0, 0, 0.15);
+  }
+  
+  .CAmodal-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+  }
+
+  .CAmodal-icon-success {
+    background: #10B981;
+  }
+
+  .CAmodal-icon-success::after {
+    content: '✓';
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .CAmodal-icon-error {
+    background: #B42318;
+  }
+
+  .CAmodal-icon-error::after {
+    content: '✕';
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .CAmodal-title {
+    color: #101828;
+    font-family: "IBM Plex Sans";
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .CAmodal-title-error {
+    color: #B42318;
+  }
+  
+  .CAmodal-message {
+    color: #475467;
+    font-family: "IBM Plex Sans";
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+  
+  .CAmodal-button {
+    background: #104631;
+    color: #FFF;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-family: "IBM Plex Sans";
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .CAmodal-button:hover {
+    background: #0d3a28;
+  }
+
+  .CAmodal-button-error {
+    background: #B42318;
+  }
+
+  .CAmodal-button-error:hover {
+    background: #912018;
+  }
+  
+  /* Loading State */
+  .CAloading {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 8px;
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  /* Error State */
+  .CAerror-message {
+    color: #B42318;
+    font-family: "IBM Plex Sans";
+    font-size: 14px;
+    margin-top: 8px;
+    text-align: center;
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .CA-container {
+      width: 90%;
+      max-width: 350px;
+      height: 60vh;
+      padding: 20px 15px;
+      margin: 0 auto;
+      box-sizing: border-box;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    .CAmodal-content {
+      width: 90%;
+      max-width: 350px;
+      padding: 24px 20px;
+    }
+
+    .CAmodal-title {
+      font-size: 18px;
+    }
+
+    .CAmodal-message {
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .CAmodal-button {
+      width: 100%;
+      padding: 12px 16px;
+      font-size: 14px;
+    }
+    
+    .CAform-row {
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    
+    .CAform-group {
+      width: 100%;
+      margin-bottom: 16px;
+    }
+    
+    .CAform-input {
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    
+    .CAbutton-row {
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    
+    .CAcancel-button,
+    .CAsignup-button {
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    
+    .CAlogin-link {
+      margin-right: 0;
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .CA-container {
+      width: 95%;
+      max-width: 320px;
+      height: 60vh;
+      padding: 15px 12px;
+    }
+    
+    .CA-title {
+      font-size: 20px;
+    }
+    
+    .CAform-input {
+      padding: 10px 12px;
+      font-size: 16px; /* Prevents zoom on iOS */
+      width: 100%;
+      max-width: 100%;
+    }
+    
+    .CAcancel-button,
+    .CAsignup-button {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .CAmodal-content {
+      width: 95%;
+      max-width: 300px;
+      padding: 20px 16px;
+    }
+
+    .CAmodal-icon {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 12px;
+    }
+
+    .CAmodal-icon-success::after,
+    .CAmodal-icon-error::after {
+      font-size: 20px;
+    }
+
+    .CAmodal-title {
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+
+    .CAmodal-message {
+      font-size: 12px;
+      margin-bottom: 16px;
+    }
+
+    .CAmodal-button {
+      padding: 10px 12px;
+      font-size: 13px;
+    }
+  }

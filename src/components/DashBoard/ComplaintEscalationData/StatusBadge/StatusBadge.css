@@ -1,0 +1,78 @@
+/* Status Container */
+.status-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Base Status Badge Styling */
+.status-badge {
+  display: inline-flex;
+  height: 34px;
+  padding: 4px 8px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 9999px;
+  text-align: center;
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+/* Status Colors */
+.status-badge.status-resolved {
+  background-color: #D1FAE5;
+  color: #065F46;
+}
+
+.status-badge.status-in-progress {
+  background-color: #F3E8FF;
+  color: #6B21A8;
+}
+
+.status-badge.status-action-required {
+  background-color: #FFF2CC;
+  color: #93370D;
+}
+
+.status-badge.status-submitted {
+  background-color: #E0E7FF;
+  color: #3730A3;
+}
+
+.status-badge.status-default-color {
+  background-color: #E5E7EB;
+  color: #4B5563;
+}
+
+/* Size Variations */
+.status-badge.small {
+  height: 28px;
+  font-size: 12px;
+  padding: 2px 6px;
+}
+
+.status-badge.large {
+  height: 40px;
+  font-size: 16px;
+  padding: 6px 12px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .status-container {
+    gap: 6px;
+  }
+  
+  .status-badge {
+    font-size: 12px;
+    padding: 3px 6px;
+    height: 30px;
+  }
+}

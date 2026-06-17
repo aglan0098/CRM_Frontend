@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.modal-box-arabic{
+    width: 710.318px;
+    display: flex;
+    flex-direction: column;
+    padding: var(--Global-spacing-xl, 16px) 24px;
+    align-items: flex-start;
+    gap: var(--Card-card-lg-gap, 24px);
+    border-radius: 20.549px;
+    background: var(--Background-background-card, #FFF);
+    box-shadow: 0px 5.572px 11.145px -2.786px rgba(16, 24, 40, 0.10), 0px 2.786px 5.572px -2.786px rgba(16, 24, 40, 0.06);
+    direction: rtl;
+}
+
+.inner-1-arabic{
+    display: flex;
+    padding: 8px 0px;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-self: stretch;
+    direction: rtl;
+}
+
+.inner-1-left-arabic{
+    display: flex;
+    width: 48px;
+    height: 48px;
+    padding: 2.5px;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1;
+    order: 2; /* For RTL positioning */
+}
+
+.tick-button-arabic{
+    width: 43px;
+    height: 43px;
+    flex-shrink: 0;
+}
+
+.inner-1-right-arabic{
+    display: flex;
+    width: 40px;
+    height: 40px;
+    padding: 7.083px 7.083px 7.084px 7.084px;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1;
+    order: 1; /* For RTL positioning */
+}
+
+.cross-button-arabic{
+    width: 25.833px;
+    height: 25.833px;
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.inner-2-arabic{
+    display: flex;
+    padding: 8px 0px;
+    flex-direction: column;
+    align-items: flex-end; /* RTL alignment */
+    gap: var(--Global-spacing-md, 8px);
+    align-self: stretch;
+    text-align: right; /* RTL text alignment */
+    direction: rtl;
+}
+
+.inner-2-upper-arabic{
+    align-self: stretch;
+    color: var(--Text-text-display, #1F2A37);
+    font-family: "IBM Plex Sans Arabic", var(--Title-Medium-Font, Roboto);
+    font-size: 22.29px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 33.435px; /* 150% */
+    letter-spacing: 0.209px;
+    text-align: right; /* RTL alignment */
+}
+
+.inner-2-lower-arabic{
+    width: 644px;
+    color: var(--Text-text-display, #1F2A37);
+    /* Text xl/Regular */
+    font-family: "IBM Plex Sans Arabic";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px; /* 150% */
+    text-align: right; /* RTL alignment */
+}
+
+.inner-3-arabic{
+    display: flex;
+    padding: 8px 0px;
+    align-items: center;
+    gap: var(--Global-spacing-xl, 16px);
+    align-self: stretch;
+    justify-content: flex-end; /* RTL alignment */
+    direction: rtl;
+}
+
+.inner-3-entity-arabic{
+    display: flex;
+    width: 132px;
+    height: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    padding: var(--Global-spacing-none, 0px) var(--Button-buttons-lg-padding, 16px);
+    justify-content: center;
+    align-items: center;
+    gap: var(--Button-buttons-lg-gap, 4px);
+    border-radius: var(--Radius-radius-sm, 4px);
+    background: var(--Button-button-background-primary-default, #1B8354);
+}
+
+.close-button-arabic{
+    color: var(--Text-text-oncolor-primary, #FFF);
+    /* Text md/Medium */
+    font-family: "IBM Plex Sans Arabic";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 150% */
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Responsive design for Arabic */
+@media (max-width: 768px) {
+    .modal-box-arabic {
+        width: 90%;
+        max-width: 500px;
+    }
+    
+    .inner-2-lower-arabic {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-box-arabic {
+        width: 95%;
+        padding: 12px 16px;
+    }
+    
+    .inner-2-upper-arabic {
+        font-size: 18px;
+        line-height: 28px;
+    }
+    
+    .inner-2-lower-arabic {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    
+    .inner-3-entity-arabic {
+        width: 100px;
+        height: 36px;
+    }
+    
+    .close-button-arabic {
+        font-size: 14px;
+    }
+}

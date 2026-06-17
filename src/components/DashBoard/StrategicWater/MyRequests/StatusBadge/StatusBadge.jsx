@@ -1,0 +1,88 @@
+import React from 'react';
+import './StatusBadge.css'; // Make sure this path is correct
+
+const StatusBadge = ({ 
+  status, 
+  statusCode, 
+  stageName, 
+  showStatusCode = false, 
+  size = 'default',
+  language = 'en',
+  externalCommunications = [],
+  stateCode = null
+}) => {
+  
+  const translations = {
+    en: {
+      submitted: 'Submitted',
+      actionRequired: 'Action Required',
+      inProgress: 'In Progress',
+      caseResolved: 'Case Resolved',
+      noStatus: 'No Status'
+    },
+    ar: {
+      submitted: 'مُقدم',
+      actionRequired: 'يتطلب إجراء',
+      inProgress: 'قيد المعالجة',
+      caseResolved: 'تم معالجة الطلب',
+      noStatus: 'لا يوجد حالة'
+    }
+  };
+
+  const t = translations[language] || translations.en;
+
+  // Get CSS class based on status
+  const getStatusBadgeClass = (status) => {
+    switch(status) {
+      case 'Resolved':
+      case 'Case Resolved':
+      case t.caseResolved:
+        return 'status-resolved';
+      case 'In Progress':
+      case t.inProgress:
+        return 'status-in-progress';
+      case 'Action Required':
+      case t.actionRequired:
+        return 'status-action-required';
+      case 'Submitted':
+      case t.submitted:
+        return 'status-submitted';
+      default: 
+        return 'status-default-color';
+    }
+  };
+
+  const getDisplayStatus = (stageName, status, externalCommunications, stateCode) => {
+    if (stateCode === 1) {
+      return t.caseResolved;
+    }
+    const hasActiveResponse = externalCommunications?.some(comm => 
+      (comm.comstatusCode === 116950000 ) && 
+      comm.response === null && 
+      ( comm.comstatusName === 'Request Sent')
+    );
+    
+    if (hasActiveResponse) {
+      return t.actionRequired;
+    }
+
+    if (stageName === 'Request Submission') return t.submitted;
+    if (stageName === 'Evaluation') return t.inProgress;
+    if (stageName === 'Resolution') return t.caseResolved;
+    return status || t.noStatus;
+  };
+
+  const displayStatus = getDisplayStatus(stageName, status, externalCommunications, stateCode);
+  const statusClass = getStatusBadgeClass(displayStatus);
+
+  return (
+    <div className="status-container">
+      <span className={`status-badge ${statusClass} ${size !== 'default' ? size : ''}`}>
+        {displayStatus}
+        {showStatusCode && statusCode && ` (${statusCode})`}
+      </span>
+    </div>
+  );
+};
+
+export default StatusBadge;

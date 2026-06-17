@@ -1,0 +1,494 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #fff;
+  color: #000;
+}
+
+/* Navbar Container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 32px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  position: relative;
+  z-index: 1000;
+}
+
+/* Logo */
+.logo-container {
+  display: flex;
+}
+
+.logo {
+  height: 45px;
+  min-width: 45px;
+  flex-shrink: 0;
+}
+
+/* Mobile Menu Toggle - hidden on desktop */
+.mobile-menu-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  order: 1;
+  margin-right: auto;
+}
+
+/* Nav Left - Desktop */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Nav Menu - Desktop */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+  padding-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #a8e6c3;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Dropdown Menu - Desktop */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 200px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  border-radius: 4px;
+  z-index: 999;
+  top: 100%;
+  left: 0;
+  padding: 10px 0;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+}
+
+.dropdown-content a:hover {
+  background-color: #f5f5f5;
+  color: #2BAE66;
+}
+
+.dropdown-content.show {
+  display: block;
+}
+
+/* Nav Right - Desktop */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 14px;
+}
+
+/* Language Switch - Desktop */
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+  cursor: pointer;
+}
+
+.lang-switch .dropdown-content {
+  min-width: 120px;
+  right: 0;
+  left: auto;
+}
+
+/* User Dropdown - Desktop */
+.user-dropdown-container {
+  position: relative;
+}
+
+.user-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.user-icon {
+  color: #555;
+}
+
+.user-dropdown .dropdown-content {
+  right: 0;
+  left: auto;
+  min-width: 150px;
+}
+
+/* Login Button - Desktop */
+.login-btn {
+  background-color: green;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.3s;
+}
+
+.login-btn:hover {
+  background-color: #24995a;
+}
+
+/* Chevron Icon Animation - Desktop */
+.nav-link .fa-chevron-down,
+.lang-switch .fa-chevron-down,
+.user-dropdown .fa-chevron-down {
+  transition: transform 0.3s ease;
+  font-size: 14px;
+  margin-left: 4px;
+}
+
+.nav-item.dropdown.show .fa-chevron-down,
+.lang-switch.dropdown.show .fa-chevron-down,
+.user-dropdown.show .fa-chevron-down {
+  transform: rotate(180deg);
+}
+
+/* Mobile Menu Styles (hidden on desktop) */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 998;
+  padding: 20px;
+  overflow-y: auto;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  width: auto;
+}
+
+.mobile-menu.open {
+  transform: translateX(0);
+}
+
+.mobile-nav-menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.mobile-nav-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.mobile-nav-link {
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile-dropdown-content {
+  display: none;
+  padding-left: 15px;
+  padding-top: 10px;
+}
+
+.mobile-dropdown-content.show {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mobile-dropdown-content a {
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.mobile-nav-right {
+  margin-top: 30px;
+}
+
+.mobile-nav-icons {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.mobile-nav-icon {
+  font-size: 16px;
+  color: #555;
+}
+
+.mobile-login-btn {
+  background-color: green;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  justify-content: center;
+  margin: 15px 0;
+}
+/* Add these styles to your Navbar.css file */
+
+/* Username display in user dropdown */
+.username {
+  margin-left: 5px;
+  margin-right: 5px;
+  max-width: 120px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* User information in dropdown */
+.user-info {
+  padding: 10px 15px;
+  border-bottom: 1px solid #eee;
+  background-color: #f9f9f9;
+}
+
+.user-name {
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin-bottom: 3px;
+}
+
+.user-phone {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Logout icon styling */
+.logout-icon {
+  margin-right: 5px;
+}
+
+/* Adjust user dropdown width to fit content */
+.user-dropdown-container .dropdown-content {
+  min-width: 150px;
+}
+
+/* Mobile menu user dropdown adjustments */
+.mobile-user-dropdown-container .mobile-dropdown-content {
+  min-width: 150px;
+}
+
+/* Ensure the Login and user dropdown positions match */
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+.mobile-user-dropdown-container {
+  margin-top: 20px;
+}
+
+.mobile-user-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 0;
+  border-top: 1px solid #eee;
+  cursor: pointer;
+}
+
+.mobile-user-dropdown span {
+  font-size: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 10px 20px;
+    flex-wrap: nowrap;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+    order: 1;
+  }
+
+  .logo-container {
+    order: 3;
+    order: 3; /* Move to end of flex container */
+    margin-left: auto; /* Push all the way to right */
+    margin-right: 0; /* Remove any right margin */
+  }
+
+  .nav-left, .nav-right {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+}
+
+/* Dark Mode */
+body.dark {
+  background-color: #1b1b1b;
+  color: #eee;
+}
+
+body.dark .navbar {
+  background-color: #222;
+}
+
+body.dark .nav-link {
+  color: #ccc;
+}
+
+body.dark .dropdown-content {
+  background-color: #333;
+}
+
+body.dark .dropdown-content a {
+  color: #eee;
+}
+
+body.dark .dropdown-content a:hover {
+  background-color: #444;
+}
+
+body.dark .login-btn {
+  background-color: #0f5132;
+}
+
+body.dark .nav-icon {
+  color: #aaa;
+}
+
+body.dark .mobile-menu-toggle {
+  color: #eee;
+}
+
+body.dark .mobile-menu {
+  background-color: #222;
+}
+
+body.dark .mobile-nav-link {
+  color: #eee;
+}
+
+body.dark .mobile-nav-item {
+  border-bottom-color: #444;
+}
+
+body.dark .mobile-dropdown-content a {
+  color: #ccc;
+}
+
+body.dark .mobile-user-dropdown {
+  border-top-color: #444;
+}
+/* Hide User Dropdown Sections */
+.user-dropdown-container,
+.mobile-user-dropdown-container {
+  display: block !important;
+}
+
+/* Adjust spacing for remaining elements */
+.nav-right {
+  gap: 20px; /* Maintain original spacing between remaining elements */
+}
+
+.mobile-nav-right {
+  margin-top: 20px; /* Keep original mobile spacing */
+}
+/* Loading placeholder styles */
+.auth-loading, .mobile-auth-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-placeholder, .mobile-loading-placeholder {
+  width: 80px;
+  height: 36px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading-shimmer 1.5s infinite;
+  border-radius: 20px;
+}
+
+.mobile-loading-placeholder {
+  width: 100px;
+  height: 40px;
+}
+
+@keyframes loading-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Dark mode loading placeholder */
+.dark .loading-placeholder,
+.dark .mobile-loading-placeholder {
+  background: linear-gradient(90deg, #2a2a2a 25%, #3a3a3a 50%, #2a2a2a 75%);
+  background-size: 200% 100%;
+}

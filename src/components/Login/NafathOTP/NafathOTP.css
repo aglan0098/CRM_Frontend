@@ -1,0 +1,353 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "IBM Plex Sans Arabic", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.login-container {
+  background: #FFF;
+  border-radius: 16px;
+  padding: 48px 72px 40px 72px;
+  width: 540px;
+  max-width: 620px;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  box-shadow: 40px 40px 60px 0px rgba(0, 0, 0, 0.15);
+  margin: 0 auto;
+}
+
+.login-title {
+  margin-bottom: 10px;
+  color: var(--foreground-high, #101828);
+  font-family: "IBM Plex Sans Arabic";
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  text-align: center;
+}
+
+.login-subtitle {
+  margin-bottom: 32px;
+  color: var(--Text-text-secondary-paragraph, #6C737F);
+  font-family: "IBM Plex Sans Arabic";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 118%;
+  text-align: center;
+}
+
+.logos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 78px;
+  align-self: stretch;
+  margin-bottom: 32px;
+  position: relative;
+}
+
+.logos-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 270px;
+}
+
+.logo1 {
+  width: 46.12px;
+  height: 48.375px;
+  flex-shrink: 0;
+}
+
+.logo2 {
+  width: 84px;
+  height: 5px;
+}
+
+.logo3 {
+  width: 103px;
+  height: 44px;
+  aspect-ratio: 103/44;
+}
+
+.otp-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.otp-input {
+  width: 80px;
+  height: 80px;
+  border: 2px solid #E5E7EB;
+  border-radius: 8px;
+  text-align: center;
+  font-family: "IBM Plex Sans Arabic";
+  font-size: 32px;
+  font-weight: 600;
+  color: #101828;
+  background: #F9FAFB;
+  outline: none;
+  transition: border-color 0.3s ease;
+  margin-bottom: 16px;
+}
+
+.otp-input:focus {
+  border-color: #104631;
+}
+
+.otp-input.filled {
+  border-color: #104631;
+  background: #fff;
+}
+
+.verification-instruction {
+  color: #6C737F;
+  font-family: "IBM Plex Sans Arabic";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 118%;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.login-button {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 4px;
+  font-family: "IBM Plex Sans Arabic";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  cursor: not-allowed;
+  transition: all 0.3s ease;
+  margin-bottom: 16px;
+  color: #FFF;
+  background: #E5E7EB;
+}
+
+.login-button.active {
+  background: #104631;
+  cursor: pointer;
+}
+
+.login-button.active:hover {
+  background: #0d3a28;
+}
+
+.countdown-timer {
+  text-align: center;
+  color: #1F2A37;
+  font-family: "IBM Plex Sans Arabic";
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+.countdown-timer .timer-number {
+  color: #1B8354;
+}
+
+.error-message {
+  color: #EF4444;
+  font-family: "IBM Plex Sans Arabic";
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 16px;
+  min-height: 20px;
+}
+
+.resend-section {
+  text-align: center;
+  font-size: 14px;
+  color: #6C737F;
+  font-family: "IBM Plex Sans";
+}
+
+.resend-section a {
+  color: #1B8354;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.resend-section a:hover:not(.disabled) {
+  text-decoration: underline;
+}
+
+.resend-section a.disabled {
+  color: #9CA3AF;
+  cursor: not-allowed;
+}
+
+/* ========================= */
+/* MOBILE RESPONSIVENESS */
+/* ========================= */
+
+/* Tablet and below */
+@media (max-width: 768px) {
+  .login-container {
+    width: 90%;
+    max-width: 90%;
+    padding: 36px 32px 32px 32px;
+  }
+
+  .login-title {
+    font-size: 24px;
+  }
+
+  .login-subtitle {
+    font-size: 15px;
+    margin-bottom: 28px;
+  }
+
+  .logos {
+    gap: 60px;
+    margin-bottom: 28px;
+  }
+
+  .logos-top {
+    max-width: 240px;
+  }
+
+  .logo1 {
+    width: 40px;
+    height: 42px;
+  }
+
+  .logo2 {
+    width: 70px;
+  }
+
+  .logo3 {
+    width: 90px;
+    height: 38px;
+  }
+
+  .otp-input {
+    width: 70px;
+    height: 70px;
+    font-size: 28px;
+  }
+
+  .verification-instruction {
+    font-size: 15px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .login-container {
+    width: 95%;
+    max-width: 95%;
+    padding: 24px 20px;
+    box-shadow: 20px 20px 40px 0px rgba(0, 0, 0, 0.15);
+  }
+
+  .login-title {
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+
+  .login-subtitle {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .logos {
+    gap: 40px;
+    margin-bottom: 24px;
+  }
+
+  .logos-top {
+    max-width: 200px;
+  }
+
+  .logo1 {
+    width: 35px;
+    height: 37px;
+  }
+
+  .logo2 {
+    width: 60px;
+    height: 4px;
+  }
+
+  .logo3 {
+    width: 75px;
+    height: 32px;
+  }
+
+  .otp-input {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  .verification-instruction {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .login-button {
+    padding: 14px;
+    font-size: 16px;
+    min-height: 48px;
+  }
+
+  .error-message {
+    font-size: 13px;
+  }
+
+  .resend-section {
+    font-size: 13px;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+  .login-container {
+    padding: 20px 16px;
+  }
+
+  .login-title {
+    font-size: 20px;
+  }
+
+  .logos-top {
+    max-width: 180px;
+  }
+
+  .logo1 {
+    width: 30px;
+    height: 32px;
+  }
+
+  .logo2 {
+    width: 50px;
+  }
+
+  .logo3 {
+    width: 65px;
+    height: 28px;
+  }
+
+  .otp-input {
+    width: 55px;
+    height: 55px;
+    font-size: 22px;
+  }
+}

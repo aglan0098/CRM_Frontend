@@ -1,0 +1,497 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+    font-family: "IBM Plex Sans Arabic", Arial, sans-serif;
+}
+
+.card-back {
+    width: 100vw;
+    height: 244px;
+    position: relative;
+    top: 0;
+    left: 0;
+    flex-shrink: 0;
+    background: #F7FDF9;
+    z-index: 1;
+}
+
+.Vector-img {
+    width: 300px;
+    height: 240px;
+    flex-shrink: 0;
+    fill: rgba(184, 234, 203, 0.20);
+    position: absolute;
+    left: 30px;
+    top: 4px;
+    z-index: 2;
+}
+
+.header-text-container {
+    position: absolute;
+    top: 90px;
+    left: 80px;
+    gap: 50px;
+    z-index: 4;
+    max-width: 800px;
+}
+
+.card-header {
+    align-self: stretch;
+    color: #161616;
+    font-family: "IBM Plex Sans Arabic";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 38px;
+    margin-bottom: 16px;
+}
+
+.card-text {
+    width: 800px;
+    color: #161616;
+    font-family: "IBM Plex Sans Arabic";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.contactcard {
+    position: absolute;
+    top: 90px;
+    right: 80px;
+    width: 416px;
+    height: 416px;
+    padding: 40px;
+    gap: 24px;
+    border-radius: 16px;
+    border: 1px solid #D2D6DB;
+    background: #FFF;
+    z-index: 3;
+}
+
+.contact-header {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1F2A37;
+    font-style: normal;
+    font-family: "IBM Plex Sans Arabic";
+    margin-bottom: 24px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    gap: 12px;
+}
+
+.contact-icon {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.contact-details {
+    flex: 1;
+}
+
+.contact-label {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1F2A37;
+    font-style: normal;
+    font-family: "IBM Plex Sans Arabic";
+    margin-bottom: 4px;
+}
+
+.contact-value {
+    font-size: 16px;
+    font-style: normal;
+    font-family: "IBM Plex Sans Arabic";
+    font-weight: 400;
+    color: #1B8354;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.copy-icon {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.follow-section {
+    margin-top: 32px;
+}
+
+.follow-header {
+    font-size: 18px;
+    font-style: normal;
+    font-family: "IBM Plex Sans Arabic";
+    font-weight: 700;
+    color: #1F2A37;
+    margin-bottom: 16px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 16px;
+}
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.survey-container {
+    margin-top: 40px;
+    padding: 40px 80px;
+    max-width: 800px;
+    z-index: 5;
+    position: relative;
+}
+
+.survey-question {
+    margin-bottom: 32px;
+}
+
+.question-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: #161616;
+    font-style: normal;
+    font-family: "IBM Plex Sans Arabic";
+    margin-bottom: 16px;
+}
+
+.question-required {
+    color: #DC2626;
+}
+
+.rating-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 12px;
+    position: relative;
+}
+
+.rating-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.rating-option input[type="radio"] {
+    width: 32px;
+    height: 32px;
+    border: 2px solid #6C737F;
+    border-radius: 50%;
+    appearance: none;
+    cursor: pointer;
+}
+
+.rating-option input[type="radio"]:checked {
+    border-color: #1B8354;
+    background-color: #1B8354;
+    position: relative;
+}
+
+.rating-option input[type="radio"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.rating-option label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #1F2A37;
+    font-style: normal;
+    font-family: "IBM Plex Sans Arabic";
+    cursor: pointer;
+}
+
+.rating-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    width: 100%;
+    position: relative;
+}
+
+.rating-label-left {
+    text-align: left;
+    position: absolute;
+    left: 5px;
+}
+
+.rating-label-right {
+    text-align: right;
+    position: absolute;
+    right: 190px;
+}
+
+.rating-label {
+    font-size: 14px;
+    font-weight: 400;
+    color: #6C737F;
+    font-family: "IBM Plex Sans Arabic";
+    font-style: normal;
+}
+
+.feedback-textarea {
+    width: 800px;
+    height: 112px;
+    padding: 16px;
+    border: 1px solid #6C737F;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: "IBM Plex Sans Arabic";
+    resize: vertical;
+    margin-top: 8px;
+}
+
+.feedback-textarea::placeholder {
+    color: #6C737F;
+}
+
+.submit-button {
+    width: 132px;
+    height: 40px;
+    background-color: #1B8354;
+    color: white;
+    padding: 0px 16px 0px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: "IBM Plex Sans Arabic";
+    cursor: pointer;
+    margin-top: 24px;
+}
+
+.submit-button:hover {
+    background-color: #166b43;
+}
+
+.Review-section {
+    max-width: 1800px;
+    z-index: 5;
+    padding: 0 80px;
+}
+
+.last-modified {
+    font-size: 14px;
+    font-weight: 400;
+    color: #6C737F;
+    font-family: "IBM Plex Sans Arabic";
+    text-align: right;
+    margin-bottom: 16px;
+}
+
+.service-rating-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.service-rating-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.service-rating-text {
+    font-size: 16px;
+    font-weight: 400;
+    color: #1F2A37;
+    font-family: "IBM Plex Sans Arabic";
+}
+
+.rating-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1F2A37;
+    font-family: "IBM Plex Sans Arabic";
+}
+
+.stars-container {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.star {
+    width: 20px;
+    height: 20px;
+    fill: #10B981;
+}
+
+.star.half {
+    fill: url(#half-star);
+}
+
+.star.empty {
+    fill: #D1D5DB;
+}
+
+.review-count {
+    font-size: 14px;
+    font-weight: 400;
+    color: #6C737F;
+    font-family: "IBM Plex Sans Arabic";
+}
+
+.rate-service-button {
+    width: 240px;
+    height: 40px;
+    background-color: #1B8354;
+    color: white;
+    padding: 0px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: "IBM Plex Sans Arabic";
+    cursor: pointer;
+}
+
+.rate-service-button:hover {
+    background-color: #166b43;
+}
+
+@media (max-width: 1440px) {
+    .contactcard {
+        right: 40px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .header-text-container {
+        max-width: 600px;
+    }
+
+    .card-text {
+        width: 600px;
+    }
+
+    .survey-container,
+    .footer-section {
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .contactcard {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin: 40px auto;
+        width: 80%;
+        max-width: 416px;
+    }
+
+    .header-text-container {
+        position: relative;
+        top: auto;
+        left: auto;
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    .card-back {
+        position: relative;
+        height: auto;
+        padding-bottom: 20px;
+    }
+
+    .Vector-img {
+        display: none;
+    }
+
+    .card-text {
+        width: 100%;
+    }
+
+    .survey-container,
+    .footer-section {
+        margin-top: 20px;
+        padding: 20px;
+    }
+
+    .rating-container {
+        gap: 20px;
+    }
+
+    .service-rating-section {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-header {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .contactcard {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .survey-container,
+    .footer-section {
+        padding: 15px;
+    }
+
+    .rating-container {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-header {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .card-text {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .contactcard {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .survey-container,
+    .footer-section {
+        padding: 10px;
+    }
+}

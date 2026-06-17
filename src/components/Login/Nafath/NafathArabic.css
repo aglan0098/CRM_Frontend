@@ -1,0 +1,205 @@
+.Nafath-container {
+  background: #fff;
+  border-radius: 16px;
+  padding: 48px 72px 40px 72px;
+  width: 540px;
+  max-width: 620px;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  box-shadow: 40px 40px 60px 0px rgba(0, 0, 0, 0.15);
+}
+
+.Nafath-title {
+  margin-bottom: 10px;
+  color: #101828;
+  font-family: 'IBM Plex Sans';
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+}
+
+.Nafath-subtitle {
+  margin-bottom: 32px;
+  color: #6c737f;
+  font-family: 'IBM Plex Sans';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 118%;
+}
+
+.Nafathform-group {
+  margin-bottom: 24px;
+}
+
+.Nafathform-label {
+  display: block;
+  margin-bottom: 8px;
+  color: #161616;
+  font-family: 'IBM Plex Sans Arabic';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.Nafathrequired {
+  color: #b42318;
+  font-family: 'IBM Plex Sans Arabic';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.Nafathform-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #9da4ae;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+  background: #fff;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.Nafathform-input:focus {
+  border-color: #2d5a27;
+  background: white;
+}
+
+.Nafathform-input.error {
+  border-color: #b42318;
+}
+
+.Nafathlogin-button {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 4px;
+  font-family: 'IBM Plex Sans Arabic';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+.Nafathlogin-button.disabled {
+  background: #e5e7eb;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.Nafathlogin-button.enabled {
+  background: #104631;
+  cursor: pointer;
+}
+
+.Nafathlogin-button.enabled:hover {
+  background: #0d3a28;
+}
+
+.Nafathsignup-link {
+  text-align: center;
+  font-size: 14px;
+  color: #384250;
+}
+
+.Nafathsignup-link-a {
+  color: #1b8354;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.Nafathvalidation-error {
+  color: #b42318;
+  font-family: 'IBM Plex Sans Arabic';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  margin-top: 4px;
+}
+
+/* ========================= */
+/* MOBILE RESPONSIVENESS - ARABIC */
+/* ========================= */
+
+/* Tablet and below */
+@media (max-width: 768px) {
+  .Nafath-container {
+    width: 90%;
+    max-width: 90%;
+    padding: 36px 32px 32px 32px;
+  }
+
+  .Nafath-title {
+    font-size: 24px;
+  }
+
+  .Nafath-subtitle {
+    font-size: 15px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .Nafath-container {
+    width: 95%;
+    max-width: 95%;
+    padding: 24px 20px;
+    box-shadow: 20px 20px 40px 0px rgba(0, 0, 0, 0.15);
+  }
+
+  .Nafath-title {
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+
+  .Nafath-subtitle {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .Nafathform-group {
+    margin-bottom: 20px;
+  }
+
+  .Nafathform-input {
+    padding: 14px 16px;
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+
+  .Nafathlogin-button {
+    padding: 14px;
+    font-size: 16px;
+    min-height: 48px; /* Touch-friendly */
+    margin-bottom: 12px;
+  }
+
+  .Nafathsignup-link {
+    font-size: 13px;
+  }
+
+  .Nafathvalidation-error {
+    font-size: 11px;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+  .Nafath-container {
+    padding: 20px 16px;
+  }
+
+  .Nafath-title {
+    font-size: 20px;
+  }
+}

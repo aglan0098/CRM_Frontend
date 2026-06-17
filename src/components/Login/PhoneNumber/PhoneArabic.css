@@ -1,0 +1,425 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family:
+      'IBM Plex Sans Arabic',
+      -apple-system,
+      BlinkMacSystemFont,
+      'Segoe UI',
+      Roboto,
+      sans-serif;
+  }
+  .Phone-containerAr {
+    background: #fff;
+    border-radius: 16px;
+    padding: 48px 72px;
+    width: 540px;
+    max-width: 620px;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    box-shadow: 40px 40px 60px 0px rgba(0, 0, 0, 0.15);
+  }
+  
+  .Phone-titleAr {
+    margin-bottom: 10px;
+    color: var(--foreground-high, #101828);
+    font-family: 'IBM Plex Sans Arabic';
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%; /* 28px */
+  }
+  
+  .Phone-subtitleAr {
+    margin-bottom: 32px;
+    color: var(--Text-text-secondary-paragraph, #6c737f);
+    font-family: 'IBM Plex Sans Arabic';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 118%; /* 18.88px */
+  }
+  
+  .Phoneform-groupAr {
+    margin-bottom: 24px;
+  }
+  
+  .Phoneform-labelAr {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--Form-field-text-label, #161616);
+    font-family: 'IBM Plex Sans Arabic';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+  }
+  
+  .PhonerequiredAr {
+    color: var(--Form-field-border-error, #b42318);
+    font-family: 'IBM Plex Sans Arabic';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+  }
+  
+  .Phoneform-inputAr {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #9da4ae;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    background: #fff;
+    direction: ltr;
+    text-align: right;
+  }
+  
+  .Phoneform-inputAr:focus {
+    outline: none;
+    border-color: #2d5a27;
+    background: white;
+  }
+  
+  .Phonepassword-containerAr {
+    position: relative;
+  }
+  
+  .Phonepassword-toggleAr {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #666;
+    font-size: 18px;
+    padding: 4px;
+  }
+  
+  .Phonepassword-toggleAr img {
+    width: 20px;
+    height: 20px;
+    transition: opacity 0.3s ease;
+  }
+  
+  .Phonepassword-toggleAr.showing::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 24px;
+    height: 2px;
+    background: #666;
+    transform: translate(-50%, -50%) rotate(45deg);
+    pointer-events: none;
+  }
+  
+  .Phoneforgot-passwordAr {
+    text-align: right;
+    margin-top: 8px;
+  }
+  
+  .Phoneforgot-passwordAr a {
+    color: #1570ef;
+    text-decoration: none;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    text-transform: capitalize;
+  }
+  
+  .Phoneforgot-passwordAr a:hover {
+    text-decoration: underline;
+  }
+  
+  .Phonelogin-buttonAr {
+    width: 100%;
+    padding: 16px;
+    background: #104631;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-family: 'IBM Plex Sans Arabic';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 16px;
+  }
+  
+  .Phonelogin-buttonAr:hover {
+    background: #104631;
+  }
+  
+  .Phonenafath-buttonAr {
+    width: 100%;
+    padding: 16px;
+    background: #0a9a8f;
+    border: none;
+    border-radius: 4px;
+    color: var(--Text-text-oncolor-primary, #fff);
+    font-family: 'IBM Plex Sans Arabic';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 150% */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 24px;
+  }
+  
+  .Phonenafath-buttonAr:hover {
+    background: #0a9a8f;
+  }
+  
+  .Phonesignup-linkAr {
+    text-align: center;
+    font-size: 14px;
+    color: #384250;
+  }
+  
+  .Phonesignup-linkAr a {
+    color: #1b8354;
+    text-decoration: none;
+    font-weight: 400;
+  }
+  
+  .Phonesignup-linkAr a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Placeholder styling */
+  .Phoneform-inputAr::placeholder {
+    color: #384250;
+  }
+  
+  /* Logo placeholder */
+  .Phonelogo-placeholderAr {
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #666;
+    font-weight: 500;
+  }
+  
+  /* Icon placeholders */
+  .Phoneicon-placeholderAr {
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: #384250;
+  }
+  
+  /* Arabic RTL styles for Phone Login component */
+  /* Add these styles to your existing Phone.css file */
+  
+  /* RTL Container */
+  .Phone-container-rtlAr {
+    direction: rtl;
+    text-align: right;
+  }
+  
+  /* Arabic font support for all text elements */
+  .Phone-container-rtlAr .Phone-titleAr {
+    font-family: "IBM Plex Sans Arabic", "IBM Plex Sans", sans-serif;
+    text-align: center;
+  }
+  
+  .Phone-container-rtlAr .Phone-subtitleAr {
+    font-family: "IBM Plex Sans Arabic", "IBM Plex Sans", sans-serif;
+    text-align: center;
+  }
+  
+  .Phone-container-rtlAr .Phoneform-labelAr {
+    font-family: "IBM Plex Sans Arabic", "IBM Plex Sans", sans-serif;
+    text-align: right;
+  }
+  
+  .Phone-container-rtlAr .PhonerequiredAr {
+    font-family: "IBM Plex Sans Arabic", "IBM Plex Sans", sans-serif;
+    margin-left: 4px;
+    margin-right: 0;
+  }
+  
+  /* Phone input positioning for Arabic - keep LTR for proper number sequence */
+  .Phone-container-rtlAr .Phoneform-inputAr[type="tel"] {
+    direction: ltr;
+    text-align: right;
+  }
+  
+  .Phone-container-rtlAr .Phonelogin-buttonAr {
+    font-family: "IBM Plex Sans Arabic", "IBM Plex Sans", sans-serif;
+  }
+  
+  .Phone-container-rtlAr .Phonenafath-buttonAr {
+    font-family: "IBM Plex Sans Arabic", "IBM Plex Sans", sans-serif;
+  }
+  
+  .Phone-container-rtlAr .Phonesignup-linkAr {
+    font-family: "IBM Plex Sans Arabic", "IBM Plex Sans", sans-serif;
+    text-align: center;
+  }
+  
+  .Phone-container-rtlAr .Phonesignup-linkAr a {
+    font-family: "IBM Plex Sans Arabic", "IBM Plex Sans", sans-serif;
+  }
+  
+  /* Password toggle button positioning for RTL */
+  .Phone-container-rtlAr .Phonepassword-toggleAr {
+    right: auto;
+    left: 12px;
+  }
+  
+  /* Forgot password link alignment for RTL */
+  .Phone-container-rtlAr .Phoneforgot-passwordAr {
+    text-align: left;
+  }
+  
+  /* Responsive adjustments for RTL */
+  @media (max-width: 768px) {
+    .Phone-container-rtlAr {
+      padding: 20px 15px;
+    }
+    
+    .Phone-container-rtlAr .Phoneform-groupAr {
+      margin-bottom: 20px;
+    }
+  }
+  
+  /* Ensure proper spacing for Arabic text */
+  .Phone-container-rtlAr * {
+    letter-spacing: normal;
+    word-spacing: normal;
+  }
+  
+  /* Fix any alignment issues */
+  .Phone-container-rtlAr button {
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Additional Arabic text optimization */
+  .Phone-container-rtlAr {
+    line-height: 1.6; /* Better line height for Arabic text */
+  }
+  
+  .Phone-container-rtlAr .Phone-titleAr,
+  .Phone-container-rtlAr .Phone-subtitleAr,
+  .Phone-container-rtlAr .Phoneform-labelAr,
+  .Phone-container-rtlAr .Phonesignup-linkAr {
+    line-height: 1.5; /* Optimized line height for readability */
+  }
+  
+  /* ========================= */
+  /* MOBILE RESPONSIVENESS - ARABIC */
+  /* ========================= */
+  
+  /* Tablet and below */
+  @media (max-width: 768px) {
+    .Phone-containerAr {
+      width: 90%;
+      max-width: 90%;
+      padding: 36px 32px;
+    }
+  
+    .Phone-container-rtlAr {
+      padding: 36px 32px;
+    }
+  
+    .Phone-titleAr {
+      font-size: 24px;
+    }
+  
+    .Phone-subtitleAr {
+      font-size: 15px;
+    }
+  }
+  
+  /* Mobile phones */
+  @media (max-width: 480px) {
+    .Phone-containerAr {
+      width: 95%;
+      max-width: 95%;
+      padding: 24px 20px;
+      box-shadow: 20px 20px 40px 0px rgba(0, 0, 0, 0.15);
+    }
+  
+    .Phone-container-rtlAr {
+      width: 95%;
+      max-width: 95%;
+      padding: 24px 20px;
+    }
+  
+    .Phone-titleAr {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+  
+    .Phone-subtitleAr {
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+  
+    .Phoneform-groupAr {
+      margin-bottom: 20px;
+    }
+  
+    .Phoneform-inputAr {
+      padding: 14px 16px;
+      font-size: 16px; /* Prevent zoom on iOS */
+    }
+  
+    .Phonelogin-buttonAr,
+    .Phonenafath-buttonAr {
+      padding: 14px;
+      font-size: 16px;
+      min-height: 48px; /* Touch-friendly */
+    }
+  
+    .Phonelogin-buttonAr {
+      margin-bottom: 12px;
+    }
+  
+    .Phonenafath-buttonAr {
+      margin-bottom: 20px;
+    }
+  
+    .Phonesignup-linkAr {
+      font-size: 13px;
+    }
+  }
+  
+  /* Very small screens */
+  @media (max-width: 360px) {
+    .Phone-containerAr,
+    .Phone-container-rtlAr {
+      padding: 20px 16px;
+    }
+  
+    .Phone-titleAr {
+      font-size: 20px;
+    }
+  }
+  

@@ -1,0 +1,689 @@
+/* SurveyArabic.css - Complete Arabic RTL styles for Survey component */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+    font-family: "IBM Plex Sans Arabic", Arial, sans-serif;
+}
+
+/* ===== ARABIC RTL HEADER SECTION ===== */
+
+.card-back-rtl {
+    width: 100vw;
+    height: 244px;
+    position: relative;
+    top: 0;
+    left: 0;
+    flex-shrink: 0;
+    background: #F7FDF9;
+    z-index: 1;
+    direction: rtl;
+}
+
+.Vector-img-rtl {
+    width: 300px;
+    height: 240px;
+    flex-shrink: 0;
+    fill: rgba(184, 234, 203, 0.20);
+    position: absolute;
+    right: 30px;
+    top: 4px;
+    z-index: 2;
+}
+
+.header-text-container-rtl {
+    position: absolute;
+    top: 90px;
+    right: 80px;
+    gap: 50px;
+    z-index: 4;
+    max-width: 800px;
+    direction: rtl;
+    text-align: right;
+}
+
+.card-header-rtl {
+    align-self: stretch;
+    color: #161616;
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 38px;
+    margin-bottom: 16px;
+    text-align: right;
+}
+
+.card-text-rtl {
+    width: 800px;
+    color: #161616;
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: right;
+}
+
+/* ===== ARABIC RTL CONTACT CARD ===== */
+
+.contactcard-rtl {
+    position: absolute;
+    top: 90px;
+    left: 80px;
+    width: 416px;
+    height: 416px;
+    padding: 40px;
+    gap: 24px;
+    border-radius: 16px;
+    border: 1px solid #D2D6DB;
+    background: #FFF;
+    z-index: 3;
+    direction: rtl;
+}
+
+.contact-header-rtl {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1F2A37;
+    font-style: normal;
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+    margin-bottom: 24px;
+    text-align: right;
+}
+
+.contact-item-rtl {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    gap: 12px;
+    direction: rtl;
+}
+
+.contact-icon-rtl {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.contact-details-rtl {
+    flex: 1;
+    text-align: right;
+}
+
+.contact-label-rtl {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1F2A37;
+    font-style: normal;
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+    margin-bottom: 4px;
+    text-align: right;
+}
+
+.contact-value-rtl {
+    font-size: 16px;
+    font-style: normal;
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+    font-weight: 400;
+    color: #1B8354;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    direction: ltr;
+    justify-content: flex-end;
+}
+
+.copy-icon-rtl {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.follow-section-rtl {
+    margin-top: 32px;
+    direction: rtl;
+}
+
+.follow-header-rtl {
+    font-size: 18px;
+    font-style: normal;
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+    font-weight: 700;
+    color: #1F2A37;
+    margin-bottom: 16px;
+    text-align: right;
+}
+
+.social-icons-rtl {
+    display: flex;
+    gap: 16px;
+    justify-content: flex-end;
+    direction: ltr;
+}
+
+.social-icon-rtl {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+/* ===== ARABIC RTL SURVEY SECTION ===== */
+
+.survey-container-rtl {
+    margin-top: 40px;
+    padding: 40px 80px;
+    max-width: 800px;
+    z-index: 5;
+    position: relative;
+    direction: rtl;
+}
+
+.survey-question-rtl {
+    margin-bottom: 32px;
+    direction: rtl;
+}
+
+.question-text-rtl {
+    font-size: 14px;
+    font-weight: 600;
+    color: #161616;
+    font-style: normal;
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+    margin-bottom: 16px;
+    text-align: right;
+}
+
+.question-required-rtl {
+    color: #DC2626;
+    margin-left: 4px;
+}
+
+.rating-container-rtl {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 12px;
+    position: relative;
+    direction: ltr;
+    justify-content: flex-end;
+}
+
+.rating-option-rtl {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.rating-option-rtl input[type="radio"] {
+    width: 32px;
+    height: 32px;
+    border: 2px solid #6C737F;
+    border-radius: 50%;
+    appearance: none;
+    cursor: pointer;
+}
+
+.rating-option-rtl input[type="radio"]:checked {
+    border-color: #1B8354;
+    background-color: #1B8354;
+    position: relative;
+}
+
+.rating-option-rtl input[type="radio"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.rating-option-rtl label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #1F2A37;
+    font-style: normal;
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+    cursor: pointer;
+}
+
+.rating-labels-rtl {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    width: 100%;
+    position: relative;
+    direction: rtl;
+}
+
+.rating-label-left-rtl {
+    text-align: left;
+    position: absolute;
+    left: 190px;
+}
+
+.rating-label-right-rtl {
+    text-align: right;
+    position: absolute;
+    right: 5px;
+}
+
+.rating-label-rtl {
+    font-size: 14px;
+    font-weight: 400;
+    color: #6C737F;
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+    font-style: normal;
+}
+
+.feedback-textarea-rtl {
+    width: 800px;
+    height: 112px;
+    padding: 16px;
+    border: 1px solid #6C737F;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+    resize: vertical;
+    margin-top: 8px;
+    direction: rtl;
+    text-align: right;
+}
+
+.feedback-textarea-rtl::placeholder {
+    color: #6C737F;
+    text-align: right;
+}
+
+.submit-button-rtl {
+    width: 132px;
+    height: 40px;
+    background-color: #1B8354;
+    color: white;
+    padding: 0px 16px 0px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+    cursor: pointer;
+    margin-top: 24px;
+}
+
+.submit-button-rtl:hover {
+    background-color: #166b43;
+}
+
+.submit-button-rtl:disabled {
+    background-color: #9CA3AF;
+    cursor: not-allowed;
+}
+
+/* ===== ARABIC RTL REVIEW SECTION ===== */
+
+.Review-section-rtl {
+    max-width: 1800px;
+    z-index: 5;
+    padding: 0 80px;
+    direction: rtl;
+}
+
+.last-modified-rtl {
+    font-size: 14px;
+    font-weight: 400;
+    color: #6C737F;
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+    text-align: left;
+    margin-bottom: 16px;
+}
+
+.service-rating-section-rtl {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    direction: rtl;
+}
+
+.service-rating-left-rtl {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    direction: rtl;
+}
+
+.service-rating-text-rtl {
+    font-size: 16px;
+    font-weight: 400;
+    color: #1F2A37;
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+}
+
+.rating-value-rtl {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1F2A37;
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+}
+
+.stars-container-rtl {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    direction: ltr;
+}
+
+.star-rtl {
+    width: 20px;
+    height: 20px;
+    fill: #10B981;
+}
+
+.star-rtl.half {
+    fill: url(#half-star);
+}
+
+.star-rtl.empty {
+    fill: #D1D5DB;
+}
+
+.review-count-rtl {
+    font-size: 14px;
+    font-weight: 400;
+    color: #6C737F;
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+}
+
+.rate-service-button-rtl {
+    width: 240px;
+    height: 40px;
+    background-color: #1B8354;
+    color: white;
+    padding: 0px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+    cursor: pointer;
+}
+
+.rate-service-button-rtl:hover {
+    background-color: #166b43;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+@media (max-width: 1440px) {
+    .contactcard-rtl {
+        left: 40px;
+    }
+    
+    .header-text-container-rtl {
+        right: 40px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .header-text-container-rtl {
+        max-width: 600px;
+        right: 60px;
+    }
+
+    .card-text-rtl {
+        width: 600px;
+    }
+
+    .survey-container-rtl {
+        max-width: 600px;
+    }
+    
+    .Review-section-rtl {
+        max-width: 600px;
+    }
+    
+    .feedback-textarea-rtl {
+        width: 600px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .contactcard-rtl {
+        position: relative;
+        top: auto;
+        left: auto;
+        margin: 40px auto;
+        width: 80%;
+        max-width: 416px;
+    }
+
+    .header-text-container-rtl {
+        position: relative;
+        top: auto;
+        right: auto;
+        padding: 20px;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .card-back-rtl {
+        position: relative;
+        height: auto;
+        padding-bottom: 20px;
+    }
+
+    .Vector-img-rtl {
+        display: none;
+    }
+
+    .card-text-rtl {
+        width: 100%;
+        text-align: center;
+    }
+
+    .card-header-rtl {
+        text-align: center;
+    }
+
+    .survey-container-rtl {
+        margin-top: 20px;
+        padding: 20px;
+    }
+    
+    .Review-section-rtl {
+        margin-top: 20px;
+        padding: 20px;
+    }
+
+    .rating-container-rtl {
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .service-rating-section-rtl {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    
+    .feedback-textarea-rtl {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-header-rtl {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .contactcard-rtl {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .survey-container-rtl {
+        padding: 15px;
+    }
+    
+    .Review-section-rtl {
+        padding: 15px;
+    }
+
+    .rating-container-rtl {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .rating-labels-rtl {
+        justify-content: center;
+        gap: 100px;
+        margin-top: 16px;
+    }
+
+    .rating-label-left-rtl,
+    .rating-label-right-rtl {
+        position: relative;
+        left: auto;
+        right: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-header-rtl {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .card-text-rtl {
+        font-size: 14px;
+        line-height: 20px;
+        width: 100%;
+    }
+
+    .contactcard-rtl {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .survey-container-rtl {
+        padding: 10px;
+    }
+    
+    .Review-section-rtl {
+        padding: 10px;
+    }
+
+    .header-text-container-rtl {
+        padding: 10px;
+    }
+
+    .submit-button-rtl {
+        width: 100%;
+        max-width: 200px;
+    }
+
+    .rate-service-button-rtl {
+        width: 100%;
+        max-width: 240px;
+    }
+    
+    .rating-labels-rtl {
+        gap: 50px;
+    }
+}
+
+/* ===== ACCESSIBILITY & PERFORMANCE ===== */
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .card-header-rtl,
+    .question-text-rtl {
+        color: #000000;
+    }
+    
+    .contact-label-rtl,
+    .service-rating-text-rtl {
+        color: #2D3748;
+    }
+    
+    .submit-button-rtl,
+    .rate-service-button-rtl {
+        border: 2px solid #1A202C;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .submit-button-rtl,
+    .rate-service-button-rtl {
+        transition: none;
+    }
+}
+
+/* Enhanced text rendering for Arabic */
+.card-header-rtl,
+.card-text-rtl,
+.question-text-rtl,
+.contact-header-rtl,
+.contact-label-rtl,
+.service-rating-text-rtl,
+.follow-header-rtl {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Better line height for Arabic text */
+.card-text-rtl,
+.question-text-rtl,
+.contact-label-rtl {
+    line-height: 1.6;
+}
+
+/* Focus styles for better accessibility */
+.rating-option-rtl input[type="radio"]:focus {
+    outline: 2px solid #1B8354;
+    outline-offset: 2px;
+}
+
+.feedback-textarea-rtl:focus {
+    outline: 2px solid #1B8354;
+    outline-offset: 1px;
+}
+
+.submit-button-rtl:focus,
+.rate-service-button-rtl:focus {
+    outline: 2px solid #1B8354;
+    outline-offset: 2px;
+}
+
+/* Loading state for submit button */
+.submit-button-rtl.submitting {
+    opacity: 0.7;
+    cursor: wait;
+}
+
+/* Ensure proper text flow for Arabic */
+.card-text-rtl,
+.question-text-rtl,
+.contact-label-rtl,
+.service-rating-text-rtl {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}

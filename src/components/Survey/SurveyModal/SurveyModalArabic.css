@@ -1,0 +1,322 @@
+/* SurveyModalArabic.css - Arabic RTL styles for SurveyModal component */
+
+/* Base modal styles (inherited from original) */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 12px;
+  padding: 32px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.modal-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.modal-title {
+  color: #1F2937;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.modal-body {
+  margin-bottom: 32px;
+}
+
+.modal-message {
+  color: #6B7280;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  margin: 0;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.modal-button {
+  background-color: #3B82F6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 32px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.modal-button:hover {
+  background-color: #2563EB;
+}
+
+.modal-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+/* ===== ARABIC RTL SPECIFIC STYLES ===== */
+
+/* RTL Modal Content */
+.modal-content-rtl {
+  direction: rtl;
+  text-align: right;
+  animation: modalSlideInRTL 0.3s ease-out;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* RTL Modal Header */
+.modal-header-rtl {
+  text-align: center;
+  direction: rtl;
+  margin-bottom: 24px;
+}
+
+.modal-title-rtl {
+  color: #111827; /* Slightly darker for better contrast */
+  font-family: "IBM Plex Sans Arabic", "IBM Plex Sans", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+}
+
+/* RTL Modal Body */
+.modal-body-rtl {
+  direction: rtl;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.modal-message-rtl {
+  color: #4B5563; /* Better contrast while maintaining readability */
+  font-family: "IBM Plex Sans Arabic", "IBM Plex Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.6; /* Better line height for Arabic text */
+  text-align: center;
+  margin: 0;
+  direction: rtl;
+}
+
+/* RTL Modal Footer */
+.modal-footer-rtl {
+  display: flex;
+  justify-content: center;
+  direction: rtl;
+}
+
+.modal-button-rtl {
+  background-color: #3B82F6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 32px;
+  font-family: "IBM Plex Sans Arabic", "IBM Plex Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.modal-button-rtl:hover {
+  background-color: #2563EB;
+}
+
+.modal-button-rtl:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+.modal-button-rtl:focus-visible {
+  outline: 2px solid #3B82F6;
+  outline-offset: 2px;
+}
+
+/* RTL Animation */
+@keyframes modalSlideInRTL {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Additional RTL optimizations */
+.modal-content-rtl * {
+  letter-spacing: normal;
+  word-spacing: normal;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablet and small desktop */
+@media (max-width: 768px) {
+  .modal-content-rtl {
+    padding: 24px 20px;
+    max-width: 350px;
+  }
+  
+  .modal-title-rtl {
+    font-size: 20px;
+  }
+  
+  .modal-message-rtl {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  .modal-button-rtl {
+    padding: 10px 24px;
+    font-size: 14px;
+  }
+  
+  .modal-icon {
+    font-size: 42px;
+    margin-bottom: 14px;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+  .modal-content-rtl {
+    padding: 20px 16px;
+    max-width: 320px;
+    width: 95%;
+  }
+  
+  .modal-title-rtl {
+    font-size: 18px;
+  }
+  
+  .modal-message-rtl {
+    font-size: 13px;
+  }
+  
+  .modal-button-rtl {
+    padding: 8px 20px;
+    font-size: 13px;
+  }
+  
+  .modal-icon {
+    font-size: 36px;
+    margin-bottom: 12px;
+  }
+  
+  .modal-header-rtl {
+    margin-bottom: 20px;
+  }
+  
+  .modal-body-rtl {
+    margin-bottom: 28px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+  .modal-content-rtl {
+    padding: 16px 12px;
+    max-width: 300px;
+    width: 98%;
+  }
+  
+  .modal-title-rtl {
+    font-size: 16px;
+  }
+  
+  .modal-message-rtl {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  
+  .modal-button-rtl {
+    padding: 6px 16px;
+    font-size: 12px;
+  }
+  
+  .modal-icon {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .modal-title-rtl {
+    color: #000000;
+  }
+  
+  .modal-message-rtl {
+    color: #2D3748;
+  }
+  
+  .modal-button-rtl {
+    border: 2px solid #1A202C;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .modal-content-rtl {
+    animation: none;
+  }
+  
+  .modal-button-rtl {
+    transition: none;
+  }
+}
+
+/* Dark mode support (if needed) */
+@media (prefers-color-scheme: dark) {
+  .modal-content-rtl {
+    background: #1F2937;
+    color: #F9FAFB;
+  }
+  
+  .modal-title-rtl {
+    color: #F9FAFB;
+  }
+  
+  .modal-message-rtl {
+    color: #D1D5DB;
+  }
+}

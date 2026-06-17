@@ -1,0 +1,454 @@
+/* Add zoom-responsive container */
+body {
+    zoom: 1;
+    transform-origin: top left;
+}
+
+.inquiry-card-back{
+    width: 1500px;
+    height: 244px;
+    position: relative;
+    flex-shrink: 0;
+    background: var(--Background-background-primary-25, #F7FDF9);
+    transform-origin: top left;
+}
+
+.inquiry-vector-img{
+    width: 710px;
+    height: 508px;
+    flex-shrink: 0;
+    fill: rgba(184, 234, 203, 0.20);
+}
+
+.inquiry-vernav{
+    position: absolute;
+    top: 16px;         
+    right: 200px;
+    display: inline-flex;
+    padding: var(--spacing-416-px, 16px) var(--spacing-624-px, 24px);
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.inquiry-vernav-img{
+    display: flex;
+    width: 20px;
+    height: 20px;
+    padding: 1.042px 1.457px 1.041px 1.458px;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1;
+}
+
+.inquiry-breadcrumbs{
+    width:317px;
+    height:20px;
+    display: inline-flex;
+    padding: var(--Global-spacing-none, 0px);
+    align-items: flex-start;
+    position: absolute;
+    top:32px;
+    left: 79px;
+    gap: var(--Global-spacing-none, 0px);
+}
+
+.inquiry-link-item{
+    display: flex;
+    padding-right: var(--Link-link-sm-gap, 4px);
+    align-items: center;
+    gap: var(--Link-link-sm-gap, 4px);
+}
+
+.inquiry-text{
+    padding: var(--Global-spacing-none, 0px);
+    text-decoration: none;
+    color: var(--Link-link-primary-visited, #14573A);
+    font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+    font-size: var(--Size-Text-typo-size-text-sm, 14px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--Line-Height-Text-line-heights-text-sm, 20px); /* 142.857% */
+}
+
+.inquiry-arrow{
+    display: flex;
+    width: 16px;
+    height: 16px;
+    padding: 2.222px 4.827px 2.22px 5.442px;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+.inquiry-service-title{
+    position: absolute;
+    top: 80px;
+    left: 75px;
+    color: var(--Text-text-default, #161616);
+    font-family: var(--Font-Family-font-family-display, "IBM Plex Sans Arabic");
+    font-size: var(--Size-Display-typo-size-display-sm, 30px);
+    font-style: normal;
+    font-weight: 700;
+    line-height: var(--Line-Height-Display-line-heights-display-sm, 38px); /* 126.667% */
+    margin: 0;
+}
+
+.inquiry-table-data{
+    display: flex;
+    width: 1250px;
+    height: 740px;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: border-radius-md;
+    background: var(--Background-background-card, #FFF);
+    box-shadow: 0px 3px 12px 0px rgba(47, 43, 61, 0.14);
+    margin-left: 80px; /* Changed from 30px to start from middle of green background (1165px / 2 = 582.5px) */
+    margin-top: 0;
+    top: -105px;
+    position: relative; /* Added to make top property work */
+}
+
+.inquiry-table-header{
+    display: flex;
+    padding: card-padding;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: var(--spacing-312-px, 12px);
+    align-self: stretch;
+}
+
+.inquiry-filter1-row{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 1300px;
+    align-self: flex-start;
+    margin-left: 30px;
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+
+.inquiry-headbut{
+    display: flex;
+    width: 1034px;
+    align-items: center;
+    gap: 20px; /* Changed from 676px to 20px for minimal space */
+    justify-content: flex-start; /* Added to align items to the left */
+}
+
+.inquiry-tablehead{
+    color: var(--Text-text-primary-paragraph, #384250);
+    font-family: "IBM Plex Sans Arabic";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px; /* 155.556% */
+    margin-left: -187px;
+    margin-top: 30px;
+}
+
+.inquiry-line1 {
+    width: 1250px;
+    height: 1px;
+    background-color: #D2D6DB;
+    border: none;
+    margin: 0;
+    display: block;
+    margin-left: -70px;
+    margin-top: 20px;
+}
+
+.inquiry-esclatebut{
+    display: flex;
+    width: 102px;
+    height: 40px;
+    padding: var(--Global-spacing-none, 0px) var(--Button-buttons-lg-padding, 16px);
+    justify-content: center;
+    align-items: center;
+    gap: var(--Button-buttons-lg-gap, 4px);
+    flex-shrink: 0;
+    color: var(--Text-text-oncolor-primary, #FFF);
+    font-family: "IBM Plex Sans Arabic";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 150% */
+    background: var(--Button-button-background-primary-default, #1B8354);
+    border: none;
+    border-radius: 6px;
+    margin-left: 143px;
+    margin-top: 30px;
+}
+
+.inquiry-search-menubar{
+    position: relative; 
+    width: 580px; 
+    height: 40px; 
+    border: 1px solid #9DA4AE; 
+    border-radius: 6px; 
+    background-color: #FFFFFF;
+}
+
+.inquiry-search-icon{
+    position: absolute; 
+    width: 18px; 
+    height: 18px; 
+    left: 10px; 
+    top: 52%; 
+    transform: translateY(-50%);
+}
+
+.inquiry-placeholdermenu{
+    width: 100%; 
+    height: 100%; 
+    padding-left: 35px; 
+    border: none; 
+    outline: none; 
+    font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+    font-size: var(--Size-Text-typo-size-text-md, 16px);
+    font-style: normal;
+    font-weight: 400; 
+    color: var(--Form-field-text-placeholder, #6C737F); 
+    background-color: transparent;
+    line-height: var(--Line-Height-Text-line-heights-text-md, 24px);
+}
+
+.inquiry-status-filter{
+    position: relative; 
+    width: 580px; 
+    height: 40px; 
+    border: 1px solid #9DA4AE; 
+    border-radius: 6px; 
+    background-color: #FFFFFF;
+    font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+    font-size: var(--Size-Text-typo-size-text-md, 16px);
+    color: var(--Form-field-text-placeholder, #6C737F);
+    padding: 0 12px;
+    outline: none;
+}
+
+.inquiry-table-footer{
+   display: flex;
+   width: 100%;
+   justify-content: space-between;
+   align-items: center;
+   padding: 20px 30px;
+   margin-top: 20px;
+}
+
+.inquiry-row-pages{
+    color: var(--Colors-Bright_Gray-Dark, #B2B2B2);
+    font-family: "IBM Plex Sans Arabic";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 150% */
+    margin: 0;
+    padding: 20px 0;
+    margin-left: -1px;
+    margin-top: 170px;
+}
+
+.inquiry-pagination {
+    display: flex;
+    justify-content: flex-start; /* Align items to the left */
+    align-items: center;
+    gap: 10px;
+    font-family: Arial, sans-serif;
+    margin: 170px 0 0 0; /* Top margin pushes it down, left margin removed */
+    padding-left: 0; /* Remove any padding */
+    list-style: none; /* Remove bullets if used in a list */
+    margin-right: 480px;
+}
+        
+.inquiry-pagination a {
+    color: #161616;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.inquiry-pagination a:hover {
+    background-color: #f0f0f0;
+}
+
+.inquiry-pagination .active {
+    color: #161616;
+    position: relative;
+}
+
+.inquiry-pagination .active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 5px;
+    right: 5px;
+    height: 4px;
+    background-color: #1B8354;
+    border-radius: 2px;
+}
+
+.inquiry-pagination .ellipsis {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #161616; /* Light black border */
+    border-radius: 3px;
+    color: #161616;
+}
+
+.inquiry-headtable{
+    display: flex;
+    width: 1039px;
+    height: 48px;
+    align-items: flex-start;
+    position: absolute;
+    left: 21px;
+    top: 153px;
+    border-top: 1px solid var(--Table-table-cell-border, #D2D6DB);
+    border-bottom: 1px solid var(--Table-table-cell-border, #D2D6DB);
+    background: var(--Background-background-body, #F9FAFB);
+}
+
+/* Added table styles */
+.inquiry-data-table {
+    width: calc(100% - 60px);
+    border-collapse: collapse;
+    margin: 20px 30px 0 30px;
+    font-family: "IBM Plex Sans Arabic";
+}
+
+.inquiry-data-table th {
+    background-color: #F9FAFB;
+    border-top: 1px solid #D2D6DB;
+    border-bottom: 1px solid #D2D6DB;
+    border-right: 1px solid #D2D6DB; /* Add vertical line */
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 500;
+    color: #384250;
+}
+
+.inquiry-data-table td {
+    padding: 16px;
+    border-bottom: 1px solid #E5E5E5; /* Add horizontal line */
+    border-right: 1px solid #D2D6DB; /* Add vertical line */
+    font-size: 14px;
+    color: #161616;
+}
+
+.inquiry-number {
+    color: #1B8354;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.inquiry-status-badge {
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+    background-color: #FFF3CD;
+    color: #856404;
+}
+
+.inquiry-file-link {
+    color: #1B8354;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.inquiry-table-container {
+    width: calc(100% - 05px);
+    padding: 0;
+    margin: -5px 10px 0 30px;
+}
+
+.inquiry-help-btn {
+    position: relative;
+    margin: 30px auto 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #1B8354;
+    color: white;
+    border: none;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    left:580px;
+    top:-120px;
+}
+
+/* Beautiful refresh icon styles */
+.inquiry-refresh-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    margin-top: 30px;
+    position: relative;
+}
+
+.inquiry-refresh-btn:hover:not(:disabled) {
+    background-color: rgba(27, 131, 84, 0.1);
+    transform: scale(1.05);
+}
+
+.inquiry-refresh-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.inquiry-refresh-icon {
+    width: 20px;
+    height: 20px;
+    color: #1B8354;
+    transition: transform 0.6s ease;
+    stroke-width: 2;
+}
+
+.inquiry-refresh-icon.spinning {
+    animation: inquirySmoothSpin 1.5s ease-in-out infinite;
+}
+
+.inquiry-refresh-btn:hover .inquiry-refresh-icon:not(.spinning) {
+    transform: rotate(180deg);
+}
+
+@keyframes inquirySmoothSpin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Beautiful SVG refresh icon */
+.inquiry-refresh-svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}

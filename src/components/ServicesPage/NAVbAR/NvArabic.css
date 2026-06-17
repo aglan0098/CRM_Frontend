@@ -1,0 +1,957 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    overflow-x: auto;
+}
+
+.SerAr-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 20px;
+    background-color: white;
+    border-bottom: 1px solid #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 100%;
+    position: relative;
+    z-index: 10000;
+}
+
+.SerAr-nav-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+}
+
+.SerAr-logo {
+    display: flex;
+    align-items: center;
+}
+
+.SerAr-logo img {
+    width: 50px;
+    height: 50px;
+}
+
+.SerAr-nav-menu {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: clamp(10px, 1.5vw, 20px);
+    flex-wrap: wrap;
+}
+
+.SerAr-nav-item {
+    position: relative;
+}
+
+.SerAr-nav-link {
+    text-decoration: none;
+    color: #161616;
+    font-size: clamp(14px, 1.125vw + 0.5rem, 16px);
+    font-weight: 500;
+    font-family: "IBM Plex Sans Arabic";
+    font-style: normal;
+    padding: 10px 0;
+    display: inline-flex;
+    align-items: center;
+    gap: clamp(3px, 0.3vw, 5px);
+    transition: color 0.3s;
+    line-height: 24px; 
+}
+
+/* Hover effect for navigation items */
+.SerAr-nav-link:hover {
+    background-color: var(--button-background-neutral-hovered, #f5f5f5);
+    color: #161616;
+    border-radius: 4px;
+    padding: 10px 20px;
+    position: relative;
+}
+
+.SerAr-nav-link:hover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 5px;
+    background-color: var(--background-neutral-400, #9ca3af);
+}
+
+/* Active/Clicked effect for navigation items */
+.SerAr-nav-link.active {
+    background-color: var(--button-background-primary-default, #1B8354);
+    color: #FFF;
+    border-radius: 4px;
+    padding: 20px 20px;
+    position: relative;
+}
+
+.SerAr-nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 5px;
+    background-color: var(--background-primary-400, #34d399);
+}
+
+.SerAr-chevron-icon {
+    width: 12px;
+    height: 8px;
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.SerAr-chevron-icon path {
+    fill: #161616;
+    transition: fill 0.3s ease;
+}
+
+.SerAr-nav-link:hover .SerAr-chevron-icon path {
+    fill: #161616;
+}
+
+.SerAr-nav-link.active .SerAr-chevron-icon path {
+    fill: #FFFFFF;
+}
+
+.SerAr-nav-item:hover .SerAr-chevron-icon {
+    transform: rotate(180deg);
+}
+
+.SerAr-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    min-width: 200px;
+    display: none;
+    z-index: 10002;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    margin-top: 0px;
+}
+
+.SerAr-dropdown::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: transparent;
+}
+
+/* Show dropdown on hover for regular nav items */
+.SerAr-nav-item:not(.SerAr-mega-menu-item):hover .SerAr-dropdown {
+    display: block !important;
+}
+
+/* Hide dropdown when mouse leaves the nav item area */
+.SerAr-nav-item:not(.SerAr-mega-menu-item):not(:hover) .SerAr-dropdown {
+    display: none !important;
+}
+
+/* Ensure dropdown shows when active class is present */
+.SerAr-dropdown.active {
+    display: block !important;
+}
+
+.SerAr-dropdown a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    border-bottom: 1px solid #f5f5f5;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+    margin: 2px 4px;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.SerAr-dropdown a:not(.SerAr-water-system-title):not(.SerAr-water-system-item):not(.SerAr-media-center-title):not(.SerAr-media-center-item):not(.SerAr-contact-us-title):not(.SerAr-contact-us-item):hover {
+    background-color: #1B8354;
+    color: #FFF;
+    border-radius: 6px;
+}
+
+.SerAr-dropdown a:last-child {
+    border-bottom: none;
+}
+
+/* Water Sector System Dropdown Specific Styles */
+.SerAr-dropdown .SerAr-water-system-title {
+    height: 28px;
+    align-self: stretch;
+    color: var(--Text-text-primary, #1B8354) !important;
+    font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic") !important;
+    font-size: var(--Size-Text-typo-size-text-Ig, 18px) !important;
+    font-style: normal;
+    font-weight: 600 !important;
+    line-height: var(--Line-Height-Text-line-heights-text-Ig, 28px) !important;
+    padding: 12px 16px;
+    text-decoration: none;
+    border-bottom: 1px solid #f5f5f5;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+    margin: 2px 4px;
+    cursor: pointer;
+    pointer-events: auto;
+    display: block;
+}
+
+.SerAr-dropdown .SerAr-water-system-item {
+    align-self: stretch;
+    color: var(--Text-text-display, #1F2A37) !important;
+    font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic") !important;
+    font-size: var(--Size-Text-typo-size-text-Ig, 18px) !important;
+    font-style: normal;
+    font-weight: 600 !important;
+    line-height: var(--Line-Height-Text-line-heights-text-Ig, 28px) !important;
+    padding: 12px 16px;
+    text-decoration: none;
+    border-bottom: 1px solid #f5f5f5;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+    margin: 2px 4px;
+    cursor: pointer;
+    pointer-events: auto;
+    display: block;
+}
+
+.SerAr-dropdown .SerAr-water-system-item:hover {
+    color: #1B8354 !important;
+    background-color: transparent;
+}
+
+.SerAr-dropdown .SerAr-water-system-title:hover {
+    color: #1B8354 !important;
+    background-color: transparent;
+}
+
+/* Media Center Dropdown Specific Styles */
+.SerAr-dropdown .SerAr-media-center-title {
+    height: 28px;
+    align-self: stretch;
+    color: var(--Text-text-primary, #1B8354) !important;
+    font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic") !important;
+    font-size: var(--Size-Text-typo-size-text-Ig, 18px) !important;
+    font-style: normal;
+    font-weight: 600 !important;
+    line-height: var(--Line-Height-Text-line-heights-text-Ig, 28px) !important;
+    padding: 12px 16px;
+    text-decoration: none;
+    border-bottom: 1px solid #f5f5f5;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+    margin: 2px 4px;
+    cursor: pointer;
+    pointer-events: auto;
+    display: block;
+}
+
+.SerAr-dropdown .SerAr-media-center-item {
+    align-self: stretch;
+    color: var(--Text-text-display, #1F2A37) !important;
+    font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic") !important;
+    font-size: var(--Size-Text-typo-size-text-Ig, 18px) !important;
+    font-style: normal;
+    font-weight: 600 !important;
+    line-height: var(--Line-Height-Text-line-heights-text-Ig, 28px) !important;
+    padding: 12px 16px;
+    text-decoration: none;
+    border-bottom: 1px solid #f5f5f5;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+    margin: 2px 4px;
+    cursor: pointer;
+    pointer-events: auto;
+    display: block;
+}
+
+.SerAr-dropdown .SerAr-media-center-item:hover {
+    color: #1B8354 !important;
+    background-color: transparent;
+}
+
+.SerAr-dropdown .SerAr-media-center-title:hover {
+    color: #1B8354 !important;
+    background-color: transparent;
+}
+
+/* Contact Us Dropdown Specific Styles */
+.SerAr-nav-item:has(.SerAr-contact-us-title) .SerAr-dropdown {
+    min-width: 350px;
+    width: max-content;
+}
+
+.SerAr-dropdown .SerAr-contact-us-title {
+    height: 28px;
+    align-self: stretch;
+    color: var(--Text-text-primary, #1B8354) !important;
+    font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic") !important;
+    font-size: var(--Size-Text-typo-size-text-Ig, 18px) !important;
+    font-style: normal;
+    font-weight: 600 !important;
+    line-height: var(--Line-Height-Text-line-heights-text-Ig, 28px) !important;
+    padding: 12px 16px;
+    text-decoration: none;
+    border-bottom: 1px solid #f5f5f5;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+    margin: 2px 4px;
+    cursor: pointer;
+    pointer-events: auto;
+    display: block;
+}
+
+.SerAr-dropdown .SerAr-contact-us-item {
+    align-self: stretch;
+    color: var(--Text-text-display, #1F2A37) !important;
+    font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic") !important;
+    font-size: var(--Size-Text-typo-size-text-Ig, 18px) !important;
+    font-style: normal;
+    font-weight: 600 !important;
+    line-height: var(--Line-Height-Text-line-heights-text-Ig, 28px) !important;
+    padding: 12px 16px;
+    text-decoration: none;
+    border-bottom: 1px solid #f5f5f5;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+    margin: 2px 4px;
+    cursor: pointer;
+    pointer-events: auto;
+    display: block;
+}
+
+.SerAr-dropdown .SerAr-contact-us-item:hover {
+    color: #1B8354 !important;
+    background-color: transparent;
+}
+
+.SerAr-dropdown .SerAr-contact-us-title:hover {
+    color: #1B8354 !important;
+    background-color: transparent;
+}
+
+.SerAr-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.SerAr-hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.SerAr-hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #161616;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+.SerAr-search-container {
+    display: flex;
+    height: 32px;
+    min-width: 72px;
+    padding: var(--spacing-md, 8px) var(--spacing-xl, 16px);
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-xs, 4px);
+}
+
+.SerAr-searchtext{
+    color: var(--Text-text-default, #161616);
+    font-family: "IBM Plex Sans Arabic";
+    font-size: clamp(14px, 1.125vw + 0.5rem, 18px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    color: #666;
+    font-size: 16px;
+} 
+
+.SerAr-language-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background-color: transparent;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: var(--Text-text-default, #161616);
+    font-family: "IBM Plex Sans Arabic";
+    font-size: clamp(14px, 1.125vw + 0.5rem, 18px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+}
+
+.SerAr-language-toggle:hover {
+    background-color: #f5f5f5;
+}
+
+.SerAr-nav-button {
+    padding: 10px 20px;
+    background-color: #1B8354;
+    color: #FFF;
+    border: none;
+    border-radius: var(--Radius-radius-sm, 4px);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    font-style: normal;
+    font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    min-height: 40px;
+max-height: 40px;
+}
+
+.SerAr-nav-button:hover {
+    background-color: #218838;
+}
+
+.globe-icon {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
+/* Mobile Backdrop Overlay */
+.SerAr-mobile-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.SerAr-mobile-backdrop.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Mega Menu Styles - About (4-column) */
+.SerAr-mega-menu {
+    position: absolute;
+    top: calc(100% + 13.5px);
+    left: -1000px;
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 0 0 12px 12px;
+    width: 800px;
+    display: none;
+    z-index: 10002;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    padding: 40px;
+}
+
+/* Show mega menu on hover */
+.SerAr-nav-item.SerAr-mega-menu-item:hover .SerAr-mega-menu {
+    display: block !important;
+}
+
+.SerAr-mega-menu.active {
+    display: block;
+}
+
+.SerAr-mega-menu-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+/* Information Center Mega Menu (3-column) */
+.SerAr-info-center-mega-menu {
+    position: absolute;
+    top: calc(100% + 13.5px);
+    left: -600px;
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 0 0 12px 12px;
+    width: 700px;
+    display: none;
+    z-index: 10002;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    padding: 40px;
+}
+
+/* Show info center mega menu on hover */
+.SerAr-nav-item.SerAr-mega-menu-item:hover .SerAr-info-center-mega-menu {
+    display: block !important;
+}
+
+.SerAr-info-center-mega-menu.active {
+    display: block;
+}
+
+.SerAr-info-center-mega-menu-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.SerAr-mega-menu-column h3.SerAr-mega-menu-title {
+    height: 28px;
+    align-self: stretch;
+    color: var(--Text-text-primary, #1B8354);
+    font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+    font-size: var(--Size-Text-typo-size-text-Ig, 18px);
+    font-style: normal;
+    font-weight: 600;
+    line-height: var(--Line-Height-Text-line-heights-text-Ig, 28px);
+    margin-bottom: 20px;
+}
+
+.SerAr-mega-menu-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.SerAr-mega-menu-column li {
+    margin-bottom: 12px;
+}
+
+.SerAr-mega-menu-column a {
+    color: var(--Text-text-display, #1F2A37);
+    font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+    font-size: var(--Size-Text-typo-size-text-Ig, 18px);
+    font-style: normal;
+    font-weight: 600;
+    line-height: var(--Line-Height-Text-line-heights-text-Ig, 28px);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: block;
+}
+
+.SerAr-mega-menu-column a:hover {
+    color: #1B8354;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .SerAr-nav {
+        padding: 12px 15px;
+    }
+    
+    .SerAr-nav-left {
+        gap: 15px;
+    }
+    
+    .SerAr-nav-right {
+        display: none;
+    }
+    
+    .SerAr-hamburger {
+        display: flex;
+    }
+    
+    .SerAr-nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: white;
+        flex-direction: column;
+        gap: 0;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        border-radius: 0 0 6px 6px;
+        padding: 10px 0;
+        z-index: 10001;
+    }
+    
+    .SerAr-nav-menu.active {
+        display: flex;
+    }
+    
+    .SerAr-mobile-right-section {
+        display: none;
+        flex-direction: row;
+        gap: 15px;
+        padding: 20px;
+        border-top: 1px solid #e0e0e0;
+        margin-top: 45px;
+        justify-content: flex-start;
+    }
+    
+    .SerAr-mobile-right-section.active {
+        display: flex !important;
+        position: absolute;
+        top: calc(100% + 300px);
+        left: 0;
+        right: 0;
+        background-color: white;
+        border-radius: 0 0 6px 6px;
+        z-index: 10000;
+    }
+    
+    .SerAr-nav-item {
+        width: 100%;
+    }
+    
+    .SerAr-nav-link {
+        padding: 15px 20px;
+        border-radius: 0;
+        font-size: 16px;
+    }
+    
+    .SerAr-nav-link:hover {
+        background-color: var(--button-background-neutral-hovered, #f5f5f5);
+        color: #161616;
+        border-radius: 0;
+        padding: 15px 20px;
+    }
+    
+    .SerAr-nav-link.active {
+        background-color: var(--button-background-primary-default, #059669);
+        color: #FFF;
+        border-radius: 0;
+        padding: 15px 20px;
+    }
+    
+    .SerAr-dropdown {
+        position: static;
+        display: none;
+        box-shadow: none;
+        border: none;
+        background-color: #f8f9fa;
+        margin: 0;
+        border-radius: 0;
+    }
+    
+    .SerAr-dropdown.active {
+        display: block;
+    }
+    
+    .SerAr-dropdown a {
+        padding: 12px 40px;
+        font-size: 14px;
+        border-bottom: 1px solid #e0e0e0;
+        margin: 0;
+    }
+    
+    .SerAr-hamburger {
+        display: flex;
+    }
+    
+    .SerAr-nav-right .SerAr-search-container {
+        display: none;
+    }
+    
+    .SerAr-mobile-right-section .SerAr-search-container {
+        display: flex;
+    }
+    
+    .SerAr-language-toggle {
+        font-size: 16px;
+        padding: 6px 10px;
+    }
+    
+    .SerAr-nav-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+    
+    .SerAr-logo svg {
+        width: 50px;
+        height: 35px;
+    }
+    
+    /* Mobile responsive for mega menus */
+    .SerAr-mega-menu,
+    .SerAr-info-center-mega-menu {
+        position: static;
+        width: 100%;
+        left: 0;
+        padding: 20px;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    
+    .SerAr-mega-menu-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .SerAr-info-center-mega-menu-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+/* Specific Zoom Level Fixes - 110%, 125%, 150%, 175% */
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .SerAr-nav {
+        padding: 10px clamp(15px, 3vw, 25px);
+    }
+    
+    .SerAr-nav-left {
+        gap: clamp(12px, 2vw, 20px);
+    }
+    
+    .SerAr-nav-menu {
+        gap: clamp(8px, 1.5vw, 15px);
+        flex-wrap: nowrap;
+    }
+    
+    .SerAr-nav-link {
+        font-size: clamp(14px, 1.2vw + 0.8rem, 16px);
+        padding: 8px 4px;
+    }
+    
+    .SerAr-nav-right {
+        gap: clamp(8px, 1.5vw, 15px);
+    }
+    
+    .SerAr-search-container {
+        min-width: clamp(45px, 8vw, 60px);
+    }
+    
+    .SerAr-searchtext {
+        font-size: clamp(14px, 1.2vw + 0.8rem, 16px);
+    }
+    
+    .SerAr-language-toggle {
+        font-size: clamp(14px, 1.2vw + 0.8rem, 16px);
+        padding: 6px 8px;
+    }
+    
+    .SerAr-nav-button {
+        font-size: clamp(12px, 1vw + 0.7rem, 14px);
+        padding: 6px 12px;
+    }
+}
+
+@media (min-width: 1201px) and (max-width: 1366px) {
+    .SerAr-nav {
+        padding: 12px clamp(20px, 4vw, 30px);
+    }
+    
+    .SerAr-nav-menu {
+        gap: clamp(10px, 1.8vw, 18px);
+    }
+    
+    .SerAr-nav-link {
+        font-size: clamp(15px, 1.3vw + 0.9rem, 17px);
+        padding: 9px 5px;
+    }
+    
+    .SerAr-nav-right {
+        gap: clamp(10px, 1.8vw, 18px);
+    }
+}
+
+@media (min-width: 1367px) and (max-width: 1599px) {
+    .SerAr-nav {
+        padding: 12px clamp(25px, 5vw, 35px);
+    }
+    
+    .SerAr-nav-menu {
+        gap: clamp(12px, 2vw, 20px);
+    }
+    
+    .SerAr-nav-link {
+        font-size: clamp(16px, 1.4vw + 1rem, 18px);
+        padding: 10px 6px;
+    }
+}
+
+/* Tablet Styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .SerAr-nav {
+        padding: 12px 25px;
+    }
+    
+    .SerAr-nav-left {
+        gap: 25px;
+    }
+    
+    .SerAr-nav-menu {
+        gap: 25px;
+    }
+    
+    .SerAr-nav-link {
+        font-size: 16px;
+    }
+    
+    .SerAr-nav-right {
+        gap: 15px;
+    }
+    
+    .SerAr-search-container {
+        min-width: 60px;
+    }
+    
+    .SerAr-searchtext {
+        font-size: 16px;
+    }
+    
+    .SerAr-language-toggle {
+        font-size: 16px;
+        padding: 6px 10px;
+    }
+    
+    .SerAr-nav-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+    
+    .SerAr-mega-menu {
+        width: 1000px;
+    }
+    
+    .SerAr-info-center-mega-menu {
+        width: 800px;
+    }
+}
+
+/* Intermediate Zoom Breakpoint - 1025px to 1366px (125%-150% zoom on larger screens) */
+@media (min-width: 1025px) and (max-width: 1366px) {
+    .SerAr-nav {
+        padding: 12px 30px;
+    }
+    
+    .SerAr-nav-left {
+        gap: 20px;
+    }
+    
+    .SerAr-nav-menu {
+        gap: 15px;
+    }
+    
+    .SerAr-nav-link {
+        font-size: 16px;
+        padding: 8px 0;
+    }
+    
+    .SerAr-nav-right {
+        gap: 12px;
+    }
+    
+    .SerAr-language-toggle {
+        font-size: 16px;
+        padding: 6px 10px;
+    }
+    
+    .SerAr-nav-button {
+        font-size: 15px;
+        padding: 8px 16px;
+    }
+    
+    .SerAr-mega-menu {
+        width: 900px;
+        left: -1150px;
+    }
+    
+    .SerAr-info-center-mega-menu {
+        width: 750px;
+        left: -750px;
+    }
+}
+
+/* Medium Desktop - 1367px to 1599px */
+@media (min-width: 1367px) and (max-width: 1599px) {
+    .SerAr-nav-menu {
+        gap: 25px;
+    }
+    
+    .SerAr-nav-link {
+        font-size: 17px;
+    }
+    
+    .SerAr-mega-menu {
+        width: 1000px;
+    }
+    
+    .SerAr-info-center-mega-menu {
+        width: 850px;
+    }
+}
+
+/* Desktop Styles - Hide Hamburger */
+@media (min-width: 769px) {
+    .SerAr-hamburger {
+        display: none !important;
+    }
+    
+    .SerAr-mobile-right-section {
+        display: none !important;
+    }
+    
+    .SerAr-mobile-backdrop {
+        display: none !important;
+    }
+    
+    .SerAr-nav-menu {
+        display: flex !important;
+    }
+    
+    .SerAr-nav-right {
+        display: flex !important;
+    }
+}
+
+/* Large Desktop Styles */
+@media (min-width: 1200px) {
+    /* .SerAr-nav {
+        padding: 12px 40px;
+    } */
+    
+    .SerAr-nav-left {
+        gap: 40px;
+    }
+    
+    .SerAr-nav-menu {
+        gap: 40px;
+    }
+    
+    .SerAr-nav-right {
+        gap: 20px;
+    }
+    
+    .SerAr-mega-menu {
+        width: 1140px;
+    }
+    
+    .SerAr-info-center-mega-menu {
+        width: 900px;
+    }
+}

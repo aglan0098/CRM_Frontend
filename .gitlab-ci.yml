@@ -1,0 +1,202 @@
+# Define the stages of the pipeline
+stages:
+  - build    # Build the Docker image
+  - sign     # Sign the built image using Binary Authorization
+  - deploy   # Deploy the signed image to Cloud Run
+
+# Define reusable environment  variables
+variables:
+  DOCKER_DRIVER: overlay2
+  REGION: me-central2
+  PROJECT_ID: proj-crm-test-821q
+  REPO_NAME: proj-crm-test-821q-artifact-registry-01
+  IMAGE_TAG: $CI_COMMIT_SHORT_SHA  # Short hash of the commit used as the image tag
+
+# -------- BUILD IMAGE JOB --------
+build_image:
+  stage: build
+  retry: 2  # Retry up to 2 times on failure
+  image: google/cloud-sdk:slim  # Lightweight GCP SDK image (but lacks Docker, so we install it below)
+  services:
+    - name: docker:24.0.7-dind  # Docker-in-Docker service
+      alias: docker
+      command: ["--host=tcp://0.0.0.0:2375", "--tls=false"]
+  variables:
+    DOCKER_HOST: tcp://docker:2375  # Connect to Docker daemon via TCP
+    DOCKER_TLS_CERTDIR: ""          # Disable TLS for Docker in Docker
+    DOCKER_API_VERSION: "1.43"
+  environment:
+    name: $CI_COMMIT_BRANCH
+
+  before_script:
+    # Install Docker CLI since it's missing in the slim image
+    - apt-get update && apt-get install -y curl gnupg lsb-release
+    - curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+    - echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
+    - apt-get update && apt-get install -y docker-ce-cli
+    - docker buildx version || echo "Buildx is ready"
+
+    # Authenticate with Google Cloud using the service account
+    - echo "$GCP_SA_KEY_TEST" | base64 -d > /tmp/key.json
+    - gcloud auth activate-service-account --key-file=/tmp/key.json
+    - gcloud config set project "$PROJECT_ID"
+
+    # Configure Docker to push images to Artifact Registry
+    - gcloud auth configure-docker "$REGION-docker.pkg.dev"
+
+    # Wait until Docker is ready
+    - |
+      for i in {1..4}; do
+        if docker info > /dev/null 2>&1; then
+          echo "✅ Docker is ready"
+          break
+        fi
+        echo "⏳ Waiting for Docker to be ready..."
+        sleep 3
+      done
+
+  script:
+    # Inject environment variables into React app build
+    - echo "REACT_APP_BE_URL=$REACT_APP_BE_URL" >> .env
+    - echo "REACT_APP_BFF_URL=$REACT_APP_BFF_URL" >> .env
+    - cat .env  # Confirm the .env file contents
+
+    # Define Docker image names and paths
+    - IMAGE_NAME="crmportal-react-cloudrunservice-$CI_COMMIT_REF_NAME"
+    - IMAGE_BASE="$REGION-docker.pkg.dev/$PROJECT_ID/$REPO_NAME/$IMAGE_NAME"
+    - IMAGE_FULL="$IMAGE_BASE:$IMAGE_TAG"
+
+    # Build and push Docker image using buildx (for platform support)
+    - docker buildx create --use
+    - docker buildx build --platform linux/amd64 -t "$IMAGE_FULL" --load .
+    - docker push "$IMAGE_FULL"
+
+    # Fetch the digest (immutable version of the image)
+    - IMAGE_DIGEST=$(gcloud artifacts docker images describe "$IMAGE_FULL" --format="value(image_summary.digest)")
+
+    # Export key variables for next jobs
+    - |
+      cat <<EOF > build.env
+      IMAGE_NAME=$IMAGE_NAME
+      IMAGE_BASE=$IMAGE_BASE
+      IMAGE_DIGEST=$IMAGE_DIGEST
+      PROJECT_ID=$PROJECT_ID
+      EOF
+    # OPTIONAL: Housekeeping - keep only 10 latest images in registry
+    - echo "🧹 Starting image housekeeping for $IMAGE_BASE"
+    - |
+      OLD_IMAGES=$(gcloud artifacts docker images list "$IMAGE_BASE" \
+        --include-tags \
+        --format="get(version)" \
+        --sort-by="~updateTime" \
+        --limit=999 | tail -n +11)
+
+      for IMG_VER in $OLD_IMAGES; do
+        echo "🗑️ Deleting old image version: $IMG_VER"
+        gcloud artifacts docker images delete "$IMAGE_BASE@$IMG_VER" \
+          --quiet \
+          --delete-tags
+      done
+
+  artifacts:
+    paths:
+      - build.env  # Exported variables for downstream jobs
+    reports:
+      dotenv: build.env  # Dotenv format so variables are auto-loaded
+
+  rules:
+    # Run this job only for selected branches
+    - if: '$CI_COMMIT_BRANCH == "dev"'
+    - if: '$CI_COMMIT_BRANCH == "sit"'
+    - if: '$CI_COMMIT_BRANCH == "prod"'
+
+
+# -------- SIGN IMAGE JOB --------
+sign_image:
+  stage: sign
+  image: google/cloud-sdk:slim
+  needs:
+    - job: build_image
+      artifacts: true  # Needs the build.env file
+  before_script:
+    # Authenticate and setup environment
+    - echo "$GCP_SA_KEY_TEST" | base64 -d > /tmp/key.json
+    - gcloud auth activate-service-account --key-file=/tmp/key.json
+    - gcloud config set project "$PROJECT_ID"
+    - source build.env  # Load variables from previous job
+
+  script:
+    # Create an attestation (digital signature) for the image
+    - echo "🔐 Signing image $IMAGE_BASE@$IMAGE_DIGEST"
+    - >
+      gcloud beta container binauthz attestations sign-and-create
+      --project="$PROJECT_ID"
+      --artifact-url="$IMAGE_BASE@$IMAGE_DIGEST"
+      --attestor="crm-test-attestor"
+      --keyversion="projects/$PROJECT_ID/locations/$REGION/keyRings/crm-test-keyring/cryptoKeys/crm-test-kms-key/cryptoKeyVersions/1"
+
+  artifacts:
+    paths:
+      - build.env
+    reports:
+      dotenv: build.env
+
+  rules:
+    # Run this job only for selected branches
+    - if: '$CI_COMMIT_BRANCH == "dev"'
+    - if: '$CI_COMMIT_BRANCH == "sit"'
+    - if: '$CI_COMMIT_BRANCH == "prod"'
+
+
+# -------- DEPLOY JOB --------
+deploy_image:
+  stage: deploy
+  image: google/cloud-sdk:slim
+  needs:
+    - job: sign_image
+      artifacts: true  # Needs the build.env file
+  before_script:
+    # Authenticate and set project
+    - echo "$GCP_SA_KEY_TEST" | base64 -d > /tmp/key.json
+    - gcloud auth activate-service-account --key-file=/tmp/key.json
+    - gcloud config set project "$PROJECT_ID"
+    - source build.env
+
+  script:
+    - echo "🚀 Deploying $IMAGE_BASE@$IMAGE_DIGEST to Cloud Run"
+    - >
+      gcloud run deploy "$IMAGE_NAME"
+      --image="$IMAGE_BASE@$IMAGE_DIGEST"
+      --region="$REGION"
+      --platform=managed
+      --ingress=internal
+      --allow-unauthenticated
+      --port=8080
+      --binary-authorization=default
+
+    # Confirm the deployed image
+    
+    - gcloud run services describe "$IMAGE_NAME" --region "$REGION" --format="value(spec.template.spec.containers[0].image)"
+
+    # OPTIONAL: Cleanup old revisions (keep last 10)
+    - |
+       OLD_REVISIONS=$(gcloud run revisions list \
+        --service="$IMAGE_NAME" \
+        --region="$REGION" \
+        --platform=managed \
+        --format="value(metadata.name)" \
+        --sort-by="~metadata.creationTimestamp" \
+        --limit=999 | tail -n +11)
+
+       for REV in $OLD_REVISIONS; do
+          gcloud run revisions delete "$REV" \
+            --region="$REGION" \
+            --platform=managed \
+            --quiet
+       done
+
+  rules:
+    # Run this job only for selected branches
+    - if: '$CI_COMMIT_BRANCH == "dev"'
+    - if: '$CI_COMMIT_BRANCH == "sit"'
+    - if: '$CI_COMMIT_BRANCH == "prod"'
